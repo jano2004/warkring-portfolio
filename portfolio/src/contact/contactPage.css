@@ -6,6 +6,7 @@ form {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    padding-top: 3rem;
     width: 100%;
     font-size: 3rem;
 }
@@ -19,7 +20,7 @@ input {
     border: 1px solid rgb(220, 220, 220);
 
     &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
+        border: 2px solid rgba(249, 105, 14);
     }
 }
 
@@ -35,7 +36,7 @@ textarea {
     border: 1px solid rgb(220, 220, 220);
 
     &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
+        border: 2px solid rgba(249, 105, 14);
     }
 }
 
