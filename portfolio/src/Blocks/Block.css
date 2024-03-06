@@ -1,0 +1,52 @@
+.main_block_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.block_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    height: 600px;
+    background-color: aqua;
+}
+
+.block_left {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 45%;
+    height: 90%;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+.block_right {
+    width: 45%;
+    height: 90%;
+    background-color: blanchedalmond;
+}
+
+.block_left h1, .block_left p {
+    margin: 30px 0 0 30px;
+    color: white;
+    text-align: left;
+}
+
+.block_left h1 {
+    font-size: 2.4rem;
+}
+
+.block_left p {
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+.block_right img {
+    height: 100%;
+    width: auto;
+}
