@@ -9,6 +9,7 @@ function Block({ header, text, image, alignment }) {
                         <div className="block_left">
                             <h1 className="block_head">{header}</h1>
                             <p>{text}</p>
+                            <button className="block_left_detail_button">DETAILS</button>
                         </div>
                         <div className="block_right">
                             <img src={image} alt={header.toLowerCase()} />

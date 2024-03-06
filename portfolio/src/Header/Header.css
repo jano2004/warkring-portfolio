@@ -1,0 +1,57 @@
+.Header {
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Header_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 100px; 
+    height: auto; 
+    margin-left: 30px;
+    transition: all 0.2s ease-in-out; 
+}
+
+.Header_Container button {
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    width: auto;
+    padding: 10px;
+    height: 40px;
+}
+
+.Header_Container button:hover {
+    background-color: rgba(255, 255, 255, 0.868);
+    color: #404258;
+}
+
+.home, .leistung, .feature, .unserTeam {
+    margin-right: 30px; 
+}
+
+.Header_Container > button:first-of-type {
+    margin-left: auto; 
+}
+
+.Header_Button_Container {
+    margin-right: 30px;
+}
