@@ -1,0 +1,51 @@
+.main_service_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main_service_container h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 3rem;
+}
+
+.main_service_container ul {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.main_service_pricing_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.main_service_pricing_button p {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+}
+
+.main_service_pricing_button button {
+    border-radius: 7px;
+    color: #323644;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding: 15px 40px 15px 40px;
+    border: 2px solid white;
+    transition: all 0.2s ease-in-out;
+}
+
+.main_service_pricing_button button:hover {
+    color: white;
+    background-color: transparent;
+}
+
