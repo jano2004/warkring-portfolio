@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 800px;
+    margin: 0;
 }
 
 .block_container {
@@ -12,7 +13,7 @@
     flex-direction: row;
     width: 90%;
     height: 600px;
-    background-color: aqua;
+    background-color: transparent;
 }
 
 .block_left {
@@ -21,14 +22,14 @@
     align-items: baseline;
     width: 45%;
     height: 90%;
-    background-color: blueviolet;
+    background-color: transparent;
     text-align: center;
 }
 
 .block_right {
     width: 45%;
     height: 90%;
-    background-color: blanchedalmond;
+    background-color: transparent;
 }
 
 .block_left h1, .block_left p {
@@ -42,7 +43,9 @@
 }
 
 .block_left p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
+    letter-spacing: 1px;
     width: 80%;
 }
 
