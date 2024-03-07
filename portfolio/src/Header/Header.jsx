@@ -1,19 +1,24 @@
 import React from 'react';
 import './Header.css';
-//import logo from './logo1200.png'; 
 import logo600 from './logo600.png';
 
 function Header({ onContactClick }) {
     return (
         <div className="Header">
-            <div className="Header_Container">
-                <img src={logo600} alt="Logo" className='logo'/> 
-                <div className='Header_Button_Container'>
-                    <button className='home'>HOME</button>
-                    <button className='leistung'>LEISTUNGEN</button>
-                    <button className='feature'>FEATURES</button>
-                    <button className='unserTeam'>UNSER TEAM</button>
-                    <button className='kontakt' onClick={onContactClick}>KONTAKT</button>
+            <div className="Header_Logo_Text">
+                <div className="Header_Logo_Text">
+                    <img src={logo600} alt="Logo" className="Header_Logo"/>
+                </div>
+                <div className="Header_Searchbar">
+                </div>
+            </div>
+            <div className="Header_Search_Menu_Login_Register">
+                <div className="Header_Menu">
+                    <button className="Header_Menu_Button">Menu</button>
+                </div>
+                <div className="Header_Login_Register">
+                    <button className="Header_Login_Button">Log in</button>
+                    <button className="Header_Register_Button">Registrieren</button>
                 </div>
             </div>
         </div>

@@ -3,12 +3,11 @@ body {
   font-family: 'Archivo Black', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #323644;
+  background-color: white;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Inter, sans-serif;
 }
 
 .main_blocks_container {
