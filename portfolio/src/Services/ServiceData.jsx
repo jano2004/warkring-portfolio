@@ -1,34 +1,34 @@
 export let serviceData = new Array(2);
 
 const features = [
-    {name: 'Benutzerfreundlichkeit', type: 'Basic'},
-    {name: 'Schnelle Ladezeit', type: 'Basic'},
-    {name: 'Sicherheit', type: 'Basic'},
-    {name: 'SEO', type: 'Basic'},
-    {name: 'Qualitätsinhalte', type: 'Basic'},
-    {name: 'Kontaktinformationen', type: 'Basic'},
-    {name: 'Social-Media Integration', type: 'Basic'},
-    {name: 'Analyse und Feedback', type: 'Basic'},
-    {name: 'Datenschutz und Rechtliches', type: 'Basic'},
-    {name: 'Branding', type: 'Basic'},
+    {featureName: 'Benutzerfreundlichkeit', featureType: 'Basic'},
+    {featureName: 'Schnelle Ladezeit', featureType: 'Basic'},
+    {featureName: 'Sicherheit', featureType: 'Basic'},
+    {featureName: 'SEO', featureType: 'Basic'},
+    {featureName: 'Qualitätsinhalte', featureType: 'Basic'},
+    {featureName: 'Kontaktinformationen', featureType: 'Basic'},
+    {featureName: 'Social-Media Integration', featureType: 'Basic'},
+    {featureName: 'Analyse und Feedback', featureType: 'Basic'},
+    {featureName: 'Datenschutz und Rechtliches', featureType: 'Basic'},
+    {featureName: 'Branding', featureType: 'Basic'},
 
-    {name: 'Responsive Design', type: 'Standart'},
-    {name: 'Call-to-Action', type: 'Standart'},
-    {name: 'Visuelle Elemente', type: 'Standart'},
-    {name: 'Hohe Inhaltsqualität', type: 'Standart'},
+    {featureName: 'Responsive Design', featureType: 'Advanced'},
+    {featureName: 'Call-to-Action', featureType: 'Advanced'},
+    {featureName: 'Visuelle Elemente', featureType: 'Advanced'},
+    {featureName: 'Hohe Inhaltsqualität', featureType: 'Advanced'},
 
-    {name: 'Kontakt-Automatisierung', type: 'Premium'},
-    {name: 'Kauf-Automatisierung', type: 'Premium'}
+    {featureName: 'Kontakt-Automatisierung', featureType: 'Premium'},
+    {featureName: 'Kauf-Automatisierung', featureType: 'Premium'}
 ];
 
-const basicFeatures = features.filter(feature => feature.type === 'Basic');
-const standartFeatures = features.filter(feature => feature.type === 'Basic'|| feature.type === 'Standart');
-const premiumFeatures = features.filter(feature => feature.type === 'Basic' || feature.type === 'Standart' || feature.type === 'Premium');
+const basicFeatures = features.filter(feature => feature.featureType === 'Basic');
+const advancedFeatures = features.filter(feature => feature.featureType === 'Basic'|| feature.featureType === 'Advanced');
+const premiumFeatures = features.filter(feature => feature.featureType === 'Basic' || feature.featureType === 'Advanced' || feature.featureType === 'Premium');
 
-const descriptionBasic = 'Für Unternehmen konzipiert, die einen einfachen, professionellen Online-Auftritt benötigen. Es bietet eine grundlegende Präsenz im Internet, die es Ihnen ermöglicht, ihre Markenidentität zu etablieren und potenzielle Kunden zu erreichen.';
-const descriptionStandart = 'Für Unternehmen konzipiert, die einen einfachen, professionellen Online-Auftritt benötigen. Es bietet eine grundlegende Präsenz im Internet, die es Ihnen ermöglicht, ihre Markenidentität zu etablieren und potenzielle Kunden zu erreichen.';
-const descriptionPremium = 'Für Unternehmen konzipiert, die einen einfachen, professionellen Online-Auftritt benötigen. Es bietet eine grundlegende Präsenz im Internet, die es Ihnen ermöglicht, ihre Markenidentität zu etablieren und potenzielle Kunden zu erreichen.';
+const descriptionBasic = 'Für einen einfachen, professionellen Online-Auftritt. Es bietet eine grundlegende Präsenz im Internet, die es Ihnen ermöglicht, ihre Markenidentität zu etablieren und potenzielle Kunden zu erreichen.';
+const descriptionAdvanced = 'Ein professioneller Online-Auftritt, der über das Grundlegende hinausgeht. Die Funktionspalette verfeinert Ihre Präsenz im Internet und schafft zudem eine umfänglich ansprechende Platform für Ihre Kunden. Eine Optimierte Darstellung in allen Suchmaschinen.';
+const descriptionPremium = 'Das Rundum-sorglos-Paket. Durch modernste Funktionen, sowie hochwertigem Design bieten Sie Ihrem Unternehmen die perfekte Präsenz im Internet. Die einfache Bedienung und Verknüpfung ermöglicht es Ihnen professionell und schnell mit Ihren Kunden zu interagieren. Maßgeschneidertes Webdesign und Sichtbarkeit in allen Suchmaschinen für optimiertes Marketing.';
 
-serviceData[0] =  {packName: 'BASIC | MODERNE UNTERNEHMENS-WEBSITE', features: basicFeatures, price: '399,- €', description: descriptionBasic};
-serviceData[1] = {packName: 'STANDART | MODERNE UNTERNEHMENS-WEBSITE', features: standartFeatures, price: '899,- €', description: descriptionStandart};
-serviceData[2] = {packName: 'PREMIUM | AUTOMATISIERTE UNTERNEHMENS-WEBSITE', features: premiumFeatures, price: '1199,- €', description: descriptionPremium};
+serviceData[0] =  {packName: 'BASIC | MODERNE UNTERNEHMENS-WEBSITE', packFeatures: basicFeatures, packPrice: '399,- €', packDescription: descriptionBasic};
+serviceData[1] = {packName: 'ADVANCDED | PROFFESSIONELLE UNTERNEHMENS-WEBSITE', packFeatures: advancedFeatures, packPrice: '899,- €', packDescription: descriptionAdvanced};
+serviceData[2] = {packName: 'PREMIUM | AUTOMATISIERTE UNTERNEHMENS-WEBSITE', packFeatures: premiumFeatures, packPrice: '1199,- €', packDescription: descriptionPremium};

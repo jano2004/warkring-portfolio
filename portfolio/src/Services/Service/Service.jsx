@@ -7,7 +7,7 @@ function Features({pack}){
             <ul>
                 {pack.map((feature, index) => (
                     <li key={index}>
-                        {feature.name}
+                        {feature.featureName}
                     </li>
                 ))}
             </ul>
@@ -21,12 +21,12 @@ function renderServicePack(pack, index) {
             <h1>{pack.packName}</h1>
             <div className='main_service_pack_content_container'>
                 <div className='main_service_description_container'>
-                    <p>{pack.description}</p>
+                    <p>{pack.packDescription}</p>
                 </div>
                 <div className='main_service_features_and_pricing_container'>
-                    <Features pack={serviceData[index].features} />
+                    <Features pack={serviceData[index].packFeatures} />
                     <div className='main_service_pricing_button_container'>
-                            <p>{serviceData[index].price}</p>
+                            <p>{serviceData[index].packPrice}</p>
                             <button>JETZT BESTELLEN</button>
                     </div>
                 </div>
