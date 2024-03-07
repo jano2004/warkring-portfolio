@@ -4,47 +4,105 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: blueviolet;
 }
 
-.main_service_container h1 {
-    color: white;
-    font-weight: bolder;
-    font-size: 3rem;
-}
-
-.main_service_container ul {
-    color: white;
-    font-weight: bold;
-    font-size: 2rem;
-}
-
-.main_service_pricing_button {
+.main_service_pack_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    width: 90%;
+    background-color: aqua;
+    border-radius: 25px;
+    margin-top: 2%;
 }
 
-.main_service_pricing_button p {
+.main_service_pack_container h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+}
+.main_service_pack_content_container {
+    width: 95%;
+    margin-bottom: 2.5%;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+
+}
+
+.main_service_description_container {
+    width: 50%;
+    background-color: chartreuse;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main_service_description_container p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 70%;
+    background-color: hotpink;
+}
+
+.main_service_features_and_pricing_container {
+    width: 50%;
+    background-color: crimson;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_service_features_container {
+    width: 95%;
+    background-color: darkgoldenrod;
+}
+
+.main_service_features_container ul {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.main_service_pricing_button_container {
+    width: 95%;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 1%;
+}
+
+.main_service_pricing_button_container p {
     color: white;
     font-weight: bold;
     font-size: 2rem;
-    margin: 0 0 20px 0;
+    padding-left: 40px;
+    width: 50%;
 }
 
-.main_service_pricing_button button {
+.main_service_pricing_button_container button {
     border-radius: 7px;
     color: #323644;
     background-color: white;
     font-weight: bold;
-    font-size: 1.6rem;
-    padding: 15px 40px 15px 40px;
+    font-size: 1.5rem;
+    margin: 5%;
     border: 2px solid white;
     transition: all 0.2s ease-in-out;
 }
 
-.main_service_pricing_button button:hover {
+.main_service_pricing_button_container button:hover {
     color: white;
     background-color: transparent;
 }
