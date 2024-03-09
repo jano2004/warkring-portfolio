@@ -38,25 +38,34 @@
     display: flex;
 }
 
-.custom_service_options_option_button {
+.silde_button {
     width: 43px;
-    background-color: grey;
+    background-color: white;
     border-radius: 7px;
     display: flex;
     align-items: center;
     margin-right: 10px;
+    justify-content: left;
 }
 
-.custom_service_options_option_button button {
-    color: white;
+.silde_button.right button {
+    transform: translateX(62%);
+    border-color: rgb(90, 255, 90);
+    background-color: rgb(90, 255, 90);
+    color: rgb(90, 255, 90);
+}
+
+.silde_button button {
+    color: rgb(187, 187, 187);
     height: 95%;
     border-radius: 50%;
     border-style: solid;
-    border-color: white;
-    background-color: white;
+    border-color: rgb(187, 187, 187);
+    background-color: rgb(187, 187, 187);
+    transition: all 0.2s ease-in-out;
 }
 
-.custom_service_options_option_button button:hover {
+.silde_button button:hover {
     cursor: pointer;
 }
 

@@ -1,13 +1,20 @@
+import React, { useState } from 'react';
 import '../Service/CustomService.css'
 import {addOnFeatures} from '../ServiceData';
 import {basicFeatures} from '../ServiceData';
 
 
-function showAddOns(feature, index) {
+function ShowAddOns(feature, index) {
+    const [isRightAligned, setIsRightAligned] = useState(false);
+
+    const toggleAlignment = () => {
+        setIsRightAligned(!isRightAligned);
+    };    
+  
     return (
         <div className='custom_service_options_option_container'>
-            <div className='custom_service_options_option_button'>
-                <button>O</button>
+            <div className={`silde_button ${isRightAligned ? 'right' : ''}`}>
+                <button onClick={toggleAlignment}>O</button>
             </div>
             <p key={index}>
                 {feature.featureName}
@@ -23,7 +30,7 @@ function RenderCustomService() {
                 <h1>BENUTZERDEFINIERT</h1>
                 <div className='custom_service_content_container'>
                     <div className='custom_service_options_container'>
-                            {addOnFeatures.map((feature, index) => showAddOns(feature, index))}
+                            {addOnFeatures.map((feature, index) => ShowAddOns(feature, index))}
                     </div>
                     <div className='custom_service_description_and_pricing_container'>
                         <div className='custom_service_description_container'>
