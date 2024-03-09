@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Block from './Blocks/Block';
 import Header from './Header/Header';
+import MainBody from './MainBody/MainBody';
+import FeatureSlides from './FeaturesSlides/FeatureSlides';
+import FeatureDesign from "./FeaturesDesigns/FeatureDesign";
 import Services from './Services/Services';
-import ContactPage from './contact/contactPage';
+import ContactPage from './Contact/ContactPage';
 import reportWebVitals from './reportWebVitals';
 import {blockData} from "./Blocks/BlockData";
 
@@ -17,15 +20,10 @@ const App = () => {
 
   return (
       <>
-          <Header onContactClick={toggleContactPage} />
-          {showContactPage ? (
-              <ContactPage />
-          ) : (
-              <>
-                  <Services />
-                  {/* Rest */}
-              </>
-          )}
+          <Header />
+          <MainBody />
+          <FeatureSlides />
+          <FeatureDesign />
       </>
   );
 }

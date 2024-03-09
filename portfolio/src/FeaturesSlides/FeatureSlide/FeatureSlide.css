@@ -1,0 +1,64 @@
+.Main_FeatureSlide_Container {
+    height: 100%;
+    width: 30%;
+    transition: all 0.1s ease-in-out;
+}
+
+.Main_FeatureSlide_Top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 45px;
+    width: 300px;
+    height: 300px;
+}
+
+.Main_FeatureSlide_Top:hover {
+    margin-top: -20px;
+    .Main_FeatureSlide_Bottom p {
+        visibility: visible;
+    }
+}
+
+.Main_FeatureSlide_Bottom {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 50%;
+    margin-top: 10px;
+    border-bottom-left-radius: 20px;
+    color: #262626;
+    border-bottom-right-radius: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.Main_FeatureSlide_Bottom p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 100;
+    width: 95%;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.Main_FeatureSlide_Top p {
+    margin-left: 30px;
+}
+
+.Main_FeatureSlide_Top_Header {
+    font-family: Inter, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.Main_FeatureSlide_Top_Text {
+    font-family: Inter, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 80%;
+}
+
+.Main_FeatureSlide_Bottom img {
+    width: 80%;
+}
