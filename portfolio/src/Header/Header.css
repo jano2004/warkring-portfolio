@@ -23,58 +23,16 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Header_Text {
-    font-size: 2rem;
-    font-weight: bolder;
-}
-
-.Header_Logo_Text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-    background-color: transparent;
-}
-
-.Header_Searchbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-    background-color: transparent;
-}
-
-.Header_Searchbar_Text_Input {
-    width: 55%;
-    border-color: #DFDFDF;
-    font-size: 1rem;
-    background-color: #1b1b1b;
-    border-radius: 20px;
-    color: white;
-    padding-left: 15px;
-}
-
 .Header_Search_Menu_Login_Register {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: end;
+    margin-right: 30px;
     width: 50%;
     height: 100%;
     background-color: transparent;
     font-family: Inter, sans-serif;
-}
-
-.Header_Menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    width: 50%;
-    height: 100%;
-    background-color: transparent;
 }
 
 .Header_Menu_Button {
@@ -86,18 +44,7 @@
     font-weight: bold;
 }
 
-.Header_Login_Register {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: end;
-    width: 50%;
-    height: 100%;
-    background-color: transparent;
-}
-
 .Header_Login_Button, .Header_Register_Button {
-    margin-right: 30px;
     border: 0;
     font-size: 1rem;
     font-weight: bold;

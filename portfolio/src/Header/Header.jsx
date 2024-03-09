@@ -6,20 +6,12 @@ function Header({ onContactClick }) {
     return (
         <div className="Header">
             <div className="Header_Logo_Text">
-                <div className="Header_Logo_Text">
-                    <img src={logo600} alt="Logo" className="Header_Logo"/>
-                </div>
-                <div className="Header_Searchbar">
-                </div>
+                <img src={logo600} alt="Logo" className="Header_Logo"/>
             </div>
             <div className="Header_Search_Menu_Login_Register">
-                <div className="Header_Menu">
-                    <button className="Header_Menu_Button">Menu</button>
-                </div>
-                <div className="Header_Login_Register">
-                    <button className="Header_Login_Button">Log in</button>
-                    <button className="Header_Register_Button">Registrieren</button>
-                </div>
+                <button className="Header_Menu_Button">Menu</button>
+                <button className="Header_Login_Button">Log in</button>
+                <button className="Header_Register_Button">Registrieren</button>
             </div>
         </div>
     );

@@ -1,13 +1,22 @@
+import React, { useState } from 'react';
 import './FeatureSlide.css';
 
 function FeatureSlide(props) {
     const backgroundStyle = {
-        backgroundImage: `linear-gradient(200deg, ${props.featureData.colorOne}, ${props.featureData.colorTwo}), linear-gradient(300deg, ${props.featureData.colorThree}, ${props.featureData.colorOne}), linear-gradient(0deg, ${props.featureData.colorTwo}, ${props.featureData.colorThree}), linear-gradient(500deg, rgba(171, 152, 239, 0.25), ${props.featureData.colorOne})`
+        backgroundImage: props.featureData.backgroundImage
+    };
+
+    const [isHovered, setIsHovered] = useState(false);
+    const defaultBackground = {
+        backgroundColor: props.featureData.background,
+        boxShadow: props.featureData.boxShadow
     };
 
     return (
-        <div className="Main_FeatureSlide_Container">
-            <div className="Main_FeatureSlide_Top" style={backgroundStyle}>
+        <div className="Main_FeatureSlide_Container"
+             onMouseEnter={() => setIsHovered(true)}
+             onMouseLeave={() => setIsHovered(false)}>
+            <div className="Main_FeatureSlide_Top" style={defaultBackground}>
                 <p className="Main_FeatureSlide_Top_Header">{props.featureData.type}</p>
                 <p className="Main_FeatureSlide_Top_Text">{props.featureData.name}</p>
             </div>
@@ -19,3 +28,4 @@ function FeatureSlide(props) {
 }
 
 export default FeatureSlide;
+

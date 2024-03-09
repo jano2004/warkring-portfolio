@@ -3,24 +3,28 @@ export const featureSlideData = [
         name: 'Suchmaschinen-Optimierung',
         type: 'SEO',
         text: "Erhöht die Sichtbarkeit einer Website in Suchmaschinen, was zu mehr Besuchern und potenziellen Kunden führt. Es verbessert die Benutzererfahrung und steigert die Glaubwürdigkeit der Marke.",
-        colorOne: 'rgba(122,235,255,0.2)',
-        colorTwo: 'rgba(255,131,122,0.2)',
-        colorThree: 'rgba(255,255,255,0.55)'
+        background: '#ff6251',
+        boxShadow: 'inset 30px 30px 60px #d95345, inset -30px -30px 60px #ff715d'
     },
     {
-        name: 'Schnelle Ladezeit',
-        type: 'LADEZEIT',
-        text: "Schnelle Ladezeiten verbessern das Benutzererlebnis, reduzieren Absprungraten und steigern die Konversionen. Sie beeinflussen positiv das Ranking in Suchmaschinen und erhöhen die Zufriedenheit der Besucher.",
-        colorOne: 'rgba(125,200,100,0.2)',
-        colorTwo: 'rgba(255,250,0,0.2)',
-        colorThree: 'rgba(255,255,255,0.55)'
+        name: 'Responsives Design',
+        type: 'RESPONSIVE',
+        text: "Ein responsives Design verbessert die Benutzererfahrung auf allen Geräten, steigert die Zugänglichkeit und unterstützt die einheitliche Darstellung der Inhalte.",
+        background: '#3a88fe',
+        boxShadow: 'inset 30px 30px 60px #3174d8, inset -30px -30px 60px #439cff'
     },
     {
         name: 'Sicherheit der Kunden',
         type: 'SICHERHEIT',
         text: "Eine hohe Sicherheit schützt die Website vor Cyberangriffen, sichert Kundendaten und stärkt das Vertrauen der Nutzer. Sie minimiert Risiken von Datenverlust und verbessert das Ranking in Suchmaschinen.",
-        colorOne: 'rgba(200,150,100,0.2)',
-        colorTwo: 'rgba(255,150,0,0.2)',
-        colorThree: 'rgba(255,255,255,0.55)'
+        background: '#96d35f',
+        boxShadow: 'inset 30px 30px 60px #80b351, inset -30px -30px 60px #adf36d'
+    },
+    {
+        name: 'Sicherheit der Kunden',
+        type: 'SICHERHEIT',
+        text: "Eine hohe Sicherheit schützt die Website vor Cyberangriffen, sichert Kundendaten und stärkt das Vertrauen der Nutzer. Sie minimiert Risiken von Datenverlust und verbessert das Ranking in Suchmaschinen.",
+        background: '#be38f3',
+        boxShadow: 'inset 30px 30px 60px #a230cf, inset -30px -30px 60px #db40ff'
     },
 ];
