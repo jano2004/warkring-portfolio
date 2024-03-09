@@ -6,7 +6,7 @@ import RenderCustomService from './Service/CustomService';
 function Services() {
     return(
         <div className='main_service_container'>
-            {serviceData.map((pack, index) => renderServicePack(pack, index))}
+            {/*{serviceData.map((pack, index) => renderServicePack(pack, index))}*/}
             <RenderCustomService />
         </div>
     )
