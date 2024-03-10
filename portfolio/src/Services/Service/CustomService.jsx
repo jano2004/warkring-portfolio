@@ -24,6 +24,8 @@ function ShowAddOns(feature, index) {
 }
 
 function RenderCustomService() {
+    const [showAllFeatures, setShowAllFeatures] = useState(false);
+
     return(
         <div className='main_service_container'>
             <div className='custom_service_container'>
@@ -41,14 +43,16 @@ function RenderCustomService() {
                                 <div className='custom_service_basic_features'>
                                     <p>Basic-Features:</p>
                                     <ul>
-                                        {basicFeatures.slice(0, 3).map((feature, index) => (
+                                        {(showAllFeatures ? basicFeatures : basicFeatures.slice(0, 3)).map((feature, index) => (
                                             <li key={index}>
                                                 {feature.featureName}
                                             </li>
                                         ))}
-                                        <li>...</li>
+                                        {!showAllFeatures &&<li>...</li>}
                                     </ul>
-                                    <button>Mehr erfahren</button>
+                                    <button onClick={() => setShowAllFeatures(!showAllFeatures)}>
+                                        {showAllFeatures ? 'Weniger anzeigen' : 'Mehr anzeigen'}
+                                    </button>
                                 </div>
                             </div>
                             <div className='custom_service_pricing_button_container'>
