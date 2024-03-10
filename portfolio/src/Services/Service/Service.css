@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: blueviolet;
+    background-color: white;
 }
 
 .main_service_pack_container {
@@ -13,97 +13,104 @@
     justify-content: center;
     align-items: center;
     width: 90%;
-    background-color: aqua;
+    background-color: #F5F5F5;
     border-radius: 25px;
     margin-top: 2%;
 }
 
 .main_service_pack_container h1 {
-    color: white;
+    color: black;
     font-weight: bolder;
     font-size: 2rem;
     text-align: center;
+    margin: 0.67em;
 }
 .main_service_pack_content_container {
     width: 95%;
     margin-bottom: 2.5%;
-    background-color: chocolate;
+    background-color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-
 }
 
 .main_service_description_container {
-    width: 50%;
-    background-color: chartreuse;
-    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    height: 30%;
     display: flex;
     justify-content: center;
 }
 
 .main_service_description_container p {
-    color: white;
-    font-weight: bold;
+    color: black;
     font-size: 1.5rem;
     width: 70%;
-    background-color: hotpink;
+    text-align: center;
+    background-color: transparent;
 }
 
 .main_service_features_and_pricing_container {
-    width: 50%;
-    background-color: crimson;
+    width: 100%;
+    background-color: transparent;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .main_service_features_container {
-    width: 95%;
-    background-color: darkgoldenrod;
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
 }
 
 .main_service_features_container ul {
-    color: white;
-    font-weight: bold;
+    color: black;
     font-size: 1.5rem;
 }
 
 .main_service_pricing_button_container {
-    width: 95%;
-    background-color: blue;
+    width: 50%;
+    background-color: transparent;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: end;
     align-items: center;
     margin: 0;
     margin-bottom: 1%;
 }
 
 .main_service_pricing_button_container p {
-    color: white;
+    color: black;
     font-weight: bold;
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.main_service_pricing_button_container p span {
     font-size: 2rem;
-    padding-left: 40px;
-    width: 50%;
 }
 
 .main_service_pricing_button_container button {
     border-radius: 7px;
-    color: #323644;
-    background-color: white;
+    color: white;
+    background-color: black;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 5%;
-    border: 2px solid white;
+    border: 2px solid black;
     transition: all 0.2s ease-in-out;
 }
 
 .main_service_pricing_button_container button:hover {
-    color: white;
+    color: black;
     background-color: transparent;
 }
 

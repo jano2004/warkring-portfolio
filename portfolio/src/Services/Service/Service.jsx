@@ -26,7 +26,7 @@ function renderServicePack(pack, index) {
                 <div className='main_service_features_and_pricing_container'>
                     <Features pack={serviceData[index].packFeatures} />
                     <div className='main_service_pricing_button_container'>
-                            <p>{serviceData[index].packPrice}</p>
+                            <p>{serviceData[index].packPrice}<span>,-€</span></p>
                             <button>JETZT BESTELLEN</button>
                     </div>
                 </div>
