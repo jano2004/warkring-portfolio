@@ -5,6 +5,7 @@ import Block from './Blocks/Block';
 import Header from './Header/Header';
 import MainBody from './MainBody/MainBody';
 import FeatureSlides from './FeaturesSlides/FeatureSlides';
+import ServicesMainSite from "./ServiceMainSite/ServicesMainSite";
 import FeatureDesign from "./FeaturesDesigns/FeatureDesign";
 import Services from './Services/Services';
 import ContactPage from './Contact/ContactPage';
@@ -23,7 +24,6 @@ const App = () => {
           <Header />
           <MainBody />
           <FeatureSlides />
-          <FeatureDesign />
       </>
   );
 }

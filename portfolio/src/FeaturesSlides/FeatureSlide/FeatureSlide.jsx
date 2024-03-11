@@ -3,15 +3,19 @@ import './FeatureSlide.css';
 
 function FeatureSlide(props) {
     const defaultBackground = {
-        backgroundColor: props.featureData.background,
-        boxShadow: props.featureData.boxShadow,
+        background: props.featureData.background
     };
 
     return (
         <div className="Main_FeatureSlide_Container">
-            <div className="Main_FeatureSlide_Top" style={defaultBackground}>
-                <p className="Main_FeatureSlide_Top_Header">{props.featureData.type}</p>
-                <p className="Main_FeatureSlide_Top_Text">{props.featureData.name}</p>
+            <div className="wave" style={defaultBackground}></div>
+            <div className="wave" style={defaultBackground}></div>
+            <div className="wave" style={defaultBackground}></div>
+            <div className="Main_FeatureSlide_Top">
+                <div className="Main_FeatureSlide_Text">
+                    <p className="Main_FeatureSlide_Top_Header">{props.featureData.type}</p>
+                    <p className="Main_FeatureSlide_Top_Text">{props.featureData.name}</p>
+                </div>
             </div>
             <div className="Main_FeatureSlide_Bottom">
                 <p>{props.featureData.text}</p>

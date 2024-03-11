@@ -4,6 +4,9 @@
     overflow: hidden;
     position: relative;
     border-radius: 45px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .Main_FeatureSlide_Flipper {
@@ -23,7 +26,7 @@
     height: 100%;
     position: absolute;
     border-radius: 45px;
-    background-color: #f8f8f8;
+    background-color: transparent;
     z-index: 2;
     transition: transform 0.3s ease-in-out;
 }
@@ -36,8 +39,7 @@
     position: absolute;
     top: 100%;
     transition: top 0.3s ease-in-out;
-    background-color: #f8f8f8;
-    color: white;
+    background-color: rgba(240, 240, 240, 80%);
     border-radius: 45px;
 }
 
@@ -49,7 +51,7 @@
     top: 0;
 }
 
-.Main_FeatureSlide_Top {
+.Main_FeatureSlide_Text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -82,6 +84,58 @@
     font-weight: 100;
     width: 90%;
     color: #1d1d1d;
-    margin-top: 50px;
+    margin-top: 30px;
     transition: all 0.2s ease-in-out;
+}
+
+.wave {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    margin-left: -50%;
+    margin-top: -100%;
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+    top: 210px;
+}
+
+.playing .wave {
+    border-radius: 40%;
+    animation: wave 3000ms infinite linear;
+}
+
+.wave {
+    border-radius: 40%;
+    animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+    animation-duration: 4000ms;
+}
+
+.wave:nth-child(2) {
+    animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+    animation-duration: 5000ms;
+}
+
+.wave:nth-child(3) {
+    animation-duration: 45s;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

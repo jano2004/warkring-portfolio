@@ -24,13 +24,13 @@
 }
 
 .Header_Search_Menu_Login_Register {
+    position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: end;
+    align-items: center;
     margin-right: 30px;
     width: 50%;
-    height: 100%;
     background-color: transparent;
     font-family: Inter, sans-serif;
 }
@@ -62,6 +62,10 @@
     padding: 8px 28px 8px 28px;
     border: 2px solid #1d1d1d;
     transition: all 0.2s ease-in-out;
+    height: 70%;
+    bottom:0 ;
+    top: 0;
+    margin-right: 10px;
 }
 
 .Header_Register_Button:hover {
