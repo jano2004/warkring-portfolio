@@ -69,13 +69,22 @@
     color: #1b1b1b;
 }
 
-@media (max-width: 800px) {
-    .Main_FeatureSlides_Container {
-        min-height: 600px; /* Erhöhen Sie die min-height, um den zusätzlichen Platzbedarf zu berücksichtigen */
+@media (max-width: 499px) {
+    .Main_Features {
+        margin-top: 20px;
     }
 
-    .FeaturesSlides_Container {
-        flex-direction: column-reverse; /* Neue Items werden unten hinzugefügt */
-        align-items: flex-start; /* Items werden links ausgerichtet */
+    .Main_FeatureSlides_Container {
+        margin-top: 10px;
+    }
+
+    .Feature_Text {
+        font-size: 0.8rem;
+    }
+
+    .Feature_Button button {
+        font-size: 0.7rem;
+        width: 75%;
+        padding: 5px 0 5px 0;
     }
 }

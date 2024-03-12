@@ -139,3 +139,31 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 499px) {
+    .Main_FeatureSlide_Container {
+        width: 140px;
+        height: 160px;
+        border-radius: 20px;
+    }
+
+    .Main_FeatureSlide_Text {
+        width: 140px;
+        height: 160px;
+    }
+
+    .Main_FeatureSlide_Top p {
+        font-size: 0.8rem;
+        width: 60%;
+        margin-left: 12px;
+    }
+
+    .Main_FeatureSlide_Bottom p {
+        font-size: 0.6rem;
+        margin-top: 7px;
+    }
+
+    .Main_FeatureSlide_Bottom {
+        border-radius: 20px;
+    }
+}

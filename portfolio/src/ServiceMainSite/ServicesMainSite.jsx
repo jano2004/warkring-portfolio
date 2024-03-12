@@ -1,18 +1,21 @@
 import React from 'react';
 import MainPageService from '../BluePrints/Cards/Services/MainPageService';
 import { service } from '../BluePrints/Cards/Services/MainPageServiceData';
+import './ServicesMainSite.css';
 
 function ServicesMainSite() {
     return (
-        <div className="services-main-site">
+        <div className="Main_ServicesMainSite_Container">
+            <div className="Feature_Text_Button">
+                <div className="Feature_Text">
+                    <p>UNSERE LEISTUNGEN</p>
+                </div>
+                <div className="Feature_Button">
+                    <button>ALLE LEISTUNGEN</button>
+                </div>
+            </div>
             {service.map((item, index) => (
-                <MainPageService
-                    key={index}
-                    type={item.type}
-                    description={item.description}
-                    price={item.price}
-                    background={item.background}
-                />
+                <MainPageService/>
             ))}
         </div>
     );

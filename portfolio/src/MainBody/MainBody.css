@@ -35,6 +35,7 @@
 }
 
 .Main_Body_Button {
+    position: relative;
     width: 23%;
     padding: 10px 0 10px 0;
     background-color: #1b1b1b;
@@ -61,4 +62,37 @@
 
 .Main_Body_Image img {
     height: 100%;
+}
+
+@media (max-width: 499px) {
+    .Main_Body {
+        height: 70px;
+    }
+
+    .Main_Body_Text_Button {
+        width: 100%;
+    }
+
+    .Main_Body_Button {
+        width: 30%;
+        font-size: 0.8rem;
+        padding: 5px 0 5px 0;
+        margin-top: 20px;
+    }
+
+    .Main_Body_Text h1, .Main_Body_Text p, .Main_Body_Button {
+        margin-left: 20px;
+    }
+
+    .Main_Body_Text h1 {
+        font-size: 2rem;
+    }
+
+    .Main_Body_Text p {
+        font-size: 1rem;
+    }
+
+    .Main_Body_Image {
+        display: none;
+    }
 }

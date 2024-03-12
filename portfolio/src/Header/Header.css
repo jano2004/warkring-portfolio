@@ -62,13 +62,46 @@
     padding: 8px 28px 8px 28px;
     border: 2px solid #1d1d1d;
     transition: all 0.2s ease-in-out;
-    height: 70%;
-    bottom:0 ;
+    bottom: 0;
     top: 0;
+    font-size: 1rem;
     margin-right: 10px;
 }
 
 .Header_Register_Button:hover {
     background-color: transparent;
     color: #1d1d1d;
+}
+
+@media (max-width: 499px){
+    .Header_Logo_Text {
+        width: 20%;
+    }
+
+    .Header_Search_Menu_Login_Register {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .Header_Logo {
+        width: 40px;
+    }
+
+    .Header_Menu_Button {
+        font-size: 0.8rem;
+        color: #1d1d1d;
+    }
+
+    .Header_Login_Button {
+        font-size: 0.8rem;
+        color: #1d1d1d;
+        padding: 0;
+    }
+
+    .Header_Register_Button {
+        padding: 5px 10px 5px 10px;
+        font-size: 0.7rem;
+        margin-right: 0;
+    }
 }
