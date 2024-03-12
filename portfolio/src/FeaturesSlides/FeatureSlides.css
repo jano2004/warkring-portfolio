@@ -18,7 +18,7 @@
 }
 
 .FeaturesSlides_Container {
-    width: 90%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;

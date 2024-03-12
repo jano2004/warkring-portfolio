@@ -1,10 +1,10 @@
-@media (max-width: 499px){
+@media (max-width: 499px) {
     .Main_PageService_Container {
         font-family: -apple-system;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 350px;
+        height: 250px;
         margin-bottom: 20px;
         background-color: transparent;
         width: 60%;
@@ -24,7 +24,7 @@
 
     .PageService_Header {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         width: 100%;
         height: 20%;
@@ -33,12 +33,13 @@
         font-family: -apple-system;
         font-weight: bold;
         font-size: 0.7rem;
+        margin-left: 20px;
         background-color: transparent;
     }
 
     .PageService_Features {
         width: 100%;
-        height: 60%;
+        height: 20%;
         background-color: transparent;
     }
 
@@ -48,53 +49,49 @@
         font-weight: bold;
     }
 
-    .PageService_Price_CTA {
-        display: flex;
-        flex-direction: row;
+    .PageService_CTA_Price_Container {
         width: 100%;
-        height: 20%;
-        background-color: transparent;
-        border-bottom-right-radius: 45px;
-        border-bottom-left-radius: 45px;
+        height: 50%;
     }
 
-    .PageService_Price {
+    .PageService_Price_Container {
+        height: 50%;
+        width: 100%;
         display: flex;
-        justify-content: end;
         align-items: center;
-        width: 35%;
-        height: 100%;
-        font-size: 1.4rem;
-        margin-right: 10px;
-        background-color: transparent;
-        border-bottom-left-radius: 45px;
     }
 
-    .PageService_CTA {
+    .PageService_Price_Container p {
+        margin-left: 20px;
+        font-size: 2rem;
+    }
+
+    .PageService_Price_Container a {
+        font-size: 1.2rem;
+    }
+
+    .PageService_CTA_Container {
+        height: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 65%;
-        height: 100%;
-        background-color: transparent;
-        border-bottom-right-radius: 45px;
     }
 
-    .PageService_CTA button {
+    .PageService_CTA_Container button {
         width: 80%;
         height: 60%;
-        border: 2px solid #1b1b1b;
-        border-radius: 10px;
-        font-size: 0.6rem;
+        font-size: 1rem;
         font-weight: bold;
+        border: 2px solid #1b1b1b;
+        border-radius: 12px;
         background-color: #1b1b1b;
         color: whitesmoke;
         transition: all 0.2s ease-in-out;
     }
 
-    .PageService_CTA button:hover {
+    .PageService_CTA_Container button:hover {
         background-color: transparent;
         color: #1b1b1b;
     }
 }
-

@@ -8,17 +8,13 @@ function MainPageService(props) {
                     <h1>HEADER</h1>
                 </div>
                 <div className="PageService_Features">
-                    <p>- Feature 1</p>
-                    <p>- Feature 2</p>
-                    <p>- Feature 3</p>
-                    <p>- Feature 4</p>
-                    <p>- Feature 5</p>
+                    <p>Short Description</p>
                 </div>
-                <div className="PageService_Price_CTA">
-                    <div className="PageService_Price">
-                        <p>399,-</p>
+                <div className="PageService_CTA_Price_Container">
+                    <div className="PageService_Price_Container">
+                        <p>399<a>,- €</a></p>
                     </div>
-                    <div className="PageService_CTA">
+                    <div className="PageService_CTA_Container">
                         <button>MEHR ERFAHREN</button>
                     </div>
                 </div>

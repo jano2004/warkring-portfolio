@@ -44,7 +44,7 @@
 }
 
 .Main_FeatureSlide_Container:hover .Main_FeatureSlide_Top {
-    transform: translateY(-90%);
+    transform: translateY(-100%);
 }
 
 .Main_FeatureSlide_Container:hover .Main_FeatureSlide_Bottom {
@@ -142,13 +142,13 @@
 
 @media (max-width: 499px) {
     .Main_FeatureSlide_Container {
-        width: 140px;
+        width: 160px;
         height: 160px;
         border-radius: 20px;
     }
 
     .Main_FeatureSlide_Text {
-        width: 140px;
+        width: 160px;
         height: 160px;
     }
 
@@ -160,7 +160,8 @@
 
     .Main_FeatureSlide_Bottom p {
         font-size: 0.6rem;
-        margin-top: 7px;
+        margin-top: 15px;
+        font-weight: 300;
     }
 
     .Main_FeatureSlide_Bottom {
