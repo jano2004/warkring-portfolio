@@ -15,10 +15,11 @@ function ServicesMainSite() {
                 </div>
             </div>
             {service.map((item, index) => (
-                <MainPageService/>
+                <MainPageService key={index} serviceObject={item.serviceObject}/>
             ))}
         </div>
     );
 }
+
 
 export default ServicesMainSite;

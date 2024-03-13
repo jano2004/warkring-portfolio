@@ -1,24 +1,27 @@
-export const service = [
-    {
-        type: 'Type',
-        description: 'Description',
-        price: 'XXX',
-        background: 'linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb)'
-    },
-    {   type: 'Type',
-        description: 'Description',
-        price: 'XXX',
-        background: 'linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb)'
-    },
-    {   type: 'Type',
-        description: 'Description',
-        price: 'XXX',
-        background: 'linear-gradient(744deg, #00FF00, #0000FF 60%, #FF0000)'
-    },
-    {   type: 'Type',
-        description: 'Description',
-        price: 'XXX',
-        background: 'linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb)'
-    },
-]
+class ServiceObject {
+    constructor(type, description, price) {
+        this.type = type;
+        this.description = description;
+        this.price = price;
+    }
+}
+
+let ServiceObjetOne =
+    new ServiceObject('Basic', 'Die Basics.', '199')
+let ServiceObjetTwo =
+    new ServiceObject('Advanced', 'Schlicht & Modern', '399')
+let ServiceObjetThree =
+    new ServiceObject('Premium', 'Mehr geht nicht!', '899')
+let ServiceObjetFour =
+    new ServiceObject('Baukasten', 'Ihr Wunsch, Ihre Wahl.', 'ab 399')
+
+export const service = [{
+    serviceObject: ServiceObjetOne
+}, {
+    serviceObject: ServiceObjetTwo
+}, {
+    serviceObject: ServiceObjetThree
+}, {
+    serviceObject: ServiceObjetFour
+}]
 

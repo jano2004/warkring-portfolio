@@ -5,14 +5,14 @@ function MainPageService(props) {
         <div className="Main_PageService_Container">
             <div className="PageService_Container">
                 <div className="PageService_Header">
-                    <h1>HEADER</h1>
+                    <h1>{props.serviceObject.type}</h1>
                 </div>
                 <div className="PageService_Features">
-                    <p>Short Description</p>
+                    <p>{props.serviceObject.description}</p>
                 </div>
                 <div className="PageService_CTA_Price_Container">
                     <div className="PageService_Price_Container">
-                        <p>399<a>,- €</a></p>
+                        <p>{props.serviceObject.price}<a>,- €</a></p>
                     </div>
                     <div className="PageService_CTA_Container">
                         <button>MEHR ERFAHREN</button>

@@ -7,7 +7,7 @@
         height: 250px;
         margin-bottom: 20px;
         background-color: transparent;
-        width: 60%;
+        width: 250px;
     }
 
     .PageService_Container {
@@ -79,7 +79,9 @@
     }
 
     .PageService_CTA_Container button {
-        width: 80%;
+        width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
         height: 60%;
         font-size: 1rem;
         font-weight: bold;
