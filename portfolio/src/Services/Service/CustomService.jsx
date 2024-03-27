@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Service/CustomService.css'
 import {addOnFeatures} from '../ServiceData';
 import {basicFeatures} from '../ServiceData';
 
 
-function ShowAddOns(feature, index) {
+function ShowAddOns({ feature, index, selectedFeatures, setSelectedFeatures }) {
     const [isRightAligned, setIsRightAligned] = useState(false);
 
     const toggleAlignment = () => {
         setIsRightAligned(!isRightAligned);
+        if (!isRightAligned) {
+            setSelectedFeatures([...selectedFeatures, feature.featurePrice]);
+        } else {
+            const indexOfFeatureToRemove = selectedFeatures.indexOf(feature.featurePrice);
+            if (indexOfFeatureToRemove !== -1) {
+                const updatedFeatures = [...selectedFeatures];
+                updatedFeatures.splice(indexOfFeatureToRemove, 1);
+                setSelectedFeatures(updatedFeatures);
+            }
+        }
     };    
   
     return (
@@ -16,7 +26,7 @@ function ShowAddOns(feature, index) {
             <div className={`silde_button ${isRightAligned ? 'right' : ''}`}>
                 <button onClick={toggleAlignment}></button>
             </div>
-            <p key={index}>
+            <p>
                 {feature.featureName}
             </p>
         </div>
@@ -25,6 +35,32 @@ function ShowAddOns(feature, index) {
 
 function RenderCustomService() {
     const [showAllFeatures, setShowAllFeatures] = useState(false);
+    const [selectedFeatures, setSelectedFeatures] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    const customMinPrice = 499;
+
+    const calculateTotalPrice = () => {
+        return selectedFeatures.reduce((total, price) => total + parseFloat(price), customMinPrice);
+    };
+
+    useEffect(() => {
+        setTotalPrice(calculateTotalPrice());
+    }, [selectedFeatures]);
+
+    useEffect(() => {
+        if (totalPrice !== 0) {
+            const timer = setTimeout(() => {
+                document.getElementById('price').classList.add('animate');
+
+                setTimeout(() => {
+                    document.getElementById('price').classList.remove('animate');
+                }, 300);
+            }, 5);
+
+            return () => clearTimeout(timer);
+        }
+    }, [totalPrice]);
 
     return(
         <div className='main_service_container'>
@@ -36,7 +72,14 @@ function RenderCustomService() {
                     </div>
                     <div className='custom_service_options_and_pricing_container'>
                         <div className='custom_service_options_container'>
-                                {addOnFeatures.map((feature, index) => ShowAddOns(feature, index))}
+                            {addOnFeatures.map((feature, index) => (
+                                <ShowAddOns 
+                                    feature={feature} 
+                                    index={index}
+                                    selectedFeatures={selectedFeatures}
+                                    setSelectedFeatures={setSelectedFeatures}
+                                />
+                            ))}
                         </div>
                         <div className='custom_service_basic_and_pricing_container'>
                             <div className='custom_service_basic_container'>
@@ -56,7 +99,7 @@ function RenderCustomService() {
                                 </div>
                             </div>
                             <div className='custom_service_pricing_button_container'>
-                                <p>149<span>,-€</span></p>
+                                <p id="price">{calculateTotalPrice()}<span>,-€</span></p>
                                 <button>JETZT BESTELLEN</button>
                             </div>
                         </div>

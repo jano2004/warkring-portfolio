@@ -180,6 +180,21 @@
     margin: 0;
 }
 
+@keyframes priceChangeAnimation {
+    from {
+        /* Definiere den Anfangszustand der Animation */
+        transform: scale(1);
+    }
+    to {
+        /* Definiere den Endzustand der Animation */
+        transform: scale(1.2);
+    }
+}
+
+.animate {
+    animation: priceChangeAnimation 0.5s alternate ease-in-out;
+}
+
 .custom_service_pricing_button_container p {
     color: black;
     font-weight: bold;
@@ -208,4 +223,5 @@
     color: black;
     background-color: white;
     border-color: black;
+    cursor: pointer;
 }
