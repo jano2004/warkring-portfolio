@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Header from './Header/Header';
 import MainBody from './MainBody/MainBody';
-import FeatureSlides from './FeaturesSlides/FeatureSlides';
+import FeatureSlides from './Feature/FeaturesSlides/FeatureSlides';
 import reportWebVitals from './reportWebVitals';
 import ServicesMainSite from "./ServiceMainSite/ServicesMainSite";
+import Services from "./Services/Services";
 
 const App = () => {
   const [showContactPage, setShowContactPage] = useState(false);
@@ -20,6 +21,7 @@ const App = () => {
           <MainBody />
           <FeatureSlides />
           <ServicesMainSite />
+          <Services />
       </>
   );
 }

@@ -1,5 +1,5 @@
 import './FeatureDesign.css';
-import ResSeqImage from '../Images/ResSeqImage.png';
+import ResSeqImage from '../../Images/ResSeqImage.png';
 function FeatureDesign() {
     return (
         <div className="Main_FeatureDesign_Container">

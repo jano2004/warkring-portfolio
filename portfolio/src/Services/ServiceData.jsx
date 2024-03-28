@@ -1,30 +1,26 @@
-export let serviceData = new Array(2);
+import {features} from '../Feature/FeaturesData';
 
-const features = [
-    {name: 'Benutzerfreundlichkeit', type: 'Basic'},
-    {name: 'Schnelle Ladezeit', type: 'Basic'},
-    {name: 'Sicherheit', type: 'Basic'},
-    {name: 'SEO', type: 'Basic'},
-    {name: 'Qualitätsinhalte', type: 'Basic'},
-    {name: 'Kontaktinformationen', type: 'Basic'},
-    {name: 'Social-Media Integration', type: 'Basic'},
-    {name: 'Analyse und Feedback', type: 'Basic'},
-    {name: 'Datenschutz und Rechtliches', type: 'Basic'},
-    {name: 'Branding', type: 'Basic'},
+export const basicFeatures = features.filter(feature => feature.featureType === 'Basic');
+const advancedFeatures = features.filter(feature => feature.featureType === 'Basic'|| feature.featureType === 'Advanced');
+const premiumFeatures = features.filter(feature => feature.featureType === 'Basic' || feature.featureType === 'Advanced' || feature.featureType === 'Premium');
 
-    {name: 'Responsive Design', type: 'Standart'},
-    {name: 'Call-to-Action', type: 'Standart'},
-    {name: 'Visuelle Elemente', type: 'Standart'},
-    {name: 'Hohe Inhaltsqualität', type: 'Standart'},
+const descriptionBasic = 'Für einen einfachen, professionellen Online-Auftritt. Es bietet eine grundlegende Präsenz im Internet, die es Ihnen ermöglicht, ihre Markenidentität zu etablieren und potenzielle Kunden zu erreichen.';
+const descriptionAdvanced = 'Ein professioneller Online-Auftritt, der über das Grundlegende hinausgeht. Die Funktionspalette verfeinert Ihre Präsenz im Internet und schafft zudem eine umfänglich ansprechende Platform für Ihre Kunden.';
+const descriptionPremium = 'Maximal professioneller Online-Auftritt. Benutzerfreundliche Bedienung und Verknüpfung für einfache, professionelle Interaktion mit Kunden. Maßgeschneidertes Webdesign und Sichtbarkeit in allen Suchmaschinen für optimiertes Marketing.';
 
-    {name: 'Kontakt-Automatisierung', type: 'Premium'},
-    {name: 'Kauf-Automatisierung', type: 'Premium'}
-];
+export let serviceData = new Array(3);
 
-const basicFeatures = features.filter(feature => feature.type === 'Basic');
-const standartFeatures = features.filter(feature => feature.type === 'Basic'|| feature.type === 'Standart');
-const premiumFeatures = features.filter(feature => feature.type === 'Basic' || feature.type === 'Standart' || feature.type === 'Premium');
+serviceData[0] =  { packName: 'BASIC | MODERNE UNTERNEHMENS-WEBSITE',
+    packFeatures: basicFeatures,
+    packPrice: '399',
+    packDescription: descriptionBasic};
+serviceData[1] = {  packName: "ADVANCED | PROFFESSIONELLE UNTERNEHMENS-WEBSITE",
+    packFeatures: advancedFeatures,
+    packPrice: '899',
+    packDescription: descriptionAdvanced};
+serviceData[2] = {  packName: 'PREMIUM | AUTOMATISIERTE UNTERNEHMENS-WEBSITE',
+    packFeatures: premiumFeatures,
+    packPrice: '1199',
+    packDescription: descriptionPremium};
 
-serviceData[0] =  {packName: 'Basic', features: basicFeatures};
-serviceData[1] = {packName: 'Standart', features: standartFeatures};
-serviceData[2] = {packName: 'Premium', features: premiumFeatures};
+export const addOnFeatures = features.filter(feature => feature.featureType === 'Advanced' || feature.featureType === 'Premium');

@@ -1,0 +1,226 @@
+.custom_service_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background: #bebcbc;
+    box-Shadow: inset 30px 30px 60px #919191, inset -30px -30px 60px #737373;
+    border-radius: 25px;
+    margin-top: 2%;
+}
+
+.custom_service_container h1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.custom_service_content_container {
+    width: 95%;
+    margin-bottom: 2.5%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-color: black;
+    border-radius: 25px;
+}
+
+.custom_service_description {
+    width: 100%;
+    height: 30%;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.custom_service_description p {
+    width: 50%;
+    color: black;
+    font-size: 1.5rem;
+}
+.custom_service_description p span {
+    font-weight: bold;
+}
+
+
+.custom_service_options_and_pricing_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1%;
+}
+.custom_service_options_container {
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.custom_service_options_option_container {
+    background-color: transparent;
+    margin: 2% 2% 2% 10%;
+    display: flex;
+    align-items: center;
+}
+
+.custom_service_options_option_container:first-of-type {
+    margin-top: 1em;
+}
+
+.silde_button {
+    height: 24px;
+    width: 40px;
+    background-color: #F5F5F5;
+    border-radius: 34px;
+    border: 1px solid;
+    border-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: left;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.silde_button.right button {
+    transform: translateX(19px);
+}
+
+.silde_button.right {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.silde_button button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.silde_button button:hover {
+    cursor: pointer;
+}
+
+.custom_service_options_option_container p {
+    color: black;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.custom_service_basic_and_pricing_container {
+    margin-top: 1em;
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom_service_basic_container {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom_service_basic_features {
+    width: 50%;
+    background-color: transparent;
+}
+
+.custom_service_basic_features p {
+    color: black;
+    font-size: 1.5rem;
+    background-color: transparent;
+    margin: 0;
+}
+
+.custom_service_basic_features ul {
+    margin: 0;
+    color: black;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+
+.custom_service_basic_features button {
+    color: black;
+    border-style: none;
+    font-size: 1rem;
+    background-color: transparent;
+    padding-left: 0;
+}
+
+.custom_service_basic_features button:hover {
+    cursor: pointer;
+}
+
+
+.custom_service_pricing_button_container {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+@keyframes priceChangeAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.animate {
+    animation: priceChangeAnimation 0.5s alternate ease-in-out;
+}
+
+.custom_service_pricing_button_container p {
+    color: black;
+    font-weight: bold;
+    font-size: 4rem;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.custom_service_pricing_button_container p span {
+    font-size: 2rem;
+}
+
+.custom_service_pricing_button_container button {
+    border-radius: 50px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 5%;
+    border: 2px solid black;
+    transition: all 0.2s ease-in-out;
+    padding:1% 2% 1% 2%;
+}
+
+.custom_service_pricing_button_container button:hover {
+    color: black;
+    background-color: white;
+    border-color: black;
+    cursor: pointer;
+}

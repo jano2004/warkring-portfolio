@@ -1,15 +1,15 @@
 import {serviceData} from './ServiceData';
-import Service from './Service/Service'
+import RenderServicePack from './Service/Service'
+import './Service/CustomService.css'
+import RenderCustomService from './Service/CustomService';
 
 function Services() {
     return(
-        <div>
-            {serviceData.map((pack, index) => (
-                <div className='main_service_container' key={index}>
-                    <h1>{pack.packName}</h1>
-                    <Service serviceData={serviceData[index].features} />
-                </div>
-            ))}
+        <div className='main_service_container'>
+            {serviceData.map((pack, index) =>
+                <RenderServicePack pack={pack} index={index} />
+            )}
+            <RenderCustomService />
         </div>
     )
 }
