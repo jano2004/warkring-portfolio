@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import '../Service/CustomService.css'
 import {addOnFeatures} from '../ServiceData';
 import {basicFeatures} from '../ServiceData';
@@ -40,13 +40,13 @@ function RenderCustomService() {
 
     const customMinPrice = 499;
 
-    const calculateTotalPrice = () => {
+    const calculateTotalPrice = useCallback( () => {
         return selectedFeatures.reduce((total, price) => total + parseFloat(price), customMinPrice);
-    };
+    }, [selectedFeatures, customMinPrice]);
 
     useEffect(() => {
         setTotalPrice(calculateTotalPrice());
-    }, [selectedFeatures]);
+    }, [selectedFeatures, calculateTotalPrice]);
 
     useEffect(() => {
         if (totalPrice !== 0) {
@@ -55,8 +55,8 @@ function RenderCustomService() {
 
                 setTimeout(() => {
                     document.getElementById('price').classList.remove('animate');
-                }, 300);
-            }, 5);
+                }, 250);
+            }, 2);
 
             return () => clearTimeout(timer);
         }

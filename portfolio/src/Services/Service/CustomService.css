@@ -176,17 +176,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     margin: 0;
 }
 
 @keyframes priceChangeAnimation {
     from {
-        /* Definiere den Anfangszustand der Animation */
         transform: scale(1);
     }
     to {
-        /* Definiere den Endzustand der Animation */
         transform: scale(1.2);
     }
 }
@@ -209,7 +207,7 @@
 }
 
 .custom_service_pricing_button_container button {
-    border-radius: 7px;
+    border-radius: 50px;
     color: white;
     background-color: black;
     font-weight: bold;
@@ -217,6 +215,7 @@
     margin: 5%;
     border: 2px solid black;
     transition: all 0.2s ease-in-out;
+    padding:1% 2% 1% 2%;
 }
 
 .custom_service_pricing_button_container button:hover {

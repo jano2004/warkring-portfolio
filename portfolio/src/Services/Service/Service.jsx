@@ -15,7 +15,7 @@ function Features({pack}){
     )
 }
 
-function renderServicePack(pack, index) {
+function RenderServicePack({ pack, index }) {
     return (
         <div className='main_service_pack_container' key={index}>
             <h1>{pack.packName}</h1>
@@ -35,4 +35,4 @@ function renderServicePack(pack, index) {
     );
 }
 
-export default renderServicePack;
+export default RenderServicePack;
