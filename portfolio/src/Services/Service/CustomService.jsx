@@ -10,9 +10,9 @@ function ShowAddOns({ feature, index, selectedFeatures, setSelectedFeatures }) {
     const toggleAlignment = () => {
         setIsRightAligned(!isRightAligned);
         if (!isRightAligned) {
-            setSelectedFeatures([...selectedFeatures, feature.featurePrice]);
+            setSelectedFeatures([...selectedFeatures, feature]);
         } else {
-            const indexOfFeatureToRemove = selectedFeatures.indexOf(feature.featurePrice);
+            const indexOfFeatureToRemove = selectedFeatures.indexOf(feature);
             if (indexOfFeatureToRemove !== -1) {
                 const updatedFeatures = [...selectedFeatures];
                 updatedFeatures.splice(indexOfFeatureToRemove, 1);
@@ -40,8 +40,13 @@ function RenderCustomService() {
 
     const customMinPrice = 499;
 
-    const calculateTotalPrice = useCallback( () => {
-        return selectedFeatures.reduce((total, price) => total + parseFloat(price), customMinPrice);
+    const calculateTotalPrice = useCallback(() => {
+        let totalPrice = 0;
+        selectedFeatures.forEach(feature => {
+            totalPrice += parseFloat(feature.featurePrice);
+        });
+        totalPrice += parseFloat(customMinPrice);
+        return totalPrice;
     }, [selectedFeatures, customMinPrice]);
 
     useEffect(() => {
