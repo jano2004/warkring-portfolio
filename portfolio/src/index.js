@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Header from './Header/Header';
-import MainBody from './MainBody/MainBody';
-import FeatureSlides from './Feature/FeaturesSlides/FeatureSlides';
+import Header from './View/Header/Header';
+import MainBody from './View/MainBody/MainBody';
+import FeatureSlides from './View/Feature/FeaturesSlides/FeatureSlides';
 import reportWebVitals from './reportWebVitals';
-import ServicesMainSite from "./ServiceMainSite/ServicesMainSite";
-import Services from "./Services/Services";
+import ServicesMainSite from "./View/ServiceMainSite/ServicesMainSite";
+import Services from "./View/Services/Services";
 
 const App = () => {
   const [showContactPage, setShowContactPage] = useState(false);
