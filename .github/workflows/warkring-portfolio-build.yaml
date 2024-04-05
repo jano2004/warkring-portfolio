@@ -17,22 +17,22 @@ env:
   DEPLOYMENT_FOLDER: build
 
 jobs:
-# Please do not rename this job
   build-project:
     name: build warkring-portfolio
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
+
+      - name: Change to the portfolio directory
+        run: cd portfolio
 
       - name: Build Node assets
+        run: |
+          npm ci
+          npm run build
         env:
           CI: true
-          SITE_URL: ${{ steps.project.outputs.site-url }}
-        run: |
-          npm run start
 
 # Please do not touch the following action
       - name: Store deployment content
