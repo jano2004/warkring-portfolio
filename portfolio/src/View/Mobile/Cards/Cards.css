@@ -1,6 +1,8 @@
 .main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 18px;
 }
 
@@ -19,6 +21,7 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: #181818;
+    margin: 0 10px 0 10px;
 }
 
 .card_container img {
@@ -56,4 +59,31 @@
     font-weight: 100;
     text-align: center;
     white-space: pre;
+}
+
+.main button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #E8E8E8;
+    margin-left: 5px;
+    font-family: -apple-system;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 2px solid #E8E8E8;
+    background: #252525;
+    box-shadow: 3px 3px #E8E8E8;
+    cursor: pointer;
+}
+
+.main button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
 }

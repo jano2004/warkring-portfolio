@@ -10,7 +10,7 @@ function Header() {
                         <p>W</p>
                     </div>
                     <div className='main_content_catalog'>
-                        <img src={MainBodyImage}/>
+                        <img src={MainBodyImage}  alt=''/>
                         <p>Katalog</p>
                     </div>
                 </div>

@@ -11,13 +11,15 @@ function Cards() {
             <div className="top">
                 <div className="card_container">
                     <div className="background_overlay">
-                        <p>Wir binden deine <br></br>Wunschfunktionen <br></br>über <a href='https://de.wikipedia.org/wiki/Programmierschnittstelle'>API's</a> an!</p>
+                        <p>Wir binden deine <br></br>Wunschfunktionen <br></br>über <a
+                            href='https://de.wikipedia.org/wiki/Programmierschnittstelle'>API's</a> an!</p>
                     </div>
                     <img src={APICCard} alt=""/>
                 </div>
                 <div className="card_container">
                     <div className="background_overlay">
-                        <p>Wir machen deine <br></br>Website sicherer mit<br></br><a href='https://de.wikipedia.org/wiki/HTTP-Cookie'>HTTP-Cookes</a>!</p>
+                        <p>Wir machen deine <br></br>Website sicherer mit<br></br><a
+                            href='https://de.wikipedia.org/wiki/HTTP-Cookie'>HTTP-Cookes</a>!</p>
                     </div>
                     <img src={CookieCard} alt=""/>
                 </div>
@@ -25,7 +27,7 @@ function Cards() {
             <div className="top">
                 <div className="card_container">
                     <div className="background_overlay">
-                        <p>Wir lassen deine <br></br>Kunden sich einloggen<br></br><a href='https://de.wikipedia.org/wiki/HTTP-Cookie'>HTTP-Cookes</a>!</p>
+                        <p>Wir lassen deine <br></br>Kunden sich einloggen<br></br></p>
                     </div>
                     <img src={LoginCard} alt=""/>
                 </div>

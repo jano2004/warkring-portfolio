@@ -7,7 +7,7 @@ function ImageWithText({header, text, img}) {
         <section className='main_imagewt_section'>
             <h1>{header}</h1>
             <p>{textWithBreaks}</p>
-            <img src={img}/>
+            <img src={img} alt=''/>
         </section>
     )
 }
