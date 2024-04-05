@@ -27,7 +27,7 @@ function Cards() {
             <div className="top">
                 <div className="card_container">
                     <div className="background_overlay">
-                        <p>Wir lassen deine <br></br>Kunden sich einloggen<br></br></p>
+                        <p>Wir sorgen <br></br>für einen sicheren <br></br>Kundenlogin!<br></br></p>
                     </div>
                     <img src={LoginCard} alt=""/>
                 </div>
