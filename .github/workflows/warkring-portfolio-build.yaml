@@ -1,0 +1,52 @@
+# To better understand this file read this:
+# https://docs.ionos.space/docs/github-actions-customization/
+
+name: "Deploy Now: Execute Build"
+
+on:
+  workflow_call:
+    inputs:
+      site-url:
+        required: true
+        type: string
+      branch-id:
+        required: true
+        type: string
+
+env:
+  DEPLOYMENT_FOLDER: build
+
+jobs:
+  build-project:
+    name: build warkring-portfolio
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Change to the portfolio directory
+        run: cd portfolio
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./portfolio
+
+      - name: Build the project
+        run: npm run build
+        working-directory: ./portfolio
+        env:
+          CI: true
+
+
+# Please do not touch the following action
+      - name: Store deployment content
+        uses: ionos-deploy-now/artifact-action@v1
+        with:
+          api-key: ${{ secrets.IONOS_API_KEY }}
+          service-host: api-eu.ionos.space
+          project-id: 14dfcc3d-d638-4ece-8205-4dda3fb6203a
+          branch-id: ${{ inputs.branch-id }}
+          version: ${{ github.sha }}
+          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          config-file: .deploy-now/warkring-portfolio/config.yaml
+          action: upload
