@@ -27,8 +27,9 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Run script
-      env:
+      - name: Build Node assets
+        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
+        env:
           CI: true
           SITE_URL: ${{ steps.project.outputs.site-url }}
         run: |
