@@ -35,7 +35,7 @@ jobs:
         run: npm run build
         working-directory: ./portfolio
         env:
-          CI: true
+          CI: false
 
 
 # Please do not touch the following action
@@ -47,6 +47,6 @@ jobs:
           project-id: 14dfcc3d-d638-4ece-8205-4dda3fb6203a
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
-          folder: ${{ env.DEPLOYMENT_FOLDER }}
+          folder: portfolio/${{ env.DEPLOYMENT_FOLDER }}
           config-file: .deploy-now/warkring-portfolio/config.yaml
           action: upload
