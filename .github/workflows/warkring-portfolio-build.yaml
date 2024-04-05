@@ -27,12 +27,14 @@ jobs:
       - name: Change to the portfolio directory
         run: cd portfolio
 
-      - name: Build Node assets
-        run: |
-          npm install
-          npm run build
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build the project
+        run: npm run build
         env:
           CI: true
+
 
 # Please do not touch the following action
       - name: Store deployment content
