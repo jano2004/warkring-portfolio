@@ -33,6 +33,7 @@ jobs:
 
       - name: Build the project
         run: npm run build
+        working-directory: ./portfolio
         env:
           CI: true
 
