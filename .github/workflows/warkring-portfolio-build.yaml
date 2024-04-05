@@ -32,7 +32,7 @@ jobs:
           CI: true
           SITE_URL: ${{ steps.project.outputs.site-url }}
         run: |
-          npm run build
+          npm run start
 
 # Please do not touch the following action
       - name: Store deployment content
