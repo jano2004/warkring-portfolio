@@ -32,7 +32,6 @@ jobs:
           CI: true
           SITE_URL: ${{ steps.project.outputs.site-url }}
         run: |
-          npm ci
           npm run build
 
 # Please do not touch the following action
