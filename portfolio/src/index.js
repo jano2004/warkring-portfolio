@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -27,12 +27,31 @@ const App = () => {
         window.scrollTo(0, 0)
     }
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        // Handler, der bei Größenänderung des Fensters aufgerufen wird
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        // Event-Listener für das 'resize'-Ereignis hinzufügen
+        window.addEventListener('resize', handleResize);
+
+        // Aufräumfunktion, die den Event-Listener entfernt
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <>
-            {view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
+            {window.innerWidth <= 400 ?
+                view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick}/>
-                        : null}
+                        : null
+                            : null}
         </>
     );
 };
