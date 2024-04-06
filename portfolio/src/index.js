@@ -31,7 +31,7 @@ const App = () => {
         <>
             {view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
-                    : view === 'Login' ? <Login />
+                    : view === 'Login' ? <Login handleHomeClick={handleHomeClick}/>
                         : null}
         </>
     );

@@ -1,13 +1,14 @@
 body {
   margin: 0;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: -apple-system;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: #181818;
 }
 
 code {
-  font-family: Inter, sans-serif;
+  font-family: -apple-system;
+  background-color: #181818;
 }
 
 .main_blocks_container {

@@ -1,10 +1,12 @@
 import './Login.css';
 import GoogleIcon from '../Images/GoogleIcon.png'
 import AppleIcon from '../Images/AppleIcon.png';
+import SpeacialHeader from "../SpeacialHeader/SpeacialHeader";
 
-function Login() {
+function Login({handleHomeClick}) {
     return (
         <section className='main_login_section'>
+            <SpeacialHeader handleHomeClick={handleHomeClick}/>
             <div className='main_login_container'>
                 <h1>Login</h1>
                 <div className='main_login_input_button'>

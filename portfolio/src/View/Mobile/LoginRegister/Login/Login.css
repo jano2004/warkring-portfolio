@@ -1,6 +1,7 @@
 .main_login_section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 90vh;
     width: 100%;
@@ -11,12 +12,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 400px;
+    height: 370px;
     width: 85%;
     border-radius: 25px;
     border: 2px solid #666666;
     background-color: #181818;
     padding-bottom: 30px;
+    margin-bottom: 25%;
 }
 
 .main_login_container h1 {
@@ -31,7 +33,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 40%;
+    height: 50%;
     width: 90%;
 }
 
@@ -42,6 +44,7 @@
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 16px;
+    padding-left: 15px;
 }
 
 .main_login_input_button button {
