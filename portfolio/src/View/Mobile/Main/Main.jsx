@@ -11,6 +11,7 @@ function MobileMain({handleMoreClick, handleHomeClick, handleLoginClick}) {
         <div>
             <Header handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
             <MainBody />
+            <ImageWithText header={'!!BETA!!'} style={{color: '#111111'}}/>
             <ImageWithText header={'PROFESSIONELLE WEBSEITEN FÜR FAIRE PREISE'} text={'Unser Team kreiert maßgeschneiderte Webseiten zu <br> fairen Preisen, perfekt abgestimmt auf Ihre <br>individuellen Bedürfnisse und Ziele.'}/>
             <Cards />
             <ImageWithText header={'WAS BIETEN WIR AN?'} text={'Wir bieten eine Vielfalt von Website-Services an, um genau das richtige Angebot für dich zu haben!'}/>
