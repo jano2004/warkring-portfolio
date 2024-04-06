@@ -1,8 +1,13 @@
 import MainBodyImage from '../../Main/Images/CatalogIcon.png';
 
 function SpeacialHeader({handleHomeClick}) {
+
+    const fixedHeader = {
+        position: 'fixed',
+    }
+
     return (
-        <section className='main_header_section'>
+        <section className='main_header_section' style={fixedHeader}>
             <div className='main_content_container'>
                 <div className='main_content_container_left'>
                     <div className='main_content_logo'>
