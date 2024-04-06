@@ -1,7 +1,7 @@
 import React from 'react';
 import './Service.css'; // Make sure your CSS path is correct
 
-function Service({ header, listItems, price, onMoreClick}) {
+function Service({ header, listItems, price, handleMoreClick}) {
     return (
         <section className="main_service_section">
             <div className="main_service_header">
@@ -22,7 +22,7 @@ function Service({ header, listItems, price, onMoreClick}) {
             </div>
             <div className="main_service_bottom">
                 <p>{price}€</p>
-                <button onClick={onMoreClick}>MEHR</button>
+                <button onClick={handleMoreClick}>MEHR</button>
             </div>
         </section>
     );

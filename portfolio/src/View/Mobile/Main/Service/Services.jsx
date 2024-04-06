@@ -1,7 +1,7 @@
 import './Services.css'
 import Service from "./Service/Service";
 
-function Services({onMoreClick}) {
+function Services({handleMoreClick}) {
     const basicFeatures = {
         one: 'Benutzerfreundlich',
         two: 'Schnelle Ladezeit',
@@ -37,12 +37,12 @@ function Services({onMoreClick}) {
     return (
         <section className='service_main_section'>
             <div className='service_top'>
-                <Service header='Basic' listItems={basicFeatures} price='449,99' onMoreClick={onMoreClick}/>
-                <Service header='Advanced' listItems={advancedFeaturs} price='949,99' onMoreClick={onMoreClick}/>
+                <Service header='Basic' listItems={basicFeatures} price='449,99' handleMoreClick={handleMoreClick}/>
+                <Service header='Advanced' listItems={advancedFeaturs} price='949,99' handleMoreClick={handleMoreClick}/>
             </div>
             <div className='service_top'>
-                <Service header='Premium' listItems={premiumFeaturs} price='1949,99' onMoreClick={onMoreClick}/>
-                <Service header='Baukasten' listItems={baukastenFeaturs} price='ab 399,99' onMoreClick={onMoreClick}/>
+                <Service header='Premium' listItems={premiumFeaturs} price='1949,99' handleMoreClick={handleMoreClick}/>
+                <Service header='Baukasten' listItems={baukastenFeaturs} price='ab 399,99' handleMoreClick={handleMoreClick}/>
             </div>
         </section>
     )
