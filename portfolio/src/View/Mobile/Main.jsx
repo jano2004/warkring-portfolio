@@ -4,6 +4,7 @@ import './Main.css';
 import ImageWithText from "./ImageWithText/ImageWithText";
 import Cards from "./Cards/Cards";
 import Services from "./Service/Services";
+import Footer from "./Footer/Footer";
 
 function MobileMain() {
     return (
@@ -14,6 +15,7 @@ function MobileMain() {
             <Cards />
             <ImageWithText header={'WAS BIETEN WIR AN?'} text={'Wir bieten eine Vielfalt von Website-Services an, um genau das richtige Angebot für dich zu haben!'}/>
             <Services />
+            <Footer />
         </div>
     )
 }
