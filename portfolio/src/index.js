@@ -43,7 +43,7 @@ const App = () => {
 
     return (
         <>
-            {window.innerWidth <= 500 ?
+            {windowWidth <= 500 ?
                 view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick}/>

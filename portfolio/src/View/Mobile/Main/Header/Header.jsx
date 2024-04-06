@@ -1,7 +1,7 @@
 import './Header.css';
 import MainBodyImage from '../Images/CatalogIcon.png';
 
-function Header({handleHomeClick, handleLoginClick}) {
+function Header({handleHomeClick, handleLoginClick, handleOpenCatalog}) {
     return (
         <section className='main_header_section'>
             <div className='main_content_container'>
@@ -9,7 +9,7 @@ function Header({handleHomeClick, handleLoginClick}) {
                     <div className='main_content_logo'>
                         <button onClick={handleHomeClick}><p>W</p></button>
                     </div>
-                    <div className='main_content_catalog'>
+                    <div className='main_content_catalog' onClick={handleOpenCatalog}>
                         <img src={MainBodyImage}  alt=''/>
                         <p>Katalog</p>
                     </div>
