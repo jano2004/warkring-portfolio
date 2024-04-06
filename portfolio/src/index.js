@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import MobileMain from "./View/Mobile/Main/Main";
 import Service from "./View/Mobile/Services/Service";
 import Login from "./View/Mobile/LoginRegister/Login/Login";
-import BlockerVideo from './BlockerVideo.mp4';
 
 const App = () => {
     const [view, setView] = useState('Main');
@@ -49,7 +48,8 @@ const App = () => {
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick}/>
                         : null
-                            : <video src={BlockerVideo} autoPlay muted loop style={{height: 'auto', width: '100%'}}>Ihr Browser untersützt Video-Vormate nicht: Aufgrund eines Relaunches ist Warkring.org derzeit nur Mobil auffindbar!</video>}
+                            : <p>Aufgrund von einer Überarbeitung der Desktop-Homepage sind wir derzeit nur auf der Mobil-Version
+                                von Warkring.org erreichbar!</p>}
         </>
     );
 };
