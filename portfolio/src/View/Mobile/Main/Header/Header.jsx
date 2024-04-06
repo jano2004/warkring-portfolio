@@ -1,13 +1,13 @@
 import './Header.css';
 import MainBodyImage from '../Images/CatalogIcon.png';
 
-function Header() {
+function Header({handleHomeClick}) {
     return (
         <section className='main_header_section'>
             <div className='main_content_container'>
                 <div className='main_content_container_left'>
                     <div className='main_content_logo'>
-                        <p>W</p>
+                        <button onClick={handleHomeClick}><p>W</p></button>
                     </div>
                     <div className='main_content_catalog'>
                         <img src={MainBodyImage}  alt=''/>

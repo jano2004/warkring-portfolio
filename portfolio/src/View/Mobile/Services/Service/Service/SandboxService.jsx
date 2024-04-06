@@ -1,7 +1,7 @@
-import React from 'react';
-import './Service.css'; // Make sure your CSS path is correct
+import './ServiceSandbox.css';
+import React from "react";
 
-function Service({ header, listItems, price }) {
+function SandboxService({header, listItems, price}) {
     return (
         <section className="main_service_section">
             <div className="main_service_header">
@@ -10,11 +10,10 @@ function Service({ header, listItems, price }) {
             <div className="main_service_list">
                 {Object.entries(listItems).map(([key, value], index) => (
                     <div key={key} className="checkbox_container">
-                        <input type="checkbox" id={`cbx-${index}`} className="cbx" hidden checked/>
-                        <label htmlFor={`cbx-${index}`} className="check">
-                            <svg width="18px" height="18px" viewBox="0 0 18 18">
-                                <path d="M1,9 L7,14 L17,4" />
-                            </svg>
+                        <label className="container">
+                            <input type="checkbox"/>
+                            <div className="line"></div>
+                            <div className="line line-indicator"></div>
                         </label>
                         <label htmlFor={`cbx-${index}`}>{value}</label>
                     </div>
@@ -22,10 +21,10 @@ function Service({ header, listItems, price }) {
             </div>
             <div className="main_service_bottom">
                 <p>{price}€</p>
-                <button>MEHR</button>
+                <button>KONTAKT</button>
             </div>
         </section>
-    );
+    )
 }
 
-export default Service;
+export default SandboxService;

@@ -72,11 +72,22 @@
     margin-left: 15px;
 }
 
-.main_content_logo p {
+.main_content_logo button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background: transparent;
+    border: 0;
+}
+
+.main_content_logo button p {
     font-family: "Apple Braille";
     font-weight: normal;
     font-size: 40px;
-    margin-left: 21px;
     color: #E8E8E8;
 }
 
