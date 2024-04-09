@@ -58,7 +58,7 @@ const App = () => {
     return (
         <>
             {windowWidth <= 500 ?
-                view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
+                view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick}/>
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick} handleRegisterClick={handleRegisterClick}/>
                         :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>

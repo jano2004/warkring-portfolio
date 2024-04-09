@@ -22,7 +22,7 @@ function Service({ header, listItems, price, handelContactClick}) {
                 </div>
                 <div className="main_service_bottom">
                     <p>{price}€</p>
-                    <button onClick={handelContactClick(header)}>KONTAKT</button>
+                    <button onClick={handelContactClick}>KONTAKT</button>
                 </div>
             </section>
         );
