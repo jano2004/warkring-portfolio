@@ -5,26 +5,33 @@ import reportWebVitals from './reportWebVitals';
 import MobileMain from "./View/Mobile/Main/Main";
 import Service from "./View/Mobile/Services/Service";
 import Login from "./View/Mobile/LoginRegister/Login/Login";
+import MobileRegister from './View/Mobile/LoginRegister/Register/Register';
 
 const App = () => {
-    const [view, setView] = useState('Main');
+    const [view, setView] = useState('Register');
 
     const handleMoreClick = () => {
-        console.log('service-view loaded')
+        console.log('service-view loaded');
         setView('Service');
         window.scrollTo(0, 0);
     };
 
     const handleHomeClick = () => {
-        console.log('main-view loaded')
+        console.log('main-view loaded');
         setView('Main');
         window.scrollTo(0, 0);
     }
 
     const handleLoginClick = () => {
-        console.log('login-view loaded')
-        setView('Login')
-        window.scrollTo(0, 0)
+        console.log('login-view loaded');
+        setView('Login');
+        window.scrollTo(0, 0);
+    }
+
+    const handleRegisterClick = () => {
+        console.log('register-view loaded');
+        setView('Register');
+        window.scrollTo(0, 0);
     }
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -46,7 +53,8 @@ const App = () => {
             {windowWidth <= 500 ?
                 view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
                 : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
-                    : view === 'Login' ? <Login handleHomeClick={handleHomeClick}/>
+                    : view === 'Login' ? <Login handleHomeClick={handleHomeClick} handleRegisterClick={handleRegisterClick}/>
+                        :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                         : null
                             : <p>Aufgrund von einer Überarbeitung der Desktop-Homepage sind wir derzeit nur auf der Mobil-Version
                                 von Warkring.org erreichbar!</p>}

@@ -1,4 +1,5 @@
 import MainBodyImage from '../../Main/Images/CatalogIcon.png';
+import logo from '../../../Desktop/Images/transparentLogo.png'
 
 function SpeacialHeader({handleHomeClick}) {
 
@@ -11,7 +12,7 @@ function SpeacialHeader({handleHomeClick}) {
             <div className='main_content_container'>
                 <div className='main_content_container_left'>
                     <div className='main_content_logo'>
-                        <button onClick={handleHomeClick}><p>W</p></button>
+                        <button onClick={handleHomeClick}><img src={logo} alt=''/></button>
                     </div>
                     <div className='main_content_catalog'>
                         <img src={MainBodyImage} alt=''/>
