@@ -45,6 +45,7 @@
     box-sizing: border-box;
     font-size: 16px;
     padding-left: 15px;
+    text-transform: lowercase;
 }
 
 .main_login_input_button button {

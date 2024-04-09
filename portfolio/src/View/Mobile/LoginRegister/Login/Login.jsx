@@ -2,17 +2,28 @@ import './Login.css';
 import GoogleIcon from '../Images/GoogleIcon.png'
 import AppleIcon from '../Images/AppleIcon.png';
 import SpeacialHeader from "../SpeacialHeader/SpeacialHeader";
+import { loginUser } from "../../../../Database/Login-Service/LoginService";
 
 function Login({handleHomeClick}) {
+
+    const handleLoginClick = () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if((username === '' || username === null) && (password === '' || password === null)) {
+            return;
+        }
+        loginUser(username, password, handleHomeClick);
+    }
+
     return (
         <section className='main_login_section'>
             <SpeacialHeader handleHomeClick={handleHomeClick}/>
             <div className='main_login_container'>
                 <h1>Login</h1>
                 <div className='main_login_input_button'>
-                    <input className='main_login_input_username' placeholder='E-Mail | Nutzername'/>
-                    <input className='main_login_input_passwort' placeholder='Passwort'/>
-                    <button className='main_login_button'>EINLOGGEN</button>
+                    <input className='main_login_input_username' id='username' placeholder='E-Mail | Nutzername'/>
+                    <input className='main_login_input_passwort' id='password' type='password' placeholder='Passwort'/>
+                    <button className='main_login_button' onClick={handleLoginClick}>EINLOGGEN</button>
                 </div>
                 <p>Noch keinen Account? <a>Jetzt registrieren!</a></p>
                 <p>Oder mit</p>
