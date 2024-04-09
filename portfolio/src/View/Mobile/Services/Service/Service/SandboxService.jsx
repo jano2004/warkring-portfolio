@@ -1,7 +1,7 @@
 import './ServiceSandbox.css';
 import React from "react";
 
-function SandboxService({header, listItems, price}) {
+function SandboxService({header, listItems, price, handelContactClick}) {
     return (
         <section className="main_service_section">
             <div className="main_service_header">
@@ -21,7 +21,7 @@ function SandboxService({header, listItems, price}) {
             </div>
             <div className="main_service_bottom">
                 <p>{price}€</p>
-                <button>KONTAKT</button>
+                <button onClick={handelContactClick}>KONTAKT</button>
             </div>
         </section>
     )

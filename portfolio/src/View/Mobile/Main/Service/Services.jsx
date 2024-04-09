@@ -1,7 +1,7 @@
 import './Services.css'
 import Service from "./Service/Service";
 
-function Services({handleMoreClick}) {
+function Services({handleMoreClick, handelContactClick}) {
     const basicFeatures = {
         one: 'Benutzerfreundlich',
         two: 'Schnelle Ladezeit',

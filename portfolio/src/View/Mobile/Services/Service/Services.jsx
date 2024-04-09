@@ -3,7 +3,7 @@ import Service from "./Service/Service";
 import SandboxService from "./Service/SandboxService";
 import ImageWithText from "../../Main/ImageWithText/ImageWithText";
 
-function Services() {
+function Services({handelContactClick}) {
     const basicFeatures = {
         bfh: 'Benutzerfreundlich',
         slz: 'Schnelle Ladezeit',
@@ -78,12 +78,12 @@ function Services() {
         <section className='service_main_section'>
             <ImageWithText header={'WAS BIETEN WIR AN?'} text={'Wir bieten eine Vielfalt von Website-Services an, um genau das richtige Angebot für dich zu haben!<br><br><br>'}/>
             <div className='service_top'>
-                <Service header='Basic' listItems={basicFeatures} price='449,99'/>
-                <Service header='Advanced' listItems={advancedFeaturs} price='949,99'/>
+                <Service header='Basic' listItems={basicFeatures} price='449,99' handelContactClick={handelContactClick}/>
+                <Service header='Advanced' listItems={advancedFeaturs} price='949,99' handelContactClick={handelContactClick}/>
             </div>
             <div className='service_top'>
-                <Service header='Premium' listItems={premiumFeaturs} price='1949,99'/>
-                <SandboxService header='Baukasten' listItems={baukastenFeaturs} price='ab 399,99'/>
+                <Service header='Premium' listItems={premiumFeaturs} price='1949,99' handelContactClick={handelContactClick}/>
+                <SandboxService header='Baukasten' listItems={baukastenFeaturs} price='ab 399,99' handelContactClick={handelContactClick}/>
             </div>
         </section>
     )

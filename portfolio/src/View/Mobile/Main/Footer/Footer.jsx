@@ -13,15 +13,15 @@ function Footer() {
             </div>
             <div className='main_footer_bottom'>
                 <div className='main_footer_bottom_top'>
-                    <button><img src={facebookIcon}/></button>
-                    <button><img src={xIcon}/></button>
-                    <button><img src={xingIcon}/></button>
-                    <button><img src={linkedInIcon}/></button>
+                    <button><img alt='' src={facebookIcon}/></button>
+                    <button><img alt='' src={xIcon}/></button>
+                    <button><img alt='' src={xingIcon}/></button>
+                    <button><img alt='' src={linkedInIcon}/></button>
                 </div>
                 <div className='main_footer_bottom_bottom'>
-                    <a><u>Impresssum</u></a>
-                    <a><u>Datenschutz</u></a>
-                    <a><u>Kontakt</u></a>
+                    <a href='.'><u>Impresssum</u></a>
+                    <a href='.'><u>Datenschutz</u></a>
+                    <a href='.'><u>Kontakt</u></a>
                 </div>
             </div>
         </section>

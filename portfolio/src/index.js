@@ -6,9 +6,10 @@ import MobileMain from "./View/Mobile/Main/Main";
 import Service from "./View/Mobile/Services/Service";
 import Login from "./View/Mobile/LoginRegister/Login/Login";
 import MobileRegister from './View/Mobile/LoginRegister/Register/Register';
+import Contact from "./View/Mobile/Contact/Contact";
 
 const App = () => {
-    const [view, setView] = useState('Register');
+    const [view, setView] = useState('Main');
 
     const handleMoreClick = () => {
         console.log('service-view loaded');
@@ -34,6 +35,12 @@ const App = () => {
         window.scrollTo(0, 0);
     }
 
+    const handelContactClick = () => {
+        console.log('contact-view loaded');
+        setView('Contact');
+        window.scrollTo(0, 0);
+    }
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -52,9 +59,10 @@ const App = () => {
         <>
             {windowWidth <= 500 ?
                 view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick}/>
-                : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
+                : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick} handleRegisterClick={handleRegisterClick}/>
                         :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
+                            :view === 'Contact' ? <Contact handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} />
                         : null
                             : <p>Aufgrund von einer Überarbeitung der Desktop-Homepage sind wir derzeit nur auf der Mobil-Version
                                 von Warkring.org erreichbar!</p>}

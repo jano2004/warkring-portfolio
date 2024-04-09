@@ -8,8 +8,8 @@ import Footer from "./Footer/Footer";
 import './Main.css';
 import Catalog from "../Catalog/Catalog";
 
-function MobileMain({ handleMoreClick, handleHomeClick, handleLoginClick }) {
-    const [catalog, setCatalog] = useState(false); // Verwenden Sie einen boolean für den Zustand
+function MobileMain({ handleMoreClick, handleHomeClick, handleLoginClick}) {
+    const [catalog, setCatalog] = useState(false);
 
     const handleOpenCatalog = () => {
         setCatalog(prevCatalog => !prevCatalog);
@@ -22,7 +22,6 @@ function MobileMain({ handleMoreClick, handleHomeClick, handleLoginClick }) {
                 <Catalog />
             </div>
             <MainBody />
-            <ImageWithText header={'!!BETA!!'} style={{ color: '#111111' }} />
             <ImageWithText header={'PROFESSIONELLE WEBSEITEN FÜR FAIRE PREISE'} text={'Unser Team kreiert maßgeschneiderte Webseiten zu <br> fairen Preisen, perfekt abgestimmt auf Ihre <br>individuellen Bedürfnisse und Ziele.'} />
             <Cards />
             <ImageWithText header={'WAS BIETEN WIR AN?'} text={'Wir bieten eine Vielfalt von Website-Services an, um genau das richtige Angebot für dich zu haben!'} />

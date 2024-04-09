@@ -1,6 +1,6 @@
 import './Header.css';
 import MainBodyImage from '../Images/CatalogIcon.png';
-import { fetchDisplaynameForLogin, fetchLoginState } from '../../../../Database/Datafetch-Service/DatafetchService';
+import { fetchDisplaynameForLogin } from '../../../../Database/Datafetch-Service/DatafetchService';
 import logo from '../../../Desktop/Images/transparentLogo.png';
 
 function Header({handleHomeClick, handleLoginClick, handleOpenCatalog}) {
