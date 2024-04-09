@@ -52,8 +52,8 @@ function Contact({handleHomeClick, handleLoginClick}) {
                     <option value='Baukasten'>Baukasten</option>
                 </select>
                 <p>* Pflicht</p>
-                <input type='text' id='contactEmail' placeholder='* Ihre E-Mail'></input>
-                <textarea id='contactText' placeholder='* Wünsche...'></textarea>
+                <input type='text' id='contactEmail' placeholder='* Deine E-Mail'></input>
+                <textarea id='contactText' placeholder='* Deine Vorstellungen...'></textarea>
                 <input type='text' id='contactAffiliate' placeholder='Ich kenne euch von [E-Mail]'></input>
                 <button onClick={pushContactInformations} disabled={loading}>Kontaktieren</button>
             </section>

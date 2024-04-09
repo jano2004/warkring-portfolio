@@ -6,6 +6,7 @@
     height: 80vh;
     width: 100%;
     background: #1d1d1d;
+    overflow: hidden;
 }
 
 .main_contact_section label {
@@ -39,6 +40,11 @@
     font-size: 16px;
     margin-bottom: 10px;
     border-radius: 7px;
+    background-color: #434343;
+}
+
+.main_contact_section input:focus {
+    background-color: #cfcfcf;
 }
 
 .main_contact_section textarea {
@@ -48,6 +54,11 @@
     padding-top: 5px;
     margin-bottom: 10px;
     border-radius: 7px;
+    background-color: #434343;
+}
+
+.main_contact_section textarea:focus {
+    background-color: #cfcfcf;
 }
 
 .main_contact_section button {
@@ -63,7 +74,6 @@
     box-shadow: 3px 3px #E8E8E8;
     margin-bottom: 20px;
 }
-
 
 .main_contact_section button:active {
     box-shadow: none;
