@@ -19,7 +19,7 @@ function MobileMain({ handleMoreClick, handleHomeClick, handleLoginClick, handel
         <div>
             <Header handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handleOpenCatalog={handleOpenCatalog} />
             <div className={`main_catalog_section ${catalog ? 'shownCatalog' : 'hiddenCatalog'}`}>
-                <Catalog />
+                <Catalog handleHomeClick={handleHomeClick} handleMoreClick={handleMoreClick} handelContactClick={handelContactClick}/>
             </div>
             <MainBody />
             <ImageWithText header={'PROFESSIONELLE WEBSEITEN FÜR FAIRE PREISE'} text={'Unser Team kreiert maßgeschneiderte Webseiten zu <br> fairen Preisen, perfekt abgestimmt auf Ihre <br>individuellen Bedürfnisse und Ziele.'} />

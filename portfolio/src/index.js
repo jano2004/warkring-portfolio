@@ -59,10 +59,10 @@ const App = () => {
         <>
             {windowWidth <= 500 ?
                 view === 'Main' ? <MobileMain handleMoreClick={handleMoreClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick}/>
-                : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick}/>
+                : view === 'Service' ? <Service handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick} handleMoreClick={handleMoreClick}/>
                     : view === 'Login' ? <Login handleHomeClick={handleHomeClick} handleRegisterClick={handleRegisterClick}/>
                         :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
-                            :view === 'Contact' ? <Contact handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} />
+                            :view === 'Contact' ? <Contact handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick} handleMoreClick={handleMoreClick} />
                         : null
                             : <p>Aufgrund von einer Überarbeitung der Desktop-Homepage sind wir derzeit nur auf der Mobil-Version
                                 von Warkring.org erreichbar!</p>}

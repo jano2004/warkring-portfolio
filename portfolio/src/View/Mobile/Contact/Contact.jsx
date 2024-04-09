@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import Catalog from "../Catalog/Catalog";
 import { importContactDataIntoDatabase } from '../../../Database/Contact-Service/ContactService';
 
-function Contact({handleHomeClick, handleLoginClick}) {
+function Contact({handleHomeClick, handleLoginClick, handelContactClick, handleMoreClick}) {
     const [catalog, setCatalog] = useState(false);
     const [loading, setLoading] = useState(false);
     const [selectedValue, setSelectedValue] = useState('Allgemein');
@@ -40,7 +40,7 @@ function Contact({handleHomeClick, handleLoginClick}) {
         <div>
             <Header handleHomeClick={handleHomeClick} handleOpenCatalog={handleOpenCatalog} handleLoginClick={handleLoginClick}/>
             <div className={`main_catalog_section ${catalog ? 'shownCatalog' : 'hiddenCatalog'}`}>
-                <Catalog/>
+                <Catalog handelContactClick={handelContactClick} handleHomeClick={handleHomeClick} handleMoreClick={handleMoreClick}/>
             </div>
             <section className='main_contact_section'>
                 <label>Angebote auswählen:</label>

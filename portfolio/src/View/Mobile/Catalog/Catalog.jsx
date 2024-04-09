@@ -1,11 +1,11 @@
 import './Catalog.css';
 
-function Catalog() {
+function Catalog({handleHomeClick, handleMoreClick, handelContactClick}) {
     return (
         <section className='main_catalog_section'>
-            <button>Home</button>
-            <button>Services</button>
-            <button>Kontakt</button>
+            <button onClick={handleHomeClick}>Home</button>
+            <button onClick={handleMoreClick}>Services</button>
+            <button onClick={handelContactClick}>Kontakt</button>
             <button>Features</button>
         </section>
     )
