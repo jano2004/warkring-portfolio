@@ -1,5 +1,7 @@
 import './Header.css';
 import MainBodyImage from '../Images/CatalogIcon.png';
+import { fetchDisplaynameForLogin, fetchLoginState } from '../../../../Database/Datafetch-Service/DatafetchService';
+import logo from '../../../Desktop/Images/transparentLogo.png';
 
 function Header({handleHomeClick, handleLoginClick, handleOpenCatalog}) {
     return (
@@ -7,7 +9,7 @@ function Header({handleHomeClick, handleLoginClick, handleOpenCatalog}) {
             <div className='main_content_container'>
                 <div className='main_content_container_left'>
                     <div className='main_content_logo'>
-                        <button onClick={handleHomeClick}><p>W</p></button>
+                        <button onClick={handleHomeClick}><img src={logo} alt=''/></button>
                     </div>
                     <div className='main_content_catalog' onClick={handleOpenCatalog}>
                         <img src={MainBodyImage}  alt=''/>
@@ -15,7 +17,7 @@ function Header({handleHomeClick, handleLoginClick, handleOpenCatalog}) {
                     </div>
                 </div>
                 <div className='main_content_container_right'>
-                    <button className='main_content_login' onClick={handleLoginClick}>Login</button>
+                    <button className='main_content_login' onClick={handleLoginClick}>{fetchDisplaynameForLogin()}</button>
 
                 </div>
             </div>

@@ -3,6 +3,7 @@ import GoogleIcon from '../Images/GoogleIcon.png'
 import AppleIcon from '../Images/AppleIcon.png';
 import SpeacialHeader from "../SpeacialHeader/SpeacialHeader";
 import { loginUser } from "../../../../Database/Login-Service/LoginService";
+import {createUserForTestPurpose} from "../../../../Database/User-Creator-For-Backend";
 
 function Login({handleHomeClick}) {
 
@@ -25,7 +26,7 @@ function Login({handleHomeClick}) {
                     <input className='main_login_input_passwort' id='password' type='password' placeholder='Passwort'/>
                     <button className='main_login_button' onClick={handleLoginClick}>EINLOGGEN</button>
                 </div>
-                <p>Noch keinen Account? <a>Jetzt registrieren!</a></p>
+                <p>Noch keinen Account? <a onClick={createUserForTestPurpose}>Jetzt registrieren!</a></p>
                 <p>Oder mit</p>
                 <div className='main_login_options'>
                     <div className='main_login_options_google'>

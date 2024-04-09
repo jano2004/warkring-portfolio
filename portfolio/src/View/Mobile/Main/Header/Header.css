@@ -84,11 +84,10 @@
     border: 0;
 }
 
-.main_content_logo button p {
-    font-family: "Apple Braille";
-    font-weight: normal;
-    font-size: 40px;
-    color: #E8E8E8;
+.main_content_logo button img {
+    width: 39px;
+    height: 39px;
+    margin-left: 10px;
 }
 
 .main_content_catalog img {
