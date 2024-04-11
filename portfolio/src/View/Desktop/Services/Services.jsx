@@ -1,15 +1,10 @@
-import {serviceData} from './ServiceData';
-import RenderServicePack from './Service/Service'
-import './Service/CustomService.css'
-import RenderCustomService from './Service/CustomService';
+import ServicesMain from './Desktop_ServicesComponents/Desktop_ServicesMain/Desktop_ServicesMain'
+import ServicesCards from './Desktop_ServicesComponents/Desktop_ServicesCards/Desktop_ServicesCards';
 
 function Services() {
     return(
-        <div className='main_service_container'>
-            {serviceData.map((pack, index) =>
-                <RenderServicePack pack={pack} index={index} />
-            )}
-            <RenderCustomService />
+        <div className='desktop_main_services_container'>
+            <ServicesCards />
         </div>
     )
 }
