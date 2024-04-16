@@ -63,7 +63,7 @@
 }
 
 .Header_Register_Button {
-    background-color: #1d1d1d;
+    background-color: #28282A;
     color: white;
     border-radius: 10px;
     padding: 8px 28px 8px 28px;
@@ -77,5 +77,5 @@
 
 .Header_Register_Button:hover {
     background-color: transparent;
-    color: #1d1d1d;
+    color: #28282A;
 }

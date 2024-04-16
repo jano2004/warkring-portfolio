@@ -8,6 +8,7 @@ import Login from "./View/Mobile/LoginRegister/Login/Login";
 import MobileRegister from './View/Mobile/LoginRegister/Register/Register';
 import Contact from "./View/Mobile/Contact/Contact";
 import DesktopMain from "./View/Desktop/Main";
+import offline from './View/Desktop/Images/offline.png'
 
 const App = () => {
     const [view, setView] = useState('Main');
@@ -65,7 +66,7 @@ const App = () => {
                         :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                             :view === 'Contact' ? <Contact handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick} handleMoreClick={handleMoreClick} />
                         : null
-                            : <DesktopMain/>}
+                            : <img src={offline} alt="" width={'100%'}/>}
         </>
     );
 };
