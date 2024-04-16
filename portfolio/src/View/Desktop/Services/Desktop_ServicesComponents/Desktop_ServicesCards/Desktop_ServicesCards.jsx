@@ -32,9 +32,7 @@ function ServicesCards() {
                             </div>
                         </div>
                         <div className="desktop_cards_slide_middle">
-                            <div className='desktop_card_main'>
                                <ShowCard pack={serviceData[(currentIndex + 1) % serviceData.length]} />
-                            </div>
                         </div>
                         <div className="desktop_cards_slide_right">
                             <div className="slide-button-container">
