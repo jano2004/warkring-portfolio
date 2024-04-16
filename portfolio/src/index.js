@@ -7,6 +7,7 @@ import Service from "./View/Mobile/Services/Service";
 import Login from "./View/Mobile/LoginRegister/Login/Login";
 import MobileRegister from './View/Mobile/LoginRegister/Register/Register';
 import Contact from "./View/Mobile/Contact/Contact";
+import DesktopMain from "./View/Desktop/Main";
 
 const App = () => {
     const [view, setView] = useState('Main');
@@ -64,8 +65,7 @@ const App = () => {
                         :view === 'Register' ? <MobileRegister handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick}/>
                             :view === 'Contact' ? <Contact handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handelContactClick={handelContactClick} handleMoreClick={handleMoreClick} />
                         : null
-                            : <p>Aufgrund von einer Überarbeitung der Desktop-Homepage sind wir derzeit nur auf der Mobil-Version
-                                von Warkring.org erreichbar!</p>}
+                            : <DesktopMain/>}
         </>
     );
 };

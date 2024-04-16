@@ -1,10 +1,10 @@
 import React from 'react';
-import './Header.css';
-import logo from '../../Desktop/Images/transparentLogo.png';
+import './DesktopHeader.css';
+import logo from '../../Desktop/Images/DesktopLogoIcon.png';
 
 function Header({ onContactClick }) {
     return (
-        <div className="Header">
+        <div className="DesktopHeader">
             <div className="Header_Logo_Text">
                 <img src={logo} alt="Logo" className="Header_Logo"/>
             </div>

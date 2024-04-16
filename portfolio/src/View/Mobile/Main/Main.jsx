@@ -16,7 +16,7 @@ function MobileMain({ handleMoreClick, handleHomeClick, handleLoginClick, handel
     }
 
     return (
-        <div>
+        <div className='MobileBody'>
             <Header handleHomeClick={handleHomeClick} handleLoginClick={handleLoginClick} handleOpenCatalog={handleOpenCatalog} />
             <div className={`main_catalog_section ${catalog ? 'shownCatalog' : 'hiddenCatalog'}`}>
                 <Catalog handleHomeClick={handleHomeClick} handleMoreClick={handleMoreClick} handelContactClick={handelContactClick}/>

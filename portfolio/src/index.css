@@ -3,12 +3,12 @@ body {
   font-family: -apple-system;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #181818;
+  background-color: #f3f3f3;
 }
 
 code {
   font-family: -apple-system;
-  background-color: #181818;
+  background-color: #f3f3f3;
 }
 
 .main_blocks_container {
