@@ -4,21 +4,16 @@
     height: 70px;
     background-color: transparent;
     color: #1d1d1d;
+    border-bottom: 2px solid #181818;
 }
 
 .Header_Logo_Text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
     margin-left: 25px;
     width: 50%;
-    height: 100%;
-    background-color: transparent;
 }
 
 .Header_Logo {
-    width: 80px;
+    width: 60px;
     height: auto; 
     transition: all 0.2s ease-in-out;
 }
@@ -32,7 +27,6 @@
     margin-right: 30px;
     width: 50%;
     background-color: transparent;
-    font-family: Inter, sans-serif;
 }
 
 .Header_Menu_Button {
@@ -41,13 +35,26 @@
     background-color: transparent;
     border: 0;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 400;
+    font-family: aktiv-grotesk;
+    transition: all 0.2s ease-in-out;
+}
+
+.Header_Menu_Button:hover {
+    text-decoration: underline;
+    text-decoration-color: #1b1b1b;
 }
 
 .Header_Login_Button, .Header_Register_Button {
     border: 0;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 400;
+    font-family: aktiv-grotesk;
+}
+
+.Header_Login_Button:hover {
+    text-decoration: underline;
+    text-decoration-color: #1b1b1b;
 }
 
 .Header_Login_Button {
@@ -71,37 +78,4 @@
 .Header_Register_Button:hover {
     background-color: transparent;
     color: #1d1d1d;
-}
-
-@media (max-width: 499px){
-    .Header_Logo_Text {
-        width: 20%;
-    }
-
-    .Header_Search_Menu_Login_Register {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-    }
-
-    .Header_Logo {
-        width: 40px;
-    }
-
-    .Header_Menu_Button {
-        font-size: 0.8rem;
-        color: #1d1d1d;
-    }
-
-    .Header_Login_Button {
-        font-size: 0.8rem;
-        color: #1d1d1d;
-        padding: 0;
-    }
-
-    .Header_Register_Button {
-        padding: 5px 10px 5px 10px;
-        font-size: 0.7rem;
-        margin-right: 0;
-    }
 }
