@@ -1,10 +1,10 @@
 import './ShowCard.css'
 
-function ShowCard({pack}) {
+function ShowCard({service}) {
     let themeClass = '';
-    if (pack.packName === 'ADVANCED') {
+    if (service.serviceName === 'Advanced') {
         themeClass = 'theme_advanced';
-    } else if (pack.packName === 'PREMIUM') {
+    } else if (service.serviceName === 'Premium') {
         themeClass = 'theme_premium';
     } else {
         themeClass = 'theme_basic';
@@ -14,15 +14,15 @@ function ShowCard({pack}) {
         <div className={`showCard_container ${themeClass}`}>
             <div className="showCard_header">
                 <div className="showCard_header_price">
-                    <p>{pack.packPrice}<span>,-€</span></p>
+                    <p>{service.servicePrice}<span>,-€</span></p>
                 </div>
             </div> 
             <div className="showCard_content">
                 <div className="showCard_heading">
-                    <h1>{pack.packName}</h1>
+                    <h1>{service.serviceName}</h1>
                 </div>
                 <div className="showCard_description">
-                    <p>{pack.packDescription}</p>
+                    <p>{service.serviceDescription}</p>
                 </div>
                 <div className="showCard_button">
                     <button>Jetzt Bestellen</button>

@@ -50,11 +50,15 @@
 .showCard_heading {
     width: 100%;
     height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .showCard_heading h1{
     margin: 0%;
-    padding:  10% 0 0 10%;
+    padding:  0 0 0 10%;
+    text-transform: uppercase;
 }
 
 .showCard_description {
@@ -89,4 +93,5 @@
 
 .showCard_button button:hover {
     font-size: 1.6rem;
+    cursor: pointer;
 }
