@@ -1,0 +1,23 @@
+.main_menu_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main_menu_nav_container div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.main_menu_image_container img {
+    width: 25px;
+    margin: 20px 0 0 0;
+}
+
+.main_menu_nav p {
+    font-size: 20px;
+    font-family: -apple-system;
+    font-weight: 500;
+    margin: 20px 0 0 20px;
+}
