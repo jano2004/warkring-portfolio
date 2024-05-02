@@ -2,6 +2,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    height: 80vh;
+    justify-content: space-between;
+    height: 85vh;
 }
+
+.main_menu_section_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main_menu_section_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+

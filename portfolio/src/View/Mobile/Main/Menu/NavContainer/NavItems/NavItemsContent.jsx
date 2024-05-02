@@ -8,6 +8,8 @@ import AboutUsIconSelected from '../NavIcons/AboutUs/selected.png';
 import AboutUsIconUnelected from '../NavIcons/AboutUs/unselected.png';
 import ContactIconSelected from '../NavIcons/Contact/selected.png';
 import ContactIconUnselected from '../NavIcons/Contact/unselected.png';
+import HelpIconSelected from '../NavIcons/Help/selected.png';
+import HelpIconUnselected from '../NavIcons/Help/unselected.png';
 
 export const content = [
     {
@@ -34,5 +36,13 @@ export const content = [
         iconSelected: ContactIconSelected,
         iconUnselected: ContactIconUnselected,
         text: 'Kontakt'
+    }
+]
+
+export const footerContent = [
+    {
+        iconSelected: HelpIconSelected,
+        iconUnselected: HelpIconUnselected,
+        text: 'Hilfe'
     }
 ]
