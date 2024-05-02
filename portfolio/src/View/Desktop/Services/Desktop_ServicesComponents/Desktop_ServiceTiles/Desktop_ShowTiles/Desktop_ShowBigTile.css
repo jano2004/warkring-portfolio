@@ -1,0 +1,63 @@
+.desktop_big_tile {
+    background-color: white;
+    width: 97.5%;
+    height: 97.5%;
+    border-radius: 45px;
+    display: flex;
+    flex-direction: row;
+}
+
+.desktop_big_tile_description {
+    background-color: transparent;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desktop_big_tile_text {
+    background-color: transparent;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+.desktop_big_tile_text p {
+    width: 90%;
+    font-size: 2rem;
+    font-weight: 1000;
+    margin: 0%;
+    padding:  0 0 0 12.5%;
+}
+
+.desktop_big_tile_text_button {
+    background-color: transparent;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0%;
+    padding:  0 0 0 12.5%;
+}
+.desktop_big_tile_text_button button{
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0%;
+    color: rgb(107, 107, 107);
+}
+.desktop_big_tile_text_button button:hover {
+    cursor: pointer;
+    color: rgb(84, 84, 255);
+}
+
+.desktop_big_tile_image {
+    background-color: transparent;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.desktop_big_tile_image img {
+    width: 90%;
+}

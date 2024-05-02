@@ -1,5 +1,5 @@
 .desktop_tiles_container {
-    background-color: grey;
+    background-color: transparent;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -40,11 +40,11 @@
     align-items: center;
 }
 
-
-
-
 .desktop_tiles_bottom {
-    background-color: orange;
+    background-color: transparent;
     width: 100%;
     height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

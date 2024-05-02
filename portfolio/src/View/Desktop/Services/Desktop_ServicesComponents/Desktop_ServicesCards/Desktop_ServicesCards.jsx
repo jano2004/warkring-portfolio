@@ -28,18 +28,18 @@ function ServicesCards() {
                                 <button onClick={prevCard}>prev</button>
                             </div>
                             <div className='desktop_card_left'>
-                                <ShowCard service={servicesData[currentIndex]} />
+                                <ShowCard service={servicesData[(currentIndex - 1 + servicesData.length) % servicesData.length]} />
                             </div>
                         </div>
                         <div className="desktop_cards_slide_middle">
-                               <ShowCard service={servicesData[(currentIndex + 1) % servicesData.length]} />
+                               <ShowCard service={servicesData[currentIndex]} />
                         </div>
                         <div className="desktop_cards_slide_right">
                             <div className="slide-button-container">
                                 <button onClick={nextCard}>next</button>
                             </div>
                             <div className='desktop_card_right'>
-                                <ShowCard service={servicesData[(currentIndex - 1 + servicesData.length) % servicesData.length]} />
+                                <ShowCard service={servicesData[(currentIndex + 1) % servicesData.length]} />
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 .desktop_small_tile {
-    background-color: aliceblue;
+    background-color: white;
     width: 95%;
     height: 95%;
     border-radius: 45px;
@@ -24,14 +24,13 @@
     height: 35%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 .desktop_small_tile_text p {
     width: 90%;
     margin: 0%;
     font-size: 2rem;
     font-weight: 1000;
-    padding: 0;
+    padding: 0%;
 }
 
 .desktop_small_tile_text_button {
@@ -44,6 +43,9 @@
     background-color: transparent;
     border: none;
     text-align: left;
+    font-size: 1rem;
+    padding: 0%;
+    color: rgb(107, 107, 107);
 }
 .desktop_small_tile_text_button button:hover {
     cursor: pointer;

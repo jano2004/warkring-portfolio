@@ -33,7 +33,7 @@
 .desktop_cards_slide_container {
     background-color: transparent;
     width: 100%;
-    height: 70%;
+    height: 80%;
 }
 
 .desktop_cards_slide_content {
@@ -63,7 +63,7 @@
 }
 
 .desktop_cards_slide_middle {
-    background-color:rgb(255, 111, 111);
+    background-color:#ff5656;
     width: 350px;
     height: 80%;
     border-radius: 45px;
@@ -71,7 +71,7 @@
     align-items: center;
     justify-content: center;
     border: 40px solid;
-    border-color: rgb(255, 111, 111);
+    border-color: #ff5656;
     margin: 50px;
 }
 

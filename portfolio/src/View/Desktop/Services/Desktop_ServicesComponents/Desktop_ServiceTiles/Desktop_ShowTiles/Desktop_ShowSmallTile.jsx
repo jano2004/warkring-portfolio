@@ -1,4 +1,4 @@
-import './Desktop_ShowTiles.css';
+import './Desktop_ShowSmallTile.css';
 import iconPremium from '../../../Services_Images/best.png';
 import iconCustom from '../../../Services_Images/hands.png';
 
