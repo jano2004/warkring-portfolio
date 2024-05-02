@@ -5,9 +5,8 @@ export default function NavItems({iconSelected, iconUnselected, text, selected, 
     return (
         <div className='main_menu_nav'>
             <div className='main_menu_image_container' onClick={handleClick}>
-                <img src={selected === convertedText ? iconSelected : iconUnselected} alt={'HomeIcon'}/>
             </div>
-            <p style={{color: selected === convertedText ? '#313131' : '#7e7e7e'}}  onClick={handleClick}>{text}</p>
+            <p style={{color: selected === convertedText ? '#efefef' : '#7e7e7e', fontWeight: selected === convertedText ? '300' : '200'}}  onClick={handleClick}>{text}</p>
         </div>
     )
 }

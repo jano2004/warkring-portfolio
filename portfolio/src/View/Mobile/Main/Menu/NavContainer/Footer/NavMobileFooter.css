@@ -16,6 +16,7 @@
     justify-content: space-between;
     height: 45px;
     width: 50%;
+    color: #b5b5b5;
 }
 
 .nav_footer_contact_email, .nav_footer_contact_data {
@@ -24,7 +25,7 @@
 }
 
 .nav_footer_contact_email {
-    color: #2b2b2b;
+    color: #acacac;
     font-weight: 200;
 }
 

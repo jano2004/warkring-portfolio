@@ -1,5 +1,5 @@
 .MobileBody {
-    background-color: #F6F6F6FF;
+    background-color: #101010;
 }
 
 .Header {
@@ -25,5 +25,6 @@
 .Menu.open {
     right: 0;
 }
+
 
 
