@@ -10,31 +10,41 @@
     border-bottom: 1px solid #cccccc;
 }
 
-.nav_footer_profile_icon {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background-color: #b1b1b1;
-}
-
-.nav_footer_profile_data {
+.nav_footer_contact_data {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 45px;
-    width: 250px;
+    width: 50%;
 }
 
-.nav_footer_profile_email, .nav_footer_profile_data {
+.nav_footer_contact_email, .nav_footer_contact_data {
     font-family: -apple-system;
     margin: 0;
 }
 
-.nav_footer_profile_email {
+.nav_footer_contact_email {
     color: #2b2b2b;
     font-weight: 200;
 }
 
 .nav_footer_profile_data {
     font-weight: 400;
+}
+
+.nav_footer_impressum_blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45px;
+    width: 50%;
+}
+
+.nav_footer_impressum, .nav_footer_blog {
+    font-family: -apple-system;
+    margin: 0;
+    text-align: end;
+    font-weight: 200;
+    font-size: 1rem;
+    color: #838383;
 }
