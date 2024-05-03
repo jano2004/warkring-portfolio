@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FeatureSlide.css';
 
 function FeatureSlide(props) {

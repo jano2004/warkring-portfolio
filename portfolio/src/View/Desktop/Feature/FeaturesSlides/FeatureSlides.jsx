@@ -1,6 +1,6 @@
 import './FeatureSlides.css';
-import FeatureSlide from './FeatureSlide/FeatureSlide';
-import { featureSlideData } from './FeatureSlide/FeatureSlideData';
+//import FeatureSlide from './FeatureSlide/FeatureSlide';
+//import { featureSlideData } from './FeatureSlide/FeatureSlideData';
 
 function FeatureSlides() {
     return (

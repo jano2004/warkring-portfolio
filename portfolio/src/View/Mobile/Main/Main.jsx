@@ -7,7 +7,7 @@ import './Main.css';
 function MobileMain() {
     const [menu, setMenu] = useState(false);
     const handleMenuMobileClick= () => {
-        //setMenu(!menu);
+        setMenu(!menu);
     }
     return (
         <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>

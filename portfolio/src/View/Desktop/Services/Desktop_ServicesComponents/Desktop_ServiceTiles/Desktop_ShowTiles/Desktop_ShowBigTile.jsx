@@ -13,7 +13,7 @@ function ShowBigTile() {
                 </div>
             </div>
             <div className='desktop_big_tile_image'>
-                <img src={laptop_image} alt='Laptop Image'/> 
+                <img src={laptop_image} alt={'Laptop_Image'}/>
             </div>
         </div>
     )
