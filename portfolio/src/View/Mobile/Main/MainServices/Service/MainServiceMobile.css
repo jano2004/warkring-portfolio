@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200&display=swap');
+
+.main_service_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    inline-size: min(100% - 4rem, 70rem);
+    margin-inline: auto;
+    background-color: #161616;
+    color: #F8F8F8;
+}
+
+.main_service_text_header_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.main_service_header, .main_service_text {
+    font-family: 'Lexend Deca', sans-serif;
+    margin-left: 15px;
+}
+
+.main_service_header {
+    font-weight: 200;
+    font-size: 1.8rem;
+}
+
+.main_service_text {
+    width: 80%;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.main_service_list {
+    list-style-type: armenian;
+    font-weight: 100;
+    font-size: 15px;
+    margin: 0;
+}
+
+.main_service_cta {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 100;
+    font-size: 12px;
+}

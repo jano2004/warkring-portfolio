@@ -4,6 +4,7 @@
     background-color: #101010;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .beta_text {
@@ -22,6 +23,13 @@
     border-radius: 5px;
     font-size: 0.9rem;
     font-weight: 200;
+}
+
+.Beta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobileMenu {
