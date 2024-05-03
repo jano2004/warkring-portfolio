@@ -9,10 +9,11 @@ function MobileMain() {
     const beta = true;
 
     const [menu, setMenu] = useState(false);
-    const handleMenuMobileClick= () => {
-        setMenu(!menu);
-    }
+
     if (beta) {
+        const handleMenuMobileClick = () => {
+            return null;
+        }
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -26,6 +27,9 @@ function MobileMain() {
             </div>
         );
     } else {
+        const handleMenuMobileClick = () => {
+            setMenu(!menu);
+        }
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
