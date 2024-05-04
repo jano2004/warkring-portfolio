@@ -9,6 +9,9 @@
     background-color: #161616;
     color: #F8F8F8;
 }
+.main_service_container {
+    scroll-snap-align: center;
+}
 
 .main_service_header, .main_service_text {
     font-family: 'Lexend Deca', sans-serif;
