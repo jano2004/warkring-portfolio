@@ -2,6 +2,7 @@ import Header from './Header/Header';
 import MainBody from './MainBody/MainBody';
 import Menu from './Menu/Menu';
 import MainServices from './MainServices/MainServices';
+import MainFeatures from './MainFeatures/MainFeatures';
 import React, { useState } from "react";
 import './Main.css';
 
@@ -38,6 +39,7 @@ function MobileMain() {
                 </div>
                 <MainBody/>
                 <MainServices />
+                <MainFeatures />
             </div>
         );
     }
