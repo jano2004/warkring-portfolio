@@ -8,7 +8,7 @@ import './MainMobile.css';
 import MainContact from "../MainContact/MainContact";
 
 function MobileMain() {
-    const beta = false;
+    const beta = true;
 
     const [menu, setMenu] = useState(false);
 
@@ -23,7 +23,9 @@ function MobileMain() {
                     {menu && <Menu/>}
                 </div>
                 <MainBody/>
-                {/*<MainServices/>*/}
+                <MainServices />
+                <MainFeatures />
+                <MainContact />
                 <Beta />
                 <div style={{height: '70px'}}></div>
             </div>
@@ -63,7 +65,6 @@ function Beta() {
                 Schreibe uns eine E-Mail um der Erste zu sei,
                 der die neue Website begrüßen kann
             </p>
-            <button className={'first_contact_button'} onClick={Contact}>Jetzt kontaktieren</button>
         </div>
 
     )
