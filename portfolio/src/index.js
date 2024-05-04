@@ -31,7 +31,7 @@ const App = () => {
                 (view === 'MobileMain' ?
                     <MobileMain handleMenuMobileClick={handleMenuMobileClick}/>
                     : <MobileMenu handleMenuMobileClick={handleMenuMobileClick}/>)
-                : <DesktopMain />}
+                : <p>Warkring.org ist derzeit aufgrund von Überarbeitungen nur Mobil (Auf dem Handy) erreichbar! Danke für Ihr Verständnis</p>}
         </>
     );
 };
