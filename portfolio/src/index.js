@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import DesktopMain from "./View/Desktop/Main";
-import MobileMain from "./View/Mobile/Main/Main";
-import MobileMenu from './View/Mobile/Main/Menu/Menu';
+import MobileMain from "./View/Mobile/Main/Main/Main";
+import MobileMenu from './View/Mobile/Header/Menu/Menu';
 
 const App = () => {
     const [view, setView] = useState('MobileMain');

@@ -1,10 +1,11 @@
-import Header from './Header/Header';
-import MainBody from './MainBody/MainBody';
-import Menu from './Menu/Menu';
-import MainServices from './MainServices/MainServices';
-import MainFeatures from './MainFeatures/MainFeatures';
+import Header from '../../Header/Header';
+import MainBody from '../MainBody/MainBody';
+import Menu from '../../Header/Menu/Menu';
+import MainServices from '../MainServices/MainServices';
+import MainFeatures from '../MainFeatures/MainFeatures';
 import React, { useState } from "react";
-import './Main.css';
+import './MainMobile.css';
+import MainContact from "../MainContact/MainContact";
 
 function MobileMain() {
     const beta = false;
@@ -40,6 +41,7 @@ function MobileMain() {
                 <MainBody/>
                 <MainServices />
                 <MainFeatures />
+                <MainContact />
             </div>
         );
     }

@@ -1,4 +1,4 @@
-import './MainBody.css';
+import './MainBodyMobile.css';
 import MainBodyImage from './MainBodyImage.png';
 
 function MainBody() {

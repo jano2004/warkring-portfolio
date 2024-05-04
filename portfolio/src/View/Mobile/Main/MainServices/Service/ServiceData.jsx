@@ -1,38 +1,39 @@
 export const services = [
     {
         title: 'Standard',
-        text: 'Die beste Wahl für eine Anfangs-Website mit allen Standard-Features',
+        text: 'Für einen einfachen, professionellen Online-Auftritt.',
         features: [
-            'Branding',
-            'Call-To-Action',
-            'Buchungssysteme',
-            'Erweitere Sicherheit',
-            'Platzhalter',
-            'Analyse und Tracking'
+            'Benutzerfreundlichkeit',
+            'Schnelle Ladezeit',
+            'Responsive Design',
+            'Kontaktinformationen',
+            'Sicherheit',
+            'SEO',
+            '...'
         ]
     },
     {
-        title: 'Advanced',
-        text: 'Die beste Wahl für eine Anfangs-Website mit allen Standard-Features',
+        title: 'Fortgeschritten',
+        text: 'Ein professioneller Online-Auftritt, der über das Grundlegende hinausgeht.',
         features: [
-            'Branding',
-            'Call-To-Action',
-            'Buchungssysteme',
-            'Erweitere Sicherheit',
-            'Platzhalter',
-            'Analyse und Tracking'
+            'Die Standards',
+            'Call-to-Action',
+            'Kundenregistrierung',
+            'Visuelle Elemente',
+            'Website-Analyse und -Tracking',
+            'Ereignis- und Buchungssysteme',
+            '...'
         ]
     },
     {
         title: 'Premium',
-        text: 'Die beste Wahl für eine Anfangs-Website mit allen Standard-Features',
+        text: 'Maximal professioneller Online-Auftritt.',
         features: [
-            'Branding',
-            'Call-To-Action',
-            'Buchungssysteme',
-            'Erweitere Sicherheit',
-            'Platzhalter',
-            'Analyse und Tracking'
+            'Die Fortgeschrittenen',
+            'Kontakt-Automatisierung',
+            'E-Commerce-Funktionalität',
+            'Zahlungsmethoden',
+            '...'
         ]
     },
 ];
