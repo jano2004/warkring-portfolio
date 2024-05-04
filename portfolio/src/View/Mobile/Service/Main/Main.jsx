@@ -6,7 +6,7 @@ import ServiceCard from "../ServiceCard/ServiceCard";
 import ServiceBody from "../ServiceBody/ServiceBody";
 import { content } from '../ServiceCard/ServiceCardContent';
 
-export default function Main() {
+export default function Main({setStatus}) {
 
     const [menu, setMenu] = useState(false);
 
@@ -18,7 +18,7 @@ export default function Main() {
         <section className={'services_section'}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'services'}/>}
+                {menu && <Menu currentSelected={'services'} setStatus={setStatus}/>}
             </div>
             <ServiceBody/>
             <div className={'services_service_card_section'}>

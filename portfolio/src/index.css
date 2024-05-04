@@ -135,3 +135,8 @@ code {
 .main_blocks_container {
   margin-top: 150px;
 }
+
+.custom_link {
+  color: #e8e8e8;
+  text-decoration: none;
+}

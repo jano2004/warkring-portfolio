@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-//import DesktopMain from "./View/Desktop/Main";
 import MobileMain from "./View/Mobile/Main/Main/Main";
 import ServiceMain from "./View/Mobile/Service/Main/Main";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ErrorHandler from "./View/Mobile/ErrorHandler/ErrorHandler";
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -19,17 +19,17 @@ const App = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleServiceClick = () => {
-
-    }
-
     return (
         <Router>
             <Routes>
                 {windowWidth <= 500 && (
                     <>
-                        <Route path="/" element={<MobileMain props={handleServiceClick}/>} />
-                        <Route path="/services" element={<ServiceMain />} />
+                        <Route path="/services" element={<ServiceMain /> }/>
+                        <Route path="/features" element={<ErrorHandler props={'Features'}/>}/>
+                        <Route path="/über uns" element={<ErrorHandler props={'Über-Uns'}/>}/>
+                        <Route path="/kontakt" element={<ErrorHandler props={'Kontakt'}/>}/>
+                        <Route path="/hilfe" element={<ErrorHandler props={'Hilfe'}/>}/>
+                        <Route path="/" element={<MobileMain />}/>
                     </>
                 )}
             </Routes>
@@ -37,11 +37,11 @@ const App = () => {
     );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
     <React.StrictMode>
         <App />
-    </React.StrictMode>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 reportWebVitals();

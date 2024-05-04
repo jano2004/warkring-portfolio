@@ -1,11 +1,12 @@
 import './MainServiceMobile.css';
+import {Link} from "react-router-dom";
 export default function Service({ title, text, features }) {
-    const scrollTo = () => {
-        //scroll logic
-    };
-
     const removeWarningOfA = () => {
         return null;
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
     }
 
     return (
@@ -21,8 +22,9 @@ export default function Service({ title, text, features }) {
             </div>
             <div className={'main_service_cta'}>
                 <p>
-                    Wenn Sie mehr zu diesem Service erfahren wollen, drücken Sie{' '}
-                    <a href={removeWarningOfA()} onClick={scrollTo}><u>hier</u></a>!
+                    <Link to={'/services'} className={'custom_link'} onClick={scrollToTop}><a href={removeWarningOfA()}>
+                        Wenn Sie mehr zu diesem Service erfahren wollen, drücken Sie{' '}
+                        <u>hier</u></a></Link>!
                 </p>
             </div>
         </div>

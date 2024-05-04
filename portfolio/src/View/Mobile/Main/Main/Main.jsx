@@ -7,20 +7,21 @@ import React, { useState } from "react";
 import './MainMobile.css';
 import MainContact from "../MainContact/MainContact";
 
-function MobileMain({props}) {
+function MobileMain() {
     const beta = false;
 
     const [menu, setMenu] = useState(false);
 
+    const handleMenuMobileClick = () => {
+        setMenu(!menu);
+    }
+
     if (beta) {
-        const handleMenuMobileClick = () => {
-            return null;
-        }
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
                 <div className={'mobileMenu'}>
-                    {menu && <Menu/>}
+                    {menu && <Menu currentSelected={'home'}/>}
                 </div>
                 <MainBody />
                 <MainServices />
@@ -31,9 +32,6 @@ function MobileMain({props}) {
             </div>
         );
     } else {
-        const handleMenuMobileClick = () => {
-            setMenu(!menu);
-        }
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
