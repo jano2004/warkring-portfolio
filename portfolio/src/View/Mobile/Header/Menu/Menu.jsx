@@ -3,8 +3,8 @@ import NavContainer from "./NavContainer/NavContainer";
 import { content } from "./NavContainer/NavItems/NavItemsContent";
 import {useState} from "react";
 
-export default function Menu({ handleMenuMobileClick }) {
-    const [selected, setSelected] = useState('home');
+export default function Menu({ currentSelected }) {
+    const [selected, setSelected] = useState(currentSelected);
 
     return (
         <div>

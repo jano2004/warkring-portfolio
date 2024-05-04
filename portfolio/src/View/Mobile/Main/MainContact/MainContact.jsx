@@ -55,6 +55,3 @@ function Formular() {
     )
 }
 
-function sendData() {
-
-}

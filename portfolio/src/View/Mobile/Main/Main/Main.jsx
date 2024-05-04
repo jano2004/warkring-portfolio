@@ -7,8 +7,8 @@ import React, { useState } from "react";
 import './MainMobile.css';
 import MainContact from "../MainContact/MainContact";
 
-function MobileMain() {
-    const beta = true;
+function MobileMain({props}) {
+    const beta = false;
 
     const [menu, setMenu] = useState(false);
 
@@ -22,7 +22,7 @@ function MobileMain() {
                 <div className={'mobileMenu'}>
                     {menu && <Menu/>}
                 </div>
-                <MainBody/>
+                <MainBody />
                 <MainServices />
                 <MainFeatures />
                 <MainContact />
@@ -38,9 +38,9 @@ function MobileMain() {
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
                 <div className={'mobileMenu'}>
-                    {menu && <Menu/>}
+                    {menu && <Menu currentSelected={'home'}/>}
                 </div>
-                <MainBody/>
+                <MainBody />
                 <MainServices />
                 <MainFeatures />
                 <MainContact />
@@ -53,11 +53,6 @@ function MobileMain() {
 export default MobileMain;
 
 function Beta() {
-    const Contact = () => {
-        let email = "kontakt@warkring.org";
-        let subject = encodeURIComponent("Kontaktanfrage von: {Ihren Namen eintragen}");
-        window.location.href = `mailto:${email}?subject=${subject}`;
-    }
     return (
         <div className={'Beta'}>
             <p className={'beta_text'}>

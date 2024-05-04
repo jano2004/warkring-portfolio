@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import DesktopMain from "./View/Desktop/Main";
+//import DesktopMain from "./View/Desktop/Main";
 import MobileMain from "./View/Mobile/Main/Main/Main";
-import MobileMenu from './View/Mobile/Header/Menu/Menu';
+import ServiceMain from "./View/Mobile/Service/Main/Main";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-    const [view, setView] = useState('MobileMain');
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -19,20 +19,21 @@ const App = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleMenuMobileClick = () => {
-        const newView = view === 'MobileMain' ? 'MobileMenuView' : 'MobileMain';
-        setView(newView);
-        window.scrollTo(0, 0);
+    const handleServiceClick = () => {
+
     }
 
     return (
-        <>
-            {windowWidth <= 500 ?
-                (view === 'MobileMain' ?
-                    <MobileMain handleMenuMobileClick={handleMenuMobileClick}/>
-                    : <MobileMenu handleMenuMobileClick={handleMenuMobileClick}/>)
-                : <p>Warkring.org ist derzeit aufgrund von Überarbeitungen nur Mobil (Auf dem Handy) erreichbar! Danke für Ihr Verständnis</p>}
-        </>
+        <Router>
+            <Routes>
+                {windowWidth <= 500 && (
+                    <>
+                        <Route path="/" element={<MobileMain props={handleServiceClick}/>} />
+                        <Route path="/services" element={<ServiceMain />} />
+                    </>
+                )}
+            </Routes>
+        </Router>
     );
 };
 

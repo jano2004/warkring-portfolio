@@ -1,6 +1,6 @@
 import './MainServicesMobile.css';
-import Service from './Service/Service';
 import { services } from './Service/ServiceData';
+import Service from './Service/Service';
 
 export default function MainServices() {
     return (
