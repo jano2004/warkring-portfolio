@@ -19,7 +19,7 @@ function ShowMainFeature({content}) {
 }
 
 
-function MainBody() {
+function MainBody({scrollToBottom}) {
     return (
         <section className='main_body_main_section'>
             <p>warkring.</p>
@@ -40,7 +40,7 @@ function MainBody() {
                 {content.map((feature, index) => (
                     <ShowMainFeature key= {index} content= {feature.text} />
                 ))}
-                <button>Anfrage senden</button>
+                <button onClick={scrollToBottom}>Anfrage senden</button>
             </div>
         </section>
     )

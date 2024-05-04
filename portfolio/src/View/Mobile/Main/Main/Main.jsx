@@ -8,12 +8,16 @@ import './MainMobile.css';
 import MainContact from "../MainContact/MainContact";
 
 function MobileMain() {
-    const beta = false;
+    const beta = true;
 
     const [menu, setMenu] = useState(false);
 
     const handleMenuMobileClick = () => {
         setMenu(!menu);
+    }
+
+    const scrollToBottom = () => {
+        window.scrollTo(0, 9999);
     }
 
     if (beta) {
@@ -23,11 +27,11 @@ function MobileMain() {
                 <div className={'mobileMenu'}>
                     {menu && <Menu currentSelected={'home'}/>}
                 </div>
-                <MainBody />
-                <MainServices />
-                <MainFeatures />
-                <MainContact />
-                <Beta />
+                <MainBody scrollToBottom={scrollToBottom}/>
+                <MainServices/>
+                <MainFeatures/>
+                <MainContact/>
+                <Beta/>
                 <div style={{height: '70px'}}></div>
             </div>
         );
@@ -38,10 +42,11 @@ function MobileMain() {
                 <div className={'mobileMenu'}>
                     {menu && <Menu currentSelected={'home'}/>}
                 </div>
-                <MainBody />
-                <MainServices />
-                <MainFeatures />
-                <MainContact />
+                <MainBody/>
+                <MainServices/>
+                <MainFeatures/>
+                <MainContact/>
+                <div style={{height: '70px'}}></div>
             </div>
         );
     }

@@ -26,7 +26,21 @@ export default function Main({setStatus}) {
                     <ServiceCard key={index} props={service}/>
                 ))}
             </div>
+            <Beta/>
             <div style={{height: '70px'}}></div>
         </section>
+    )
+}
+
+function Beta() {
+    return (
+        <div className={'Beta'}>
+            <p className={'beta_text'}>
+                Wir befinden uns derzeit noch im Aufbau.
+                Schreibe uns eine E-Mail um der Erste zu sei,
+                der die neue Website begrüßen kann
+            </p>
+        </div>
+
     )
 }

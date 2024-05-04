@@ -18,15 +18,14 @@
     align-items: center;
     height: auto;
     inline-size: min(100% - 4rem, 70rem);
-    background-color: #161616;
     padding: 10px 0 10px 0;
 }
 
 .main_formular_input_standard, .main_formular_input_message {
-    width: 80%;
+    width: 95%;
     font-size: 17px;
     margin: 5px 0 5px 0;
-    background-color: #202020;
+    background-color: #161616;
     color: #F8F8F8;
     border: 0;
     font-family: 'Lexend Deca', sans-serif;
