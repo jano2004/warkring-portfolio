@@ -12,7 +12,7 @@ const content = [
 function ShowMainFeature({content}) {
     return (
         <div className='request_feature'>
-            <img src= {CheckIcon} alt='check-picture' />
+            <img src= {CheckIcon} alt='checkPicture' />
             <p>{content}</p>
         </div>
     );
