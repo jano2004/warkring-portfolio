@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import './Main.css';
 
 function MobileMain() {
-    const beta = true;
+    const beta = false;
 
     const [menu, setMenu] = useState(false);
 
