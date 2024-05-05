@@ -17,7 +17,10 @@ function MobileMain() {
     }
 
     const scrollToBottom = () => {
-        window.scrollTo(0, 9999);
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
     }
 
     if (beta) {
