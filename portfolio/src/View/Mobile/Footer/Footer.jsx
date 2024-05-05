@@ -7,7 +7,9 @@ function Footer() {
         <footer className='main_footer_section'>
             <div className='main_footer_logo_container'>
                 <img src={FooterImage} alt={'footerImage'} className='footer_image'/>
-                <h1>warkring</h1>
+                <div className='main_footer_logo_container_header'>
+                    <h1>warkring</h1>
+                </div>
             </div>
             <div className='footer_link_container'>
                 {content.map((links, index)=>(
