@@ -6,9 +6,10 @@ import MainFeatures from '../MainFeatures/MainFeatures';
 import React, { useState } from "react";
 import './MainMobile.css';
 import MainContact from "../MainContact/MainContact";
+import Footer from '../../Footer/Footer';
 
 function MobileMain() {
-    const beta = true;
+    const beta = false;
 
     const [menu, setMenu] = useState(false);
 
@@ -50,6 +51,7 @@ function MobileMain() {
                 <MainFeatures/>
                 <MainContact/>
                 <div style={{height: '70px'}}></div>
+                <Footer />
             </div>
         );
     }
