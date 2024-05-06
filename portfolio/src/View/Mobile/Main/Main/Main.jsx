@@ -9,7 +9,7 @@ import MainContact from "../MainContact/MainContact";
 import Footer from '../../Footer/Footer';
 
 function MobileMain() {
-    const beta = true;
+    const beta = false;
 
     const [menu, setMenu] = useState(false);
 
@@ -36,7 +36,6 @@ function MobileMain() {
                 <MainFeatures/>
                 <MainContact/>
                 <Beta/>
-                <div style={{height: '70px'}}></div>
             </div>
         );
     } else {
@@ -49,8 +48,8 @@ function MobileMain() {
                 <MainBody/>
                 <MainServices/>
                 <MainFeatures/>
-                <MainContact/>
-                <div style={{height: '70px'}}></div>
+                {/*<MainContact/>*/}
+                <div style={{height: '30px'}}/>
                 <Footer />
             </div>
         );

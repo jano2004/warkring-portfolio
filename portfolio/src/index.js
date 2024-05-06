@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MobileMain from "./View/Mobile/Main/Main/Main";
-import ServiceMain from "./View/Mobile/Service/Main/Main";
+import MobileMain from './View/Mobile/Main/Main/Main';
+import ServiceMain from './View/Mobile/Service/Main/Main';
+import ContactMain from './View/Mobile/Contact/Main/Main'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ErrorHandler from "./View/Mobile/ErrorHandler/ErrorHandler";
+import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -24,12 +25,13 @@ const App = () => {
             <Routes>
                 {windowWidth <= 500 && (
                     <>
-                        <Route path="/services" element={<ServiceMain /> }/>
-                        <Route path="/features" element={<ErrorHandler props={'Features'}/>}/>
-                        <Route path="/über uns" element={<ErrorHandler props={'Über-Uns'}/>}/>
-                        <Route path="/kontakt" element={<ErrorHandler props={'Kontakt'}/>}/>
-                        <Route path="/hilfe" element={<ErrorHandler props={'Hilfe'}/>}/>
-                        <Route path="/" element={<MobileMain />}/>
+                        <Route path={'/services'} element={<ServiceMain /> }/>
+                        <Route path={'/features'} element={<ErrorHandler props={'Features'}/>}/>
+                        <Route path={'/über uns'} element={<ErrorHandler props={'Über-Uns'}/>}/>
+                        <Route path={'/kontakt'} element={<ContactMain />}/>
+                        <Route path={'/hilfe'} element={<ErrorHandler props={'Hilfe'}/>}/>
+                        <Route path={'/impressum'} element={<ErrorHandler props={'Impressum'}/> }/>
+                        <Route path={'/'} element={<MobileMain />}/>
                     </>
                 )}
             </Routes>

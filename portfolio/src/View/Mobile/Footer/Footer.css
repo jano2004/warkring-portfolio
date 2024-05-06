@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    background-color: #0b0b0b;
 }
 
 .main_footer_logo_container {

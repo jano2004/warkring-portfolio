@@ -1,5 +1,6 @@
 import './MainContactMobile.css';
 import { useState} from "react";
+import {Link} from "react-router-dom";
 
 export default function MainContact() {
     return (
@@ -11,6 +12,14 @@ export default function MainContact() {
 }
 
 function Formular() {
+    const removeWarningOfA = () => {
+        return null;
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -51,6 +60,8 @@ function Formular() {
                       value={message}
                       onChange={handleMessageChange}/>
             <button className={'main_formular_submit'} onClick={sendData}><u>Absenden</u></button>
+                <Link to={'/kontakt'} className={'custom_link'} onClick={scrollToTop}><a className={'main_formular_cta'} href={removeWarningOfA()}>
+                    Um zum erweitern Kontakt-Formular zu gelangen, klicken Sie hier</a></Link>
         </div>
     )
 }

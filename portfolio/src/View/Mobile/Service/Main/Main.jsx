@@ -15,7 +15,7 @@ export default function Main({setStatus}) {
     }
 
     return (
-        <section className={'services_section'}>
+        <section className={'services_section'} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'}>
                 {menu && <Menu currentSelected={'services'} setStatus={setStatus}/>}

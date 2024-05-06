@@ -1,5 +1,6 @@
 import './Footer.css';
 import FooterImage from './FooterImage.png';
+import {Link} from "react-router-dom";
 
 function Footer() {
     const content = [ 'Kontakt', 'Über uns', 'Impressum' ];
@@ -22,7 +23,7 @@ function Footer() {
 
 function FooterLink({props}) {
     return (
-        <p className='footer_link'>{props}</p>
+        <Link to={'/' + props.toLowerCase()} className={'custom_link'}><p className='footer_link'>{props}</p></Link>
     )
 }
 

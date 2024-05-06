@@ -13,7 +13,7 @@ export default function ErrorHandler({props}) {
         <div style={{width: '100%'}}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'home'}/>}
+                {menu && <Menu currentSelected={props.toLowerCase()}/>}
             </div>
             <p style={{color: 'white'}}>Die {props}-Seite existiert noch nicht!</p>
         </div>
