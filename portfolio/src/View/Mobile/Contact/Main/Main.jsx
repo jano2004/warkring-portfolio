@@ -21,8 +21,9 @@ export default function Main() {
 
     const handleMenuMobileClick = () => {
         setMenu(!menu);
-    }
+    };
 
+    const [errorHandler, setErrorHandler] = useState(false)
 
     const sendData = () => {
         console.log("sendData wurde aufgerufen");
@@ -49,9 +50,17 @@ export default function Main() {
     };
 
     const sendMail = () => {
-        const fullNameAndEmail = `${firstname} ${lastname} | ${email}`;
-        const message = createMessage();  // Ruf die Funktion createMessage auf, um den aktualisierten Nachrichteninhalt zu erhalten
-        window.location.href = `mailto:kontakt@warkring.org?subject=${encodeURIComponent(fullNameAndEmail)}&body=${encodeURIComponent(message)}`;
+        if(firstname !== null && firstname !== '' &&
+            lastname !== null && lastname !== '' &&
+            email !== null && email !== '' &&
+            pages !== null && pages !== '' &&
+            pricing !== null && pricing !== '') {
+            const fullNameAndEmail = `${firstname} ${lastname} | ${email}`;
+            const message = createMessage();  // Ruf die Funktion createMessage auf, um den aktualisierten Nachrichteninhalt zu erhalten
+            window.location.href = `mailto:kontakt@warkring.org?subject=${encodeURIComponent(fullNameAndEmail)}&body=${encodeURIComponent(message)}`;
+        } else {
+            setErrorHandler(true);
+        }
     };
 
     return (
@@ -69,11 +78,12 @@ export default function Main() {
                            number={number} setNumber={setNumber}
                            reachability={reachability} setReachability={setReachability}/> :
                 <CardSecond setFormular={setFormular}
-                             handleSend={sendData}
-                             kind={kind} setKind={setKind}
-                             pages={pages} setPages={setPages}
-                             preference={preference} setPreference={setPreference}
-                             pricing={pricing} setPricing={setPricing}/>}
+                            handleSend={sendData}
+                            kind={kind} setKind={setKind}
+                            pages={pages} setPages={setPages}
+                            preference={preference} setPreference={setPreference}
+                            pricing={pricing} setPricing={setPricing}
+                            errorHandler={errorHandler}/>}
         </div>
     )
 }

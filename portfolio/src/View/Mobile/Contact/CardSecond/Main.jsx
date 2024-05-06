@@ -1,7 +1,7 @@
 import './MainContactCardSecondMobile.css';
 import ContactButtonIconRight from "../CardIcons/ContactButtonIconRight.png";
 
-export default function Main({setFormular, kind, pages, preference, pricing, setKind, setPages, setPreference, setPricing, handleSend}) {
+export default function Main({setFormular, kind, pages, preference, pricing, setKind, setPages, setPreference, setPricing, handleSend, errorHandler}) {
     const kindValues = [
         'Informationsseite',
         'Unternehmensseite',
@@ -47,6 +47,7 @@ export default function Main({setFormular, kind, pages, preference, pricing, set
                            value={pricing}
                            setValue={handlePricingInput}/>
             </div>
+            {errorHandler ? <p className={'contact_card_error_handler'}>Nicht alle mit * markierten Felder <br></br>sind ausgefüllt!</p> : null}
             <div className={'contact_card_second_button'}>
                 <button type="button" className={'contact_card_second_back_button'} onClick={handleFormularChange}><img src={ContactButtonIconRight} alt={'data'}/></button>
                 <button type='button' className={'contact_card_second_send_button'} onClick={handleSendData}>Absenden</button>
