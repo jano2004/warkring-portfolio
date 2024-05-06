@@ -42,7 +42,7 @@ export default function Main() {
     const createMessage = () => {
         return `Hallo, Warkring-Team, \n\nich bin auf der Suche nach einer ${kind}-Webseite.` +
             `${pages ? ` \nDie Webseite soll ungefähr ${pages} Seiten enthalten.` : ''}` +
-            `${reachability ? ` \nSie können mich am besten über ${reachability} erreichen.` : ''}` +
+            `${reachability === 'Keine Präferenz' ? 'Sie können mich über alle Platformem erreichen!' : ` \nSie können mich am besten über ${reachability} erreichen.`}` +
             `${number ? ` \nMeine Telefonnummer lautet: ${number}.` : ''}` +
             `${preference !== 'Keine' ? ` \nMeine Präferenz der Kodierung ist ${preference}.` : ' Ich habe keine Code-Präferenzen.'}` +
             `${pricing ? `\nMeine Preisvorstellung liegt bei ${pricing}€.` : ''}` +

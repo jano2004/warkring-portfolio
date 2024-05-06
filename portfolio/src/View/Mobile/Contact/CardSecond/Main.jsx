@@ -3,18 +3,13 @@ import ContactButtonIconRight from "../CardIcons/ContactButtonIconRight.png";
 
 export default function Main({setFormular, kind, pages, preference, pricing, setKind, setPages, setPreference, setPricing, handleSend, errorHandler}) {
     const kindValues = [
-        'Informationsseite',
-        'Unternehmensseite',
-        'Portfolio-Websites',
-        'Bildungsplattformen',
-        'Forum',
-        'Blog',
+        'Informationsseite', 'Unternehmensseite', 'Portfolio-Websites', 'Bildungsplattformen', 'Forum', 'Blog',
     ]
     const preferenceValues = [
-        'Keine',
-        'Framework (React, Spring)',
-        'Wordpress',
-        'HTML-CSS'
+        'Keine', 'Framework (React, Spring)', 'Wordpress', 'HTML-CSS'
+    ]
+    const pagesValues = [
+        '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'
     ]
     const handleFormularChange = () => {
         setFormular('first');
@@ -35,10 +30,9 @@ export default function Main({setFormular, kind, pages, preference, pricing, set
                 <DropdownInput header={'* Was ist die Art der Webseite?'}
                                values={kindValues}
                                setValue={handleKindInput}/>
-                <StarInput placeholder={'Anzahl (1-20)'}
-                           header={'* Wie viele Seiten soll die Website haben?'}
-                           value={pages}
-                           setValue={handlePagesInput}/>
+                <DropdownInput header={'* Wie viele Seiten soll die Website haben?'}
+                               values={pagesValues}
+                               setValue={handlePagesInput}/>
                 <DropdownInput header={'Haben sie Kodierungs-Präferenzen?'}
                                values={preferenceValues}
                                setValue={handlePreference}/>

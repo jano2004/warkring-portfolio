@@ -13,6 +13,10 @@ export default function Main({setFormular, firstname, lastname, email, number, r
     const handleNumber = (event) => setNumber(event.target.value);
     const handleReachability = (event) => setReachability(event.target.value);
 
+    const reachabilityValues = [
+        'Keine Präferenz', 'E-Mail', 'WhatsApp', 'Telegramm', 'Messanger', 'Skype', 'Discord'
+    ]
+
     return (
         <div className={'contact_card_first_container'}>
             <div className={'contact_card_first_inputs'}>
@@ -36,11 +40,9 @@ export default function Main({setFormular, firstname, lastname, email, number, r
                            value={number}
                            setValue={handleNumber}
                            tabIndex={4}/>
-                <StarInput placeholder={'Erreichbarkeit'}
-                           header={'Wie sind Sie am besten zu erreichen?'}
-                           value={reachability}
-                           setValue={handleReachability}
-                           tabIndex={5}/>
+                <DropdownInput header={'Wie sind Sie am besten zu erreichen?'}
+                               values={reachabilityValues}
+                               setValue={handleReachability}/>
             </div>
             <div className={'contact_card_first_button'}>
                 <button type="button" onClick={handleFormularChange}><img src={ContactButtonIconRight} alt={'data'}/></button>
@@ -62,4 +64,17 @@ function StarInput({header, placeholder, value, setValue, tabIndex}) {
             />
         </div>
     );
+}
+
+function DropdownInput({header, values, setValue}) {
+    return (
+        <div className={'contact_input_and_header'}>
+            <p className={'contact_input_header'}>{header}</p>
+            <select onChange={setValue}>
+                {values.map((value, index)=>(
+                    <option key={index} value={value}>{value}</option>
+                ))}
+            </select>
+        </div>
+    )
 }
