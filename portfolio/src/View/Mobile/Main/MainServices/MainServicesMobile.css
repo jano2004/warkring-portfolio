@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 460px;
+    height: 480px;
     width: 100%;
+    background-color: transparent;
 }
 
 .main_service_top {
@@ -30,3 +31,38 @@
     scroll-snap-type: x mandatory;
 }
 
+.main_service_page {
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_service_page_container {
+    background-color: #161616;
+    height: 18px;
+    width: 55px;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.scroll_page {
+    background-color: black;
+    margin: 25%;
+    border-radius: 100%;
+    border: none;
+    padding: 0%;
+}
+
+.scroll_page_clicked {
+    background-color: #F8F8F8;
+    margin: 25%;
+    border-radius: 100%;
+    border: none;
+    padding: 0%;
+}

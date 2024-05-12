@@ -9,7 +9,7 @@ import MainContact from "../MainContact/MainContact";
 import Footer from '../../Footer/Footer';
 
 function MobileMain() {
-    const beta = false;
+    const beta = true;
 
     const [menu, setMenu] = useState(false);
 
