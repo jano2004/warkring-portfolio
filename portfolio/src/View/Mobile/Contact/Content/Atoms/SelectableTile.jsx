@@ -2,28 +2,12 @@ import React, { useEffect, useCallback } from 'react';
 
 export default function SelectableTile({props, id, state, changeState, scrollToNextComponent, position}) {
 
-    const handleScroll = useCallback(() => {
-        switch (position) {
-            case 'first':
-                scrollToNextComponent('second');
-                break;
-            case 'second':
-                scrollToNextComponent('third');
-                break;
-            case 'third':
-                console.log('test');
-                scrollToNextComponent('fourth');
-                break;
-            default:
-                break;
-        }
-    }, [scrollToNextComponent, position]);
-
+    // useEffect Hook, der nach jedem Zustandsupdate ausgeführt wird
     useEffect(() => {
         if (state) {
             handleScroll();
         }
-    }, [state, handleScroll]);
+    }, [state]);
 
     const handleSelect = () => {
         if (!state) {
@@ -33,6 +17,22 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
         }
     }
 
+    const handleScroll = () => {
+        switch (position) {
+            case 'first':
+                scrollToNextComponent('second');
+                break;
+            case 'second':
+                scrollToNextComponent('third');
+                break;
+            case 'third':
+                console.log('test')
+                scrollToNextComponent('fourth');
+                break;
+            default:
+                break;
+        }
+    }
 
     const styleUnselected = {
         display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
