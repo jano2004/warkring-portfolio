@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 
 export default function SelectableTile({props, id, state, changeState, scrollToNextComponent, position}) {
 

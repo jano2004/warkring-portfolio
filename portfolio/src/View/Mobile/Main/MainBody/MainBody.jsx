@@ -1,6 +1,7 @@
 import './MainBodyMobile.css';
 import MainBodyImage from './MainBodyImage.png';
 import CheckIcon from './haken-icons.png';
+import {Link} from "react-router-dom";
 
 
 const content = [
@@ -40,7 +41,7 @@ function MainBody({scrollToBottom}) {
                 {content.map((feature, index) => (
                     <ShowMainFeature key= {index} content= {feature.text} />
                 ))}
-                <button onClick={scrollToBottom}>Anfrage senden</button>
+                <Link to={'/kontakt'}><button onClick={scrollToBottom}>Anfrage senden</button></Link>
             </div>
         </section>
     )
