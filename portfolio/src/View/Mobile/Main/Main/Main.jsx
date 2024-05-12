@@ -9,7 +9,7 @@ import MainContact from "../MainContact/MainContact";
 import Footer from '../../Footer/Footer';
 
 function MobileMain() {
-    const beta = false;
+    const beta = 'nonbeta';
 
     const [menu, setMenu] = useState(false);
 
@@ -24,7 +24,7 @@ function MobileMain() {
         });
     }
 
-    if (beta) {
+    if (beta === 'beta') {
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -38,7 +38,7 @@ function MobileMain() {
                 <Beta/>
             </div>
         );
-    } else {
+    } else if(beta === 'nonbeta') {
         return (
             <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -53,6 +53,12 @@ function MobileMain() {
                 <Footer />
             </div>
         );
+    } else if(beta === 'storybook') {
+        return (
+            <div style={{height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+
+            </div>
+        )
     }
 
 }
