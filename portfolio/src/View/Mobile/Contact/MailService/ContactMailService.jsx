@@ -1,7 +1,7 @@
 const createMessage = (fullName, email, number, hauptziel, hauptzielSecond, erfolg) => {
     console.log(hauptziel + hauptzielSecond + erfolg)
     const hauptzielText = (hauptziel === 'info' ? 'Informations' : 'Placeholder');
-    const hauptzielSecondText = (hauptzielSecond === 'selber' ? 'um meine Person' :
+    const hauptzielSecondText = (hauptzielSecond === 'selbst' ? 'um meine Person' :
         hauptzielSecond === 'unternehmen' ? 'um mein Unternehmen' :
             hauptzielSecond === 'verbreitung' ? 'um die Verbreitung von Informationen' :
                 hauptzielSecond === 'sonstiges' ? 'Sonstigen' : 'Placeholder')

@@ -8,7 +8,7 @@ import { sendMail } from '../MailService/ContactMailService'
 
 export default function MainContact() {
    const [selectedHauptziel, setSelectedHauptziel] = useState('');
-   const [selectedInformation, setSelectedInformation] = useState('');
+   const [selectedHauptzielSecond, setSelectedHauptzielSecond] = useState('');
    const [selectedPlaceholder, setSelectedPlaceholder] = useState('');
    const [selectedErfolg, setSelectedErfolg] = useState('');
    const [inputFullName, setInputFullName] = useState('');
@@ -77,7 +77,7 @@ export default function MainContact() {
    }
 
    const handleSendMail = () => {
-      sendMail(inputFullName, inputEmail, inputTelefon, selectedHauptziel, selectedInformation, selectedErfolg);
+      sendMail(inputFullName, inputEmail, inputTelefon, selectedHauptziel, selectedHauptzielSecond, selectedErfolg);
    }
 
    return (
@@ -94,8 +94,8 @@ export default function MainContact() {
                                            scrollToNextComponent={scrollToNextComponent}/>
           <RadioSelectForHauptziel id={'second'}
                                    selectedHauptziel={selectedHauptziel}
-                                   selectedInformation={selectedInformation} selectedPlaceholder={selectedPlaceholder}
-                                   setSelectedInformation={setSelectedInformation} setSelectedPlaceholder={setSelectedPlaceholder}
+                                   selectedHauptzielSecond={selectedHauptzielSecond} selectedPlaceholder={selectedPlaceholder}
+                                   setSelectedHauptzielSecond={setSelectedHauptzielSecond} setSelectedPlaceholder={setSelectedPlaceholder}
                                    scrollToNextComponent={scrollToNextComponent}/>
           <RadioSelectWithHeaderFooterLine id={'third'}
                                            header={'Wie messen Sie den Erfolg Ihrer Website?'}
@@ -111,20 +111,30 @@ export default function MainContact() {
    )
 }
 
-function RadioSelectForHauptziel({id, selectedHauptziel, selectedInformation, setSelectedInformation, selectedPlaceholder, setSelectedPlaceholder, scrollToNextComponent}) {
+function RadioSelectForHauptziel({id, selectedHauptziel, selectedHauptzielSecond, setSelectedHauptzielSecond, selectedPlaceholder, setSelectedPlaceholder, scrollToNextComponent}) {
 
    const contentInformation = [
-      { props: 'Über mich selber', id: 'selber', state: selectedInformation === 'selber', position: 'second'},
-      { props: 'Über mein\nUnternehmen', id: 'unternehmen', state: selectedInformation === 'unternehmen', position: 'second'},
-      { props: 'Informations-\nverbreitung', id: 'verbreitung', state: selectedInformation === 'verbreitung', position: 'second'},
-      { props: 'Sonstiges...', id: 'sonstiges', state: selectedInformation === 'sonstiges', position: 'second'},
+      { props: 'Über mich selbst', id: 'selbst', state: selectedHauptzielSecond === 'selbst', position: 'second'},
+      { props: 'Über mein\nUnternehmen', id: 'unternehmen', state: selectedHauptzielSecond === 'unternehmen', position: 'second'},
+      { props: 'Informations-\nverbreitung', id: 'verbreitung', state: selectedHauptzielSecond === 'verbreitung', position: 'second'},
+      { props: 'Sonstiges...', id: 'sonstigesInformation', state: selectedHauptzielSecond === 'sonstigesInformation', position: 'second'},
+   ]
+
+   const contentBildung = [
+      { props: 'Weiterbildung spezifischer Themen', id: 'weiterbildung', state: selectedHauptzielSecond === 'weiterbildung', position: 'second'},
+      { props: 'Sportliche Übungen / Training', id: 'sportliches', state: selectedHauptzielSecond === 'sportliches', position: 'second'},
+      { props: 'Motivation', id: 'motivation', state: selectedHauptzielSecond === 'motivation', position: 'second'},
+      { props: 'Sonstiges...', id: 'sonstigesBildung', state: selectedHauptzielSecond === 'sonstigesBildung', position: 'second'},
+   ]
+
+   const contentPortfolio = [
+      { props: 'Über mich selber', id: 'selbst', state: selectedHauptzielSecond === 'selbst', position: 'second'},
+      { props: 'Über mein Unternehmen', id: 'unternehmen', state: selectedHauptzielSecond === 'unternehmen', position: 'second'},
+      { props: 'Sonstiges...', id: 'sonstigesPortfolio', state: selectedHauptzielSecond === 'sonstigesPortfolio', position: 'second'},
    ]
 
    const contentPlaceholder = [
-      { props: '', id: 'first', state: selectedInformation === 'first', position: 'second'},
-      { props: '', id: 'second', state: selectedInformation === 'second', position: 'second'},
-      { props: '', id: 'third', state: selectedInformation === 'third', position: 'second'},
-      { props: '', id: 'fourth', state: selectedInformation === 'fourth', position: 'second'},
+      { props: 'Noch keine Angebote!', id: 'null', state: selectedHauptzielSecond === 'null', position: 'second'},
    ]
 
    return (
@@ -132,20 +142,20 @@ function RadioSelectForHauptziel({id, selectedHauptziel, selectedInformation, se
           {selectedHauptziel === 'info' ? <RadioSelectWithHeaderFooterLine id={id}
                                                                            header={'Infortmations-Bereitstellung'}
                                                                            content={contentInformation}
-                                                                           selected={selectedInformation}
-                                                                           setSelected={setSelectedInformation}
+                                                                           selected={selectedHauptzielSecond}
+                                                                           setSelected={setSelectedHauptzielSecond}
                                                                            scrollToNextComponent={scrollToNextComponent}/> :
           selectedHauptziel === 'bildung' ? <RadioSelectWithHeaderFooterLine id={id}
                                                                              header={'Bildung und Training'}
-                                                                             content={contentPlaceholder}
-                                                                             selected={selectedPlaceholder}
-                                                                             setSelected={setSelectedPlaceholder}
+                                                                             content={contentBildung}
+                                                                             selected={selectedHauptzielSecond}
+                                                                             setSelected={setSelectedHauptzielSecond}
                                                                              scrollToNextComponent={scrollToNextComponent}/> :
           selectedHauptziel === 'portfolio' ? <RadioSelectWithHeaderFooterLine id={id}
                                                                                header={'Portfolio / Präsentation'}
-                                                                               content={contentPlaceholder}
-                                                                               selected={selectedPlaceholder}
-                                                                               setSelected={setSelectedPlaceholder}
+                                                                               content={contentPortfolio}
+                                                                               selected={selectedHauptzielSecond}
+                                                                               setSelected={setSelectedHauptzielSecond}
                                                                                scrollToNextComponent={scrollToNextComponent}/> :
           selectedHauptziel === 'marketing' ? <RadioSelectWithHeaderFooterLine id={id}
                                                                                header={'Marketing / Werbung'}
