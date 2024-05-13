@@ -133,9 +133,6 @@ function RadioSelectForHauptziel({id, selectedHauptziel, selectedHauptzielSecond
       { props: 'Sonstiges...', id: 'sonstigesPortfolio', state: selectedHauptzielSecond === 'sonstigesPortfolio', position: 'second'},
    ]
 
-   const contentPlaceholder = [
-      { props: 'Noch keine Angebote!', id: 'null', state: selectedHauptzielSecond === 'null', position: 'second'},
-   ]
 
    return (
        <div>
@@ -157,12 +154,7 @@ function RadioSelectForHauptziel({id, selectedHauptziel, selectedHauptzielSecond
                                                                                selected={selectedHauptzielSecond}
                                                                                setSelected={setSelectedHauptzielSecond}
                                                                                scrollToNextComponent={scrollToNextComponent}/> :
-          selectedHauptziel === 'marketing' ? <RadioSelectWithHeaderFooterLine id={id}
-                                                                               header={'Marketing / Werbung'}
-                                                                               content={contentPlaceholder}
-                                                                               selected={selectedPlaceholder}
-                                                                               setSelected={setSelectedPlaceholder}
-                                                                               scrollToNextComponent={scrollToNextComponent}/> : null}
+          selectedHauptziel === 'marketing' ? null : null}
        </div>
    )
 }
