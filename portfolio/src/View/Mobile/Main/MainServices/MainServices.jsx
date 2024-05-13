@@ -13,7 +13,7 @@ function ShowScrollPage({ isActive }) {
 }
 
 export default function MainServices() {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function MainServices() {
                     const element = currentContainerRef.children[i];
                     const elementPosition = element.getBoundingClientRect().left - containerPosition;
                     if (elementPosition >= 0 && elementPosition < containerWidth) {
-                        setCurrentPage(i + 1);
+                        setCurrentPage(i);
                         break;
                     }
                 }
@@ -59,15 +59,12 @@ export default function MainServices() {
             </div>
             <div className='main_service_page'>
                 <div className='main_service_page_container'>
-                    <ShowScrollPage 
-                        isActive={currentPage === 1} 
-                    />
-                    <ShowScrollPage 
-                        isActive={currentPage === 2}
-                    />
-                    <ShowScrollPage 
-                        isActive={currentPage === 3}
-                    />
+                    {[0, 1, 2].map(pageNumber => (
+                        <ShowScrollPage 
+                            key={pageNumber}
+                            isActive={currentPage === pageNumber} 
+                        />
+                    ))}
                 </div>
             </div>
         </div>
