@@ -4,7 +4,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MobileMain from './View/Mobile/Main/Main/Main';
 import ServiceMain from './View/Mobile/Service/Main/Main';
-import ContactMain from './View/Mobile/Contact/Main/Main'
+import ContactMain from './View/Mobile/Contact/Main/Main';
+import ImpressumMain from './View/Mobile/Impressum/Main'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
 
@@ -30,7 +31,7 @@ const App = () => {
                         <Route path={'/über uns'} element={<ErrorHandler props={'Über-Uns'}/>}/>
                         <Route path={'/kontakt'} element={<ContactMain />}/>
                         <Route path={'/hilfe'} element={<ErrorHandler props={'Hilfe'}/>}/>
-                        <Route path={'/impressum'} element={<ErrorHandler props={'Impressum'}/> }/>
+                        <Route path={'/impressum'} element={<ImpressumMain /> }/>
                         <Route path={'/'} element={<MobileMain />}/>
                     </>
                 )}

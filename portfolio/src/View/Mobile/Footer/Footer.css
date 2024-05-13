@@ -4,7 +4,7 @@
     height: 150px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 20px 70px 20px;
     background-color: #0b0b0b;
 }
 
@@ -49,7 +49,7 @@
 .footer_link {
     cursor: pointer;
     padding-right: 20px;
-    margin: 3px;
+    margin: 7px;
     color: #F8F8F8;
     font-family: 'Lexend Zetta', sans-serif;
     font-size: 12px;

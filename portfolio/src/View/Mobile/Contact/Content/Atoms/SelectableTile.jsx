@@ -7,6 +7,7 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
         if (state) {
             handleScroll();
         }
+        // eslint-disable-next-line
     }, [state]);
 
     const handleSelect = () => {
@@ -51,12 +52,12 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
     }
 
     const styleHeaderUnselected = {
-        fontSize: '1rem', fontWeight: '200', textAlign: 'center',
+        fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
         color: '#171717', transition: 'color o.1s'
     }
 
     const styleHeaderSelected = {
-        fontSize: '1rem', fontWeight: '200', textAlign: 'center',
+        fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
         color: '#F8F8F8', transition: 'color o.1s'
     }
 

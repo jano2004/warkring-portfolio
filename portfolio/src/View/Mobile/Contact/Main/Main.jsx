@@ -42,7 +42,7 @@ export default function MainContact() {
    ];
 
    const contentErfolg = [
-      { props: 'Traffic /\nZugriffszahlen', id: 'traffic', state: selectedErfolg === 'traffic', position: 'third'},
+      { props: 'Traffic / Zugriffszahlen', id: 'traffic', state: selectedErfolg === 'traffic', position: 'third'},
       { props: 'Verkaufszahlen', id: 'verkauf', state: selectedErfolg === 'verkauf', position: 'third' },
       { props: 'Anzahl der Leads \nKontaktanfragen', id: 'leads', state: selectedErfolg === 'leads', position: 'third' },
       { props: 'Kundenfeedback\nund -bewertung', id: 'feedback', state: selectedErfolg === 'feedback', position: 'third' },
@@ -98,7 +98,7 @@ export default function MainContact() {
                                    setSelectedHauptzielSecond={setSelectedHauptzielSecond} setSelectedPlaceholder={setSelectedPlaceholder}
                                    scrollToNextComponent={scrollToNextComponent}/>
           <RadioSelectWithHeaderFooterLine id={'third'}
-                                           header={'Wie messen Sie den Erfolg Ihrer Website?'}
+                                           header={'Wie möchten Sie den Erfolg Ihrer Website messen?'}
                                            content={contentErfolg}
                                            selected={selectedErfolg}
                                            setSelected={setSelectedErfolg}
