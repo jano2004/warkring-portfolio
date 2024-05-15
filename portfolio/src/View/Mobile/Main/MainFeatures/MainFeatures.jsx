@@ -12,7 +12,7 @@ function ShowFeatures({heading, description, styles}) {
 
 const content = [
     {
-        heading: 'Login / Registrierung einbindung',
+        heading: 'Login / Registrierung',
         description: 'Die perfekte Platform für Ihre Kunden.'
     },
     {

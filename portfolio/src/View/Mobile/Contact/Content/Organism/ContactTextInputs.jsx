@@ -1,5 +1,9 @@
 import TextInput from "../Atoms/TextInput";
+import {colors} from "../../../../../Services/ThemeService/Colors";
+import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 export default function ContactTextInputs({id, header, props}) {
+
+    const [isDarkMode] = useDarkMode();
 
     const style = {
         display: 'flex',
@@ -14,7 +18,7 @@ export default function ContactTextInputs({id, header, props}) {
         textAlign: 'center',
         fontSize: '1.5rem',
         fontWeight: '300',
-        color: '#F8F8F8',
+        color: colors.mainTextColor(isDarkMode),
         padding: '0',
         margin: '30px 0 25px 0'
     }

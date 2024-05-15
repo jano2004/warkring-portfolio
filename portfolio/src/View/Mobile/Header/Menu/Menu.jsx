@@ -1,4 +1,3 @@
-import './MobileMenu.css';
 import NavContainer from "./NavContainer/NavContainer";
 import { content } from "./NavContainer/NavItems/NavItemsContent";
 import {useState} from "react";

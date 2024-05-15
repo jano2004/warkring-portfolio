@@ -1,5 +1,9 @@
 import RadioSelect from "../Molecules/RadioSelect";
+import {colors} from "../../../../../Services/ThemeService/Colors";
+import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 export default function RadioSelectWithHeaderFooterLine({id, header, content, selected, setSelected, scrollToNextComponent}) {
+
+    const [isDarkMode] = useDarkMode();
 
     const styleContainer = {
         display: 'flex',
@@ -12,7 +16,7 @@ export default function RadioSelectWithHeaderFooterLine({id, header, content, se
         textAlign: 'center',
         fontSize: '1.5rem',
         fontWeight: '300',
-        color: '#F8F8F8',
+        color: colors.mainTextColor(isDarkMode),
         padding: '0',
         margin: '30px 0 25px 0'
     }
@@ -20,7 +24,7 @@ export default function RadioSelectWithHeaderFooterLine({id, header, content, se
     const styleLine = {
         height: '1px',
         width: '100%',
-        background: '#F8F8F8',
+        background: colors.mainTextColor(isDarkMode),
         margin: '30px 0 0 0'
     }
 

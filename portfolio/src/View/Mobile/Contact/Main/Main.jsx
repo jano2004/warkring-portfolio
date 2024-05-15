@@ -5,6 +5,8 @@ import RadioSelectWithHeaderFooterLine from "../Content/Organism/RadioSelectWith
 import ContactTextInputs from "../Content/Organism/ContactTextInputs";
 import Footer from "../../Footer/Footer";
 import { sendMail } from '../MailService/ContactMailService'
+import {colors} from "../../../../Services/ThemeService/Colors";
+import useDarkMode from "../../../../Services/ThemeService/ThemeService";
 
 export default function MainContact() {
    const [selectedHauptziel, setSelectedHauptziel] = useState('');
@@ -56,7 +58,10 @@ export default function MainContact() {
       { placeholder: 'Telefonnummer', value: inputTelefon, setValue: setInputTelefon}
    ]
 
+   const [isDarkMode] = useDarkMode();
+
    const styleContainer = {
+      background: colors.mainBackgroundColor(isDarkMode),
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -65,15 +70,15 @@ export default function MainContact() {
    }
 
    const styleSubmitButton = {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '40px',
-      width: '150px',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+      marginTop: '10px',
+      border: 'none',
+      borderRadius: '5px',
       fontSize: '1rem',
-      color: '#171717',
-      borderRadius: '7px',
-      margin: '20px 0 0 0'
+      fontWeight: 300,
+      color: colors.mainTextColor(!isDarkMode),
+      backgroundColor: colors.buttonColor(isDarkMode),
+      padding: '5px 20px'
    }
 
    const handleSendMail = () => {

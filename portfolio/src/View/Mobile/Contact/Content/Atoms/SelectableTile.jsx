@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../../../Services/ThemeService/Colors";
 
 export default function SelectableTile({props, id, state, changeState, scrollToNextComponent, position}) {
 
-    // useEffect Hook, der nach jedem Zustandsupdate ausgeführt wird
+    const [isDarkMode] = useDarkMode();
+
     useEffect(() => {
         if (state) {
             handleScroll();
@@ -37,32 +40,32 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
 
     const styleUnselected = {
         display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
-        background: '#F8F8F8',
+        background: colors.selectableTileUnselectedColor(isDarkMode),
         width: '160px', height: '160px',
-        border: '1px solid #F8F8F8', borderRadius: '7px',
+        borderRadius: '7px',
         transition: 'background 0.15s, color 0.1s'
     }
 
     const styleSelected = {
         display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
-        background: '#171717',
+        background: colors.selectableTileSelectedColor(isDarkMode),
         width: '160px', height: '160px',
-        border: '1px solid #F8F8F8', borderRadius: '7px',
+        borderRadius: '7px',
         transition: 'background 0.15s, color 0.1s'
     }
 
     const styleHeaderUnselected = {
         fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
-        color: '#171717', transition: 'color o.1s'
+        color: colors.mainTextColor(isDarkMode), transition: 'color o.1s'
     }
 
     const styleHeaderSelected = {
         fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
-        color: '#F8F8F8', transition: 'color o.1s'
+        color: colors.selectableTileTextColor(isDarkMode), transition: 'color o.1s'
     }
 
     return (
-        <div className={'selectable_tile'} onClick={handleSelect} style={state ? styleSelected : styleUnselected}>
+        <div onClick={handleSelect} style={state ? styleSelected : styleUnselected}>
             <h1 style={state ? styleHeaderSelected : styleHeaderUnselected}>{props}</h1>
         </div>
     );

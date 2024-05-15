@@ -105,8 +105,8 @@ function MainBody({scrollToBottom}) {
             borderRadius: '5px',
             fontSize: '1rem',
             fontWeight: 300,
-            color: colors.mainTextColor(false),
-            backgroundColor: colors.cardBorderColor(isDarkMode),
+            color: colors.mainTextColor(!isDarkMode),
+            backgroundColor: colors.buttonColor(isDarkMode),
             padding: '5px 20px'
         }
     };
@@ -119,7 +119,7 @@ function MainBody({scrollToBottom}) {
             </style>
             <p style={styles.mainBodyMainSectionP}> warkring.</p>
             <div style={styles.mainBodyMainDescriptionImage}>
-                <div className={'main_body_main_description'}>
+                <div>
                     <p style={styles.mainBodyMainDescriptionP}>
                         professionelle
                         <br></br>
