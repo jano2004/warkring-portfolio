@@ -12,7 +12,7 @@ function ShowScrollPage({ isActive, styles }) {
 }
 
 export default function MainServices() {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     const containerRef = useRef(null);
     const [isDarkMode] = useDarkMode();
 
@@ -28,7 +28,7 @@ export default function MainServices() {
                     const element = currentContainerRef.children[i];
                     const elementPosition = element.getBoundingClientRect().left - containerPosition;
                     if (elementPosition >= 0 && elementPosition < containerWidth) {
-                        setCurrentPage(i + 1);
+                        setCurrentPage(i);
                         break;
                     }
                 }
@@ -132,6 +132,16 @@ export default function MainServices() {
                     <ShowScrollPage 
                         isActive={currentPage === 3} styles={styles}
                     />
+                    <div className='main_service_page'>
+                        <div className='main_service_page_container'>
+                            {[0, 1, 2].map(pageNumber => (
+                                <ShowScrollPage
+                                    key={pageNumber}
+                                    isActive={currentPage === pageNumber}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
