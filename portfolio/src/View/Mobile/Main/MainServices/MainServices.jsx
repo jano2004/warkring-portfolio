@@ -77,7 +77,8 @@ export default function MainServices() {
             gap: '1rem',
             overflowX: 'auto',
             marginTop: 0,
-            scrollSnapType: 'x mandatory'
+            scrollSnapType: 'x mandatory',
+            scrollbarWidth: 'none'
         },
         mainServicePage: {
             backgroundColor: 'transparent',
@@ -123,21 +124,13 @@ export default function MainServices() {
             </div>
             <div style={styles.mainServicePage}>
                 <div style={styles.mainServicePageContainer}>
-                    <ShowScrollPage 
-                        isActive={currentPage === 1} styles={styles}
-                    />
-                    <ShowScrollPage 
-                        isActive={currentPage === 2} styles={styles}
-                    />
-                    <ShowScrollPage 
-                        isActive={currentPage === 3} styles={styles}
-                    />
-                    <div className='main_service_page'>
-                        <div className='main_service_page_container'>
+                    <div style={styles.mainServicePage}>
+                        <div style={styles.mainServicePageContainer}>
                             {[0, 1, 2].map(pageNumber => (
                                 <ShowScrollPage
                                     key={pageNumber}
                                     isActive={currentPage === pageNumber}
+                                    styles={styles}
                                 />
                             ))}
                         </div>

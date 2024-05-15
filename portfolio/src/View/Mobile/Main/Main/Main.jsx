@@ -39,7 +39,7 @@ function MobileMain() {
         }
     };
 
-    const beta = 'nonbeta';
+    const beta = 'beta';
 
     const [menu, setMenu] = useState(false);
 
@@ -65,9 +65,11 @@ function MobileMain() {
                 <MainServices/>
                 <MainFeatures/>
                 <Beta styles={styles}/>
+                <div style={{height: '30px'}}/>
+                <Footer/>
             </div>
         );
-    } else if(beta === 'nonbeta') {
+    } else if (beta === 'nonbeta') {
         return (
             <div style={styles.mobileBody} onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
