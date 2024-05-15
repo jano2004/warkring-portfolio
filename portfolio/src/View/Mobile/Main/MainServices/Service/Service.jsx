@@ -1,5 +1,6 @@
-import './MainServiceMobile.css';
 import {Link} from "react-router-dom";
+import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../../../Services/ThemeService/Colors";
 export default function Service({ title, text, features }) {
     const removeWarningOfA = () => {
         return null;
@@ -9,20 +10,74 @@ export default function Service({ title, text, features }) {
         window.scrollTo(0, 0);
     }
 
+    const [isDarkMode] = useDarkMode();
+
+    const styles = {
+        mainServiceContainer: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'start',
+            height: '400px',
+            inlineSize: 'min(100% - 4rem, 70rem)',
+            marginInline: 'auto',
+            backgroundColor: colors.cardBackgroundColor(isDarkMode),
+            color: colors.mainTextColor(isDarkMode),
+            scrollSnapAlign: 'center',
+            borderRadius: '20px',
+            border: '1px solid' + colors.cardBorderColor(isDarkMode)
+        },
+        mainServiceHeaderText: {
+            fontFamily: "'Inter', sans-serif"
+        },
+        mainServiceHeader: {
+            fontWeight: 300,
+            fontSize: '1.8rem',
+            marginLeft: '15px'
+        },
+        mainServiceText: {
+            width: '80%',
+            fontWeight: 100,
+            fontSize: '16px',
+            marginLeft: '15px'
+        },
+        mainServiceList: {
+            listStyleType: 'circle',
+            fontWeight: 100,
+            fontSize: '15px',
+            margin: 0
+        },
+        mainServiceCta: {
+            width: '80%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            fontWeight: 100,
+            fontSize: '12px',
+            transform: 'translateX(10%)',
+            marginTop: 'auto',
+        },
+        mainServiceCtaText: {
+            color: colors.mainTextColor(isDarkMode),
+            fontWeight: '200'
+        }
+    };
+
     return (
-        <div className={'main_service_container'}>
-            <div className={'main_service_text_header_list'}>
-                <h1 className={'main_service_header'}>{title}</h1>
-                <p className={'main_service_text'}>{text}</p>
-                <ul className={'main_service_list'}>
+        <div style={styles.mainServiceContainer}>
+            <div style={styles.mainServiceHeaderText}>
+                <h1 style={styles.mainServiceHeader}>{title}</h1>
+                <p style={styles.mainServiceText}>{text}</p>
+                <ul style={styles.mainServiceList} >
                     {features.map((feature, index) => (
                         <li key={index}>{feature}</li>
                     ))}
                 </ul>
             </div>
-            <div className={'main_service_cta'}>
+            <div style={styles.mainServiceCta}>
                 <p>
-                    <Link to={'/services'} className={'custom_link'} onClick={scrollToTop}><a href={removeWarningOfA()}>
+                    <Link to={'/services'} className={'custom_link'} onClick={scrollToTop}><a href={removeWarningOfA()} style={styles.mainServiceCtaText}>
                         Wenn Sie mehr zu diesem Service erfahren wollen, drücken Sie{' '}
                         <u>hier</u></a></Link>!
                 </p>

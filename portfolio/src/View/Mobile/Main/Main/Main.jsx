@@ -5,10 +5,40 @@ import MainServices from '../MainServices/MainServices';
 import MainFeatures from '../MainFeatures/MainFeatures';
 import React, { useState } from "react";
 import './MainMobile.css';
-import MainContact from "../MainContact/MainContact";
 import Footer from '../../Footer/Footer';
+import {colors} from "../../../../Services/ThemeService/Colors";
+import useDarkMode from "../../../../Services/ThemeService/ThemeService";
 
 function MobileMain() {
+    const [isDarkMode] = useDarkMode();
+
+    const styles = {
+        mobileBody: {
+            display: 'flex',
+            flexDirection: 'column',
+            backgroundColor: colors.mainBackgroundColor(isDarkMode),
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflowX: 'hidden'
+        },
+        betaText: {
+            color: colors.mainTextColor(isDarkMode),
+            fontFamily: '-apple-system',
+            fontWeight: 20,
+            textAlign: 'center',
+            width: '80%'
+        },
+        beta: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        mobileMenu: {
+            width: '100%'
+        }
+    };
+
     const beta = 'nonbeta';
 
     const [menu, setMenu] = useState(false);
@@ -26,7 +56,7 @@ function MobileMain() {
 
     if (beta === 'beta') {
         return (
-            <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
+            <div style={styles.mobileBody} onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
                 <div className={'mobileMenu'}>
                     {menu && <Menu currentSelected={'home'}/>}
@@ -34,41 +64,32 @@ function MobileMain() {
                 <MainBody scrollToBottom={scrollToBottom}/>
                 <MainServices/>
                 <MainFeatures/>
-                <MainContact/>
-                <Beta/>
+                <Beta styles={styles}/>
             </div>
         );
     } else if(beta === 'nonbeta') {
         return (
-            <div className='MobileBody' onClick={menu ? handleMenuMobileClick : null}>
+            <div style={styles.mobileBody} onClick={menu ? handleMenuMobileClick : null}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
-                <div className={'mobileMenu'}>
+                <div style={styles.mobileMenu}>
                     {menu && <Menu currentSelected={'home'}/>}
                 </div>
                 <MainBody/>
                 <MainServices/>
                 <MainFeatures/>
-                {/*<MainContact/>*/}
                 <div style={{height: '30px'}}/>
                 <Footer />
             </div>
         );
-    } else if(beta === 'storybook') {
-        return (
-            <div style={{height: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-
-            </div>
-        )
     }
-
 }
 
 export default MobileMain;
 
-function Beta() {
+function Beta({styles}) {
     return (
-        <div className={'Beta'}>
-            <p className={'beta_text'}>
+        <div style={styles.beta}>
+            <p style={styles.betaText}>
                 Wir befinden uns derzeit noch im Aufbau.
                 Schreibe uns eine E-Mail um der Erste zu sei,
                 der die neue Website begrüßen kann
@@ -77,3 +98,4 @@ function Beta() {
 
     )
 }
+
