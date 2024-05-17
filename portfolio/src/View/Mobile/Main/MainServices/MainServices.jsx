@@ -124,17 +124,13 @@ export default function MainServices() {
             </div>
             <div style={styles.mainServicePage}>
                 <div style={styles.mainServicePageContainer}>
-                    <div style={styles.mainServicePage}>
-                        <div style={styles.mainServicePageContainer}>
-                            {[0, 1, 2].map(pageNumber => (
-                                <ShowScrollPage
-                                    key={pageNumber}
-                                    isActive={currentPage === pageNumber}
-                                    styles={styles}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    {[0, 1, 2].map(pageNumber => (
+                        <ShowScrollPage
+                            key={pageNumber}
+                            isActive={currentPage === pageNumber}
+                            styles={styles}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
