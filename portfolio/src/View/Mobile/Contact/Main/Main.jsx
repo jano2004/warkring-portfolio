@@ -81,6 +81,12 @@ export default function MainContact() {
       padding: '5px 20px'
    }
 
+   const mobileMenuStyle = {
+      transition: 'transform 0.2s ease-in-out',
+      width: '100%',
+      transform: menu ? 'translateX(0)' : 'translateX(-100%)',
+   };
+
    const handleSendMail = () => {
       sendMail(inputFullName, inputEmail, inputTelefon, selectedHauptziel, selectedHauptzielSecond, selectedErfolg);
    }
@@ -88,7 +94,7 @@ export default function MainContact() {
    return (
        <div style={styleContainer} id={'top'}>
           <Header handleMenuMobileClick={handleMenuMobileClick}/>
-          <div className={'mobileMenu'}>
+          <div className={'mobileMenu'} style={mobileMenuStyle}>
             {menu && <Menu currentSelected={'kontakt'}/>}
           </div>
           <RadioSelectWithHeaderFooterLine id={'first'}

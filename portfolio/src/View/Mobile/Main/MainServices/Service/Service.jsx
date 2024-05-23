@@ -28,22 +28,22 @@ export default function Service({ title, text, features }) {
             border: '1px solid' + colors.cardBorderColor(isDarkMode)
         },
         mainServiceHeaderText: {
-            fontFamily: "'Inter', sans-serif"
+            fontFamily: '-apple-system',
         },
         mainServiceHeader: {
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: '1.8rem',
             marginLeft: '15px'
         },
         mainServiceText: {
             width: '80%',
-            fontWeight: 100,
+            fontWeight: 300,
             fontSize: '16px',
             marginLeft: '15px'
         },
         mainServiceList: {
             listStyleType: 'circle',
-            fontWeight: 100,
+            fontWeight: 200,
             fontSize: '15px',
             margin: 0
         },

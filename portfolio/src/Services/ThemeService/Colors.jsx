@@ -20,13 +20,12 @@ export const colors  = {
     buttonColor: (isDarkMode) => {
         return isDarkMode ? '#cdcdcd' : '#292929';
     },
-    selectableTileSelectedColor: (isDarkMode) => {
-        return isDarkMode ? '#292929' : '#3C568F';
+    selectableTileUnselectedColor: (state) => {
+        return state ? '#191919' : '#f3f3f3';
     },
-    selectableTileUnselectedColor: (isDarkMode) => {
-        return isDarkMode ? '#191919' : '#f3f3f3';
-    },
-    selectableTileTextColor: (isDarkMode) => {
-        return isDarkMode ? '#F8F8F8' : '#F8F8F8';
+    coloredSelectableTile: (positionIndex) => {
+        return positionIndex === 'first' ? '#1697A6'
+            : positionIndex === 'second' ? '#FFB3AE'
+                : positionIndex === 'third' ? '#F47068' : null;
     },
 }

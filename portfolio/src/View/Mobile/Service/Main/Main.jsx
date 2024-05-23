@@ -1,10 +1,11 @@
-import './ServiceMainMobile.css';
 import Header from "../../Header/Header";
 import Menu from "../../Header/Menu/Menu";
 import React, {useState} from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
-import ServiceBody from "../ServiceBody/ServiceBody";
 import { content } from '../ServiceCard/ServiceCardContent';
+import useDarkMode from "../../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../../Services/ThemeService/Colors";
+import Footer from "../../Footer/Footer";
 
 export default function Main({setStatus}) {
 
@@ -14,33 +15,38 @@ export default function Main({setStatus}) {
         setMenu(!menu);
     }
 
+    const [isDarkMode] = useDarkMode();
+
+    const style = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        background: colors.mainBackgroundColor(isDarkMode)
+    }
+
+    const styleCardSection = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+    }
+
     return (
-        <section className={'services_section'} onClick={menu ? handleMenuMobileClick : null}>
+        <section style={style} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'}>
                 {menu && <Menu currentSelected={'services'} setStatus={setStatus}/>}
             </div>
-            <ServiceBody/>
-            <div className={'services_service_card_section'}>
+            <div style={styleCardSection}>
                 {Object.values(content).map((service, index) => (
                     <ServiceCard key={index} props={service}/>
                 ))}
             </div>
-            <Beta/>
             <div style={{height: '70px'}}></div>
+            <Footer />
         </section>
-    )
-}
-
-function Beta() {
-    return (
-        <div className={'Beta'}>
-            <p className={'beta_text'}>
-                Wir befinden uns derzeit noch im Aufbau.
-                Schreibe uns eine E-Mail um der Erste zu sei,
-                der die neue Website begrüßen kann
-            </p>
-        </div>
-
     )
 }

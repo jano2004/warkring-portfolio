@@ -1,8 +1,11 @@
 import Header from "../Header/Header";
 import Menu from "../Header/Menu/Menu";
 import React, {useState} from "react";
+import useDarkMode from "../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../Services/ThemeService/Colors";
 
 export default function Main() {
+    const [isDarkMode] = useDarkMode();
 
     const style = {
         display: 'flex',
@@ -13,7 +16,7 @@ export default function Main() {
 
     const styleParagraphContainer = {
         width: '90%',
-        background: '#171717',
+        background: colors.cardBackgroundColor(isDarkMode),
         padding: '20px 0 20px 0'
     }
 
@@ -23,27 +26,39 @@ export default function Main() {
         setMenu(!menu);
     }
 
+    const mobileMenuStyle = {
+        transition: 'transform 0.2s ease-in-out',
+        width: '100%',
+        transform: menu ? 'translateX(0)' : 'translateX(-100%)',
+    };
+
     return (
-        <div style={style}>
-            <Header handleMenuMobileClick={handleMenuMobileClick}/>
-            <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'services'} setStatus={'hilfe'}/>}
-            </div>
-            <div style={styleParagraphContainer}>
-                <Paragraph props={'Lukas Krings'}/>
-                <Paragraph props={'Im Boisdorfer Feld 17'}/>
-                <Paragraph props={'50169 Kerpen'}/>
-                <Paragraph props={'+49 1575 4627989'}/>
-                <Paragraph props={'kontakt@warkring.org'}/>
+        <div style={{
+            height: '100vh',
+            width: '100%',
+            background: colors.mainBackgroundColor(isDarkMode)}}>
+            <div style={style}>
+                <Header handleMenuMobileClick={handleMenuMobileClick}/>
+                <div style={mobileMenuStyle}>
+                    {menu && <Menu currentSelected={''}/>}
+                </div>
+                <div style={styleParagraphContainer}>
+                    <Paragraph props={'Lukas Krings'}/>
+                    <Paragraph props={'Im Boisdorfer Feld 17'}/>
+                    <Paragraph props={'50169 Kerpen'}/>
+                    <Paragraph props={'+49 1575 4627989'}/>
+                    <Paragraph props={'kontakt@warkring.org'}/>
+                </div>
             </div>
         </div>
     )
 }
 
 function Paragraph({props}) {
+    const [isDarkMode] = useDarkMode();
 
     const styleText = {
-        color: 'white',
+        color: colors.mainTextColor(isDarkMode),
         margin: '10px 0 10px 10px'
     }
 

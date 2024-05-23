@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../../../Services/ThemeService/Colors";
 
-export default function SelectableTile({props, id, state, changeState, scrollToNextComponent, position}) {
-
+export default function SelectableTile({props, id, tileKey, state, changeState, scrollToNextComponent, position}) {
     const [isDarkMode] = useDarkMode();
 
     useEffect(() => {
@@ -19,7 +18,7 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
         } else {
             changeState('');
         }
-    }
+    };
 
     const handleScroll = () => {
         switch (position) {
@@ -30,39 +29,45 @@ export default function SelectableTile({props, id, state, changeState, scrollToN
                 scrollToNextComponent('third');
                 break;
             case 'third':
-                console.log('test')
                 scrollToNextComponent('fourth');
                 break;
             default:
                 break;
         }
-    }
+    };
+
+    const commonStyles = {
+        display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
+        width: '160px', height: '160px',
+        borderRadius: '20px',
+        transition: 'background 0.15s, color 0.1s',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.4)'
+    };
 
     const styleUnselected = {
-        display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
-        background: colors.selectableTileUnselectedColor(isDarkMode),
-        width: '160px', height: '160px',
-        borderRadius: '7px',
-        transition: 'background 0.15s, color 0.1s'
-    }
+        ...commonStyles,
+        background: colors.coloredSelectableTile(position),
+    };
 
     const styleSelected = {
-        display: 'flex', justifyContent: 'center', alignItems: 'flex-start',
-        background: colors.selectableTileSelectedColor(isDarkMode),
-        width: '160px', height: '160px',
-        borderRadius: '7px',
-        transition: 'background 0.15s, color 0.1s'
-    }
+        ...commonStyles,
+        background: colors.selectableTileUnselectedColor(isDarkMode),
+    };
+
+    const textCommonStyles = {
+        fontSize: '1rem', fontWeight: '400', textAlign: 'center', width: '90%',
+        transition: 'color o.1s'
+    };
 
     const styleHeaderUnselected = {
-        fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
-        color: colors.mainTextColor(isDarkMode), transition: 'color o.1s'
-    }
+        ...textCommonStyles,
+        color: colors.selectableTileUnselectedColor(false)
+    };
 
     const styleHeaderSelected = {
-        fontSize: '1rem', fontWeight: '200', textAlign: 'center', width: '90%',
-        color: colors.selectableTileTextColor(isDarkMode), transition: 'color o.1s'
-    }
+        ...textCommonStyles,
+        color: colors.selectableTileUnselectedColor(true)
+    };
 
     return (
         <div onClick={handleSelect} style={state ? styleSelected : styleUnselected}>

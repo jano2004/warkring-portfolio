@@ -31,7 +31,7 @@ export default function MainFeatures() {
     const styles = {
         mainFeaturesSection: {
             fontFamily: "'Inter', sans-serif",
-            height: '500px',
+            height: 'auto',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -40,7 +40,7 @@ export default function MainFeatures() {
             marginTop: '50px',
         },
         mainFeaturesContainer: {
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: '-apple-system',
             backgroundColor: colors.cardBackgroundColor(isDarkMode),
             color: colors.mainTextColor(isDarkMode),
             width: '100%',
@@ -71,8 +71,8 @@ export default function MainFeatures() {
         mainFeaturesHeader: {
             textAlign: 'center',
             marginBottom: '10px',
-            fontWeight: '300',
-            fontSize: '1.3rem'
+            fontWeight: '400',
+            fontSize: '1.5rem'
         },
         mainFeaturesDescription: {
             textAlign: 'center',
