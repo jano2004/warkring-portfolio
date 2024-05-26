@@ -36,7 +36,7 @@ function MobileMain() {
 
     const scrollToBottom = () => {
         window.scrollTo({
-            top: document.documentElement.scrollHeight,
+            top: document.documentElement.scrollTop,
             behavior: 'smooth'
         });
     }

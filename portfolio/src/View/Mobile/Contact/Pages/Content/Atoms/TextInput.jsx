@@ -1,6 +1,6 @@
 import {useState} from "react";
-import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
-import {colors} from "../../../../../Services/ThemeService/Colors";
+import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../../../../Services/ThemeService/Colors";
 
 export default function TextInput({id, placeholder, value, setValue}) {
 

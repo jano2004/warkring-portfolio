@@ -3,7 +3,7 @@ export default function RadioSelect({content, selected, setSelected, scrollToNex
     const style = {
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '20px'
+        gap: '15px'
     };
 
     const changeSelected = (props) => {

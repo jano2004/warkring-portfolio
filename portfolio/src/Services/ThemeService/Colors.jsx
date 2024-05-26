@@ -9,7 +9,7 @@ export const colors  = {
         return isDarkMode ? '#0e0e0e' : '#f4f4f4';
     },
     cardBorderColor: (isDarkMode) => {
-        return isDarkMode ? '#2e2e2e' : '#cacaca';
+        return isDarkMode ? '#2e2e2e' : '#f4f4f4';
     },
     navItemSelectedColor: (isDarkMode) => {
         return isDarkMode ? '#ffffff' : '#000000';
@@ -20,12 +20,22 @@ export const colors  = {
     buttonColor: (isDarkMode) => {
         return isDarkMode ? '#cdcdcd' : '#292929';
     },
-    selectableTileUnselectedColor: (state) => {
-        return state ? '#191919' : '#f3f3f3';
+    selectableTileUnselectedColor: (state, isDarkMode) => {
+        if (isDarkMode) {
+            if(state) {
+                return '#588157FF';
+            } else if (!state) {
+                return '#2C2C2CFF';
+            }
+        } else {
+            if(state) {
+                return '#588157FF';
+            } else if (!state) {
+                return '#f3f3f3';
+            }
+        }
     },
-    coloredSelectableTile: (positionIndex) => {
-        return positionIndex === 'first' ? '#1697A6'
-            : positionIndex === 'second' ? '#FFB3AE'
-                : positionIndex === 'third' ? '#F47068' : null;
-    },
+    selectableTileBorderColor: (isDarkMode) => {
+        return isDarkMode ? '#3a3a3a' : '#C4C4C4';
+    }
 }

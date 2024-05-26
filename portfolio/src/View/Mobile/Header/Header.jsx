@@ -10,7 +10,7 @@ function Header({ handleMenuMobileClick}) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            height: '50px'
+            height: '50px',
         },
         mainHeaderContainer: {
             display: 'flex',
