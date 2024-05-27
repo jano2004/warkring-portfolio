@@ -14,7 +14,7 @@ export default function NavContainer({content, selected, setSelected, setStatus}
             {content.map(item => (
                     <NavItems
                         key={item.text}
-                        iconSelected={item.iconSelected} iconUnselected={item.iconUnselected}
+                        icon={item.icon}
                         text={item.text}
                         selected={selected} setSelected={setSelected}
                         setStatus={setStatus}/>

@@ -9,7 +9,6 @@ import ImpressumMain from './View/Mobile/Impressum/Main';
 import AboutUs from './View/Mobile/AboutUs/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
-import AboutBody from "./View/Mobile/AboutUs/AboutBody";
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
