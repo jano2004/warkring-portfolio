@@ -151,12 +151,12 @@ export const propsSecondaryGoal = (selectedPrimaryGoal, selected, elseSelected, 
 
 export const propsMainGoal = (selected) => {
     return {
-        header: 'Hauptziel und Zweck',
-        description: 'Was möchten Sie mit der von Ihnen gewünschten Webseite erreichen?',
+        header: 'Erfolg Ihrer Webseite',
+        description: 'Wie haben Sie vor den Erfolg Ihrer Webseite zu messen?',
         missing: 'Für anderes lassen Sie dieses Feld frei und drücken Sie auf "Weiter"',
         content: [
             {
-                props: 'Traffic',
+                props: 'Traffic/ Aufrufzahlen',
                 id: 'traffic',
                 state: selected === 'traffic',
                 position: 'third'
