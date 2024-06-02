@@ -183,10 +183,3 @@ export const propsMainGoal = (selected) => {
         index: 15
     }
 }
-
-export const propsPersonalData = () => {
-    return {
-        header: 'Jetzt zu Ihnen',
-        text: 'Wir brauchen noch ein paar persönliche Daten von Ihnen',
-    }
-}

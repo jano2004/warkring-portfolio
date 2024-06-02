@@ -6,7 +6,7 @@ import {useState} from "react";
 import Personal from "./Personal/Personal";
 
 export default function ContactMain() {
-    const [page, setPage] = useState(3);
+    const [page, setPage] = useState(0);
     const [paket, setPaket] = useState('');
     const [mainTopic, setMainTopic] = useState('');
     const [topic, setTopic] = useState('');
