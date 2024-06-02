@@ -66,7 +66,15 @@ export default function Personal({fullName, setFullName, email, setEmail, phone,
                    placeholder={'Vor- und Nachname'}/>
             <input style={style.input} value={email} onChange={e => setEmail(e.target.value)}
                    placeholder={'E-Mail-Adresse'}/>
-            {email.includes('@') && email.includes('.') ? null : email !== '' ? <p style={{margin: '0 0 10px 0', width: '95%', color: 'red', fontWeight: 250}}>E-Mail-Format nicht korrekt</p> : null}
+            {email.includes('@') && email.includes('.') ? null : email !== '' ? <p style={{
+                    margin: '0 0 10px 0',
+                    width: '95%',
+                    color: 'red',
+                    fontWeight: 250,
+                    textAlign: 'center'}}>
+                    E-Mail-Format nicht korrekt
+                </p>
+                : null}
             <input style={style.input} value={phone} onChange={e => setPhone(e.target.value)}
                    placeholder={'Telefonnummer'}/>
             <textarea style={style.textArea} value={others} onChange={e => setOthers(e.target.value)}

@@ -17,7 +17,7 @@ export default function ContactMain() {
     const [phone, setPhone] = useState('');
     const [others, setOthers] = useState('');
 
-    const [error, setError] = useState(true)
+    const [error, setError] = useState(false)
 
     const handleSendMail = () => {
         if(email !== '' && fullName !== '') { console.log('send!' + email + fullName); sendMail() }
@@ -26,7 +26,7 @@ export default function ContactMain() {
     const sendMail = () => {
         const fullNameAndEmail = `${fullName} | ${email}`;
         const message = (
-            'Liebes Genwa-Team, hiermit schicke ich Ihnen meine Daten und Präferenzen\n\n'
+            'Liebes Warkring-Team, hiermit schicke ich Ihnen meine Daten und Präferenzen\n\n'
             + 'Hauptthema: ' + mainTopic + '\n'
             + 'Unterthema: ' + topic + '\n'
             + 'Voller Name: ' + fullName + '\n'
