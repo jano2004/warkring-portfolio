@@ -9,6 +9,7 @@ import ImpressumMain from './View/Mobile/Impressum/Main';
 import AboutUs from './View/Mobile/AboutUs/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
+import DesktopMain from "./View/Desktop/Contact/ContactMain";
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -34,6 +35,11 @@ const App = () => {
                         <Route path={'/hilfe'} element={<ErrorHandler props={'Hilfe'}/>}/>
                         <Route path={'/impressum'} element={<ImpressumMain /> }/>
                         <Route path={'/'} element={<MobileMain />}/>
+                    </>
+                )}
+                {windowWidth >= 501 && (
+                    <>
+                        <Route path={'/'} element={<DesktopMain />}/>
                     </>
                 )}
             </Routes>

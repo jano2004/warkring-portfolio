@@ -23,19 +23,25 @@ export const colors  = {
     selectableTileUnselectedColor: (state, isDarkMode) => {
         if (isDarkMode) {
             if(state) {
-                return '#588157FF';
+                return '#529552';
             } else if (!state) {
                 return '#2C2C2CFF';
             }
         } else {
             if(state) {
-                return '#588157FF';
+                return '#529552';
             } else if (!state) {
                 return '#f3f3f3';
             }
         }
     },
+    selectableTileLightmode: (state) => {
+        return state ? '#529552' : '#f3f3f3';
+    },
     selectableTileBorderColor: (isDarkMode) => {
         return isDarkMode ? '#3a3a3a' : '#C4C4C4';
+    },
+    progressBar: () => {
+        return '#529552';
     }
 }
