@@ -26,7 +26,7 @@ export default function Main({setStatus}) {
         <section style={styles} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'about'} setStatus={setStatus}/>}
+                {menu && <Menu currentSelected={'über uns'} setStatus={setStatus}/>}
             </div>
             <AboutBody />
             <Footer />

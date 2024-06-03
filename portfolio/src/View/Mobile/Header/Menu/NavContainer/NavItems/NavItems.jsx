@@ -51,7 +51,7 @@ export default function NavItems({icon, text, selected, setSelected, setStatus }
                 {icon === 'homeIcon' ? <IoIosHome size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'featuresIcon' ? <LuAtom size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'servicesIcon' ? <SiMoleculer size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'aboutIcon' ? <div style={{transform: 'rotate(180deg)'}}><DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/></div> : null}
+                {icon === 'aboutIcon' ? <DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'contactIcon' ? <IoMdContact size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'helpIcon' ? <FaHandsHelping size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 <Link to={convertedText === 'home' ? '/' : '/' + convertedText } className={'custom_link'}><p style={styles.mainMenuNavP}  onClick={handleClick}>{text}</p></Link>
