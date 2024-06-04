@@ -1,6 +1,7 @@
 import React from "react";
 import ShowPersonCard from './Components/AboutPersonCard';
 import TextCards from './Components/AboutTextCards';
+import { cssVariables } from "../../../Services/abstand";
 
 export default function AboutBody() {
     const content = {
@@ -26,17 +27,6 @@ export default function AboutBody() {
         }
     };
 
-    const cssVariables = {
-        '--width_outside_card_space': '38px',
-        '--width_inside_card_space': '19px',
-        '--height_section_space': '112px',
-        '--height_header_space': '56px',
-        '--height_body_to_body_space': '28px',
-        '--height_body_attached_space': '14px',
-        '--font_main_heading': '45px',
-        '--font_body_heading': '28px',
-        '--font_body_text': '17px',
-    };
 
     const styles = {
         about_main_section: {
@@ -54,7 +44,7 @@ export default function AboutBody() {
         },
         about_main_header: {
             width: '100%',
-            marginBottom: cssVariables['--height_section_space'],
+            marginBottom: cssVariables['--height_header_space'],
         },
         about_main_header_heading: {
             backgroundColor: 'transparent',
@@ -62,7 +52,7 @@ export default function AboutBody() {
             margin: '0%',
             marginBottom: cssVariables['--height_header_space'],
             fontSize: cssVariables['--font_main_heading'],
-            fontWeight: 'bold',
+            fontWeight: 'normal',
         },
         about_main_header_first: {
             backgroundColor: 'transparent',

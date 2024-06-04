@@ -22,7 +22,7 @@ export default function ShowPersonCard({ person, isMirrored = false, cssVariable
             height: '100%',
             width: '100%',
             borderRadius: '50%',
-            objectFit: 'cover' // ensuring the image fits well within the border radius
+            objectFit: 'cover'
         },
         personCard_content: {
             backgroundColor: 'transparent',
@@ -40,7 +40,7 @@ export default function ShowPersonCard({ person, isMirrored = false, cssVariable
         personCard_text: {
             backgroundColor: 'transparent',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: 400, // "regular" is not a valid value for font-weight
+            fontWeight: 400,
             margin: 0,
         }
     };
