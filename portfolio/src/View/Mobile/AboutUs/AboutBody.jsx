@@ -58,7 +58,7 @@ export default function AboutBody() {
             backgroundColor: 'transparent',
             width: '100%',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: '500',
+            fontWeight: 'normal',
             margin: '0%',
             marginBottom: cssVariables['--height_body_to_body_space'],
         },
@@ -66,7 +66,7 @@ export default function AboutBody() {
             backgroundColor: 'transparent',
             width: '100%',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: '500',
+            fontWeight: 'normal',
             margin: '0%',
         },
         about_main_person_cards: {
