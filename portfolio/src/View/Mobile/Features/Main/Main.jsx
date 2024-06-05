@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import { useState } from 'react';
 
-import useDarkMode from "../../../Services/ThemeService/ThemeService";
-import {colors} from "../../../Services/ThemeService/Colors";
-import Header from "../Header/Header";
-import Menu from "../Header/Menu/Menu";
-import AboutBody from "../AboutUs/AboutBody";
-import Footer from "../Footer/Footer";
+import useDarkMode from "../../../../Services/ThemeService/ThemeService";
+import {colors} from "../../../../Services/ThemeService/Colors";
+import Header from "../../Header/Header";
+import Menu from "../../Header/Menu/Menu";
+import FeaturesMain from '../Body/FeaturesBody';
+import Footer from '../../Footer/Footer';
 
 export default function Main({setStatus}) {
     const [isDarkMode] = useDarkMode();
@@ -32,9 +32,9 @@ export default function Main({setStatus}) {
         <section style={styles} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'} style={mobileMenuStyle}>
-                {menu && <Menu currentSelected={'über uns'}/>}
+                {menu && <Menu currentSelected={'features'}/>}
              </div>
-            <AboutBody />
+            <FeaturesMain />
             <Footer />
         </section>
     )

@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import ShowPersonCard from './Components/AboutPersonCard';
 import TextCards from './Components/AboutTextCards';
+import { cssVariables } from "../../../Services/abstand";
 
 export default function AboutBody() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []); 
+    
     const content = {
         headerHeading: 'Über uns',
         headerFirstText: 'Willkommen bei Warkring, Ihrem professionellen Partner für maßgeschneiderte Website-Lösungen. Wir sind ein dynamisches Trio bestehend aus drei engagierten Informatikstudenten an der FH Aachen.',
@@ -26,17 +33,6 @@ export default function AboutBody() {
         }
     };
 
-    const cssVariables = {
-        '--width_outside_card_space': '38px',
-        '--width_inside_card_space': '19px',
-        '--height_section_space': '112px',
-        '--height_header_space': '56px',
-        '--height_body_to_body_space': '28px',
-        '--height_body_attached_space': '14px',
-        '--font_main_heading': '45px',
-        '--font_body_heading': '28px',
-        '--font_body_text': '17px',
-    };
 
     const styles = {
         about_main_section: {
@@ -54,7 +50,7 @@ export default function AboutBody() {
         },
         about_main_header: {
             width: '100%',
-            marginBottom: cssVariables['--height_section_space'],
+            marginBottom: cssVariables['--height_header_space'],
         },
         about_main_header_heading: {
             backgroundColor: 'transparent',
@@ -62,13 +58,22 @@ export default function AboutBody() {
             margin: '0%',
             marginBottom: cssVariables['--height_header_space'],
             fontSize: cssVariables['--font_main_heading'],
-            fontWeight: 'bold',
+            fontWeight: 'normal',
         },
+        about_main_header_text_container: {
+            transform: 'translateY(100%)',
+            opacity: 0,
+            transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
+        },
+        flyIn: {
+            transform: 'translateY(0)',
+            opacity: 1,
+          },
         about_main_header_first: {
             backgroundColor: 'transparent',
             width: '100%',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: '500',
+            fontWeight: 'normal',
             margin: '0%',
             marginBottom: cssVariables['--height_body_to_body_space'],
         },
@@ -76,7 +81,7 @@ export default function AboutBody() {
             backgroundColor: 'transparent',
             width: '100%',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: '500',
+            fontWeight: 'normal',
             margin: '0%',
         },
         about_main_person_cards: {
@@ -110,13 +115,15 @@ export default function AboutBody() {
             <div style={styles.about_main_content}>
                 <section style={styles.about_main_header}>
                     <h1 style={styles.about_main_header_heading}>{content.headerHeading}</h1>
-                    <p style={styles.about_main_header_first}>{content.headerFirstText}</p>
-                    <p style={styles.about_main_header_second}>{content.headerSecText}</p>
+                    <div style={{ ...styles.about_main_header_text_container, ...(isLoaded && styles.flyIn)} }>
+                        <p style={styles.about_main_header_first}>{content.headerFirstText}</p>
+                        <p style={styles.about_main_header_second}>{content.headerSecText}</p>
+                    </div>
                 </section>
                 <section style={styles.about_main_person_cards}>
-                    <ShowPersonCard person={personCard.first} cssVariables={cssVariables} />
-                    <ShowPersonCard person={personCard.second} isMirrored cssVariables={cssVariables} />
-                    <ShowPersonCard person={personCard.third} cssVariables={cssVariables} />
+                    <ShowPersonCard person={personCard.first} cssVariables={cssVariables} isLoaded={isLoaded} />
+                    <ShowPersonCard person={personCard.second} isMirrored cssVariables={cssVariables} isLoaded={isLoaded} />
+                    <ShowPersonCard person={personCard.third} cssVariables={cssVariables} isLoaded={isLoaded}/>
                 </section>
                 <section style={styles.about_main_text_cards}>
                     <TextCards cssVariables={cssVariables} />

@@ -17,6 +17,12 @@ export default function Main({setStatus}) {
 
     const [isDarkMode] = useDarkMode();
 
+    const mobileMenuStyle = {
+        transition: 'transform 0.2s ease-in-out',
+        width: '100%',
+        transform: menu ? 'translateX(0)' : 'translateX(-100%)',
+     };
+
     const style = {
         display: 'flex',
         flexDirection: 'column',
@@ -37,9 +43,9 @@ export default function Main({setStatus}) {
     return (
         <section style={style} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
-            <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'services'} setStatus={setStatus}/>}
-            </div>
+            <div className={'mobileMenu'} style={mobileMenuStyle}>
+                {menu && <Menu currentSelected={'services'}/>}
+             </div>
             <div style={styleCardSection}>
                 {Object.values(content).map((service, index) => (
                     <ServiceCard key={index} props={service}/>

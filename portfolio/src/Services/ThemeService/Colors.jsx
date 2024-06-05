@@ -6,7 +6,7 @@ export const colors  = {
         return isDarkMode ? '#F8F8F8' : '#161616';
     },
     cardBackgroundColor: (isDarkMode) => {
-        return isDarkMode ? '#0e0e0e' : '#f4f4f4';
+        return isDarkMode ? '#282828' : '#f4f4f4';
     },
     cardBorderColor: (isDarkMode) => {
         return isDarkMode ? '#2e2e2e' : '#f4f4f4';

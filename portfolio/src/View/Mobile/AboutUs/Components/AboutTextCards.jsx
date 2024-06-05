@@ -14,6 +14,7 @@ function ShowTextCard({ cssVariables, content }) {
             display: 'flex',
             flexDirection: 'column',
             marginBottom: cssVariables['--height_body_attached_space'],
+            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         card: {
             backgroundColor: 'transparent',
