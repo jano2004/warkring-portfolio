@@ -16,6 +16,12 @@ export default function Main({setStatus}) {
         setMenu(!menu);
     }
 
+    const mobileMenuStyle = {
+        transition: 'transform 0.2s ease-in-out',
+        width: '100%',
+        transform: menu ? 'translateX(0)' : 'translateX(-100%)',
+     };
+
     const styles= { 
         overflowX: 'hidden',
         backgroundColor: colors.mainBackgroundColor(isDarkMode),
@@ -25,9 +31,9 @@ export default function Main({setStatus}) {
     return (
         <section style={styles} onClick={menu ? handleMenuMobileClick : null}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
-            <div className={'mobileMenu'}>
-                {menu && <Menu currentSelected={'features'} setStatus={setStatus}/>}
-            </div>
+            <div className={'mobileMenu'} style={mobileMenuStyle}>
+                {menu && <Menu currentSelected={'features'}/>}
+             </div>
             <FeaturesMain />
             <Footer />
         </section>
