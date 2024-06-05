@@ -6,23 +6,15 @@ export const content = [
     {
         icon: 'featuresIcon',
         text: 'Features'
-    },
-    {
-        icon: 'servicesIcon',
-        text: 'Services'
+    },{
+        icon: 'contactIcon',
+        text: 'Kontakt'
     },
     {
         icon: 'aboutIcon',
         text: 'Über uns'
     },
-    {
-        icon: 'contactIcon',
-        text: 'Kontakt'
-    },
-    {
-        icon: 'helpIcon',
-        text: 'Hilfe'
-    }
+    
 ]
 
 export const footerContent = [

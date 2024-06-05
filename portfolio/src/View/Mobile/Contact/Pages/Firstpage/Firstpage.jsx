@@ -55,10 +55,10 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             cursor: 'pointer'}}
                              onClick={handleBackward}>
                             <IoChevronBackOutline
-                                color={selected === null ? colors.cardBorderColor(!isDarkMode) : colors.cardBorderColor(false)}/>
+                                color= {selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(false, isDarkMode)}/>
                             <p style={{
                                 margin: '0 0 0 5px',
-                                color: selected === null ? colors.cardBorderColor(!isDarkMode) : colors.cardBorderColor(false, isDarkMode),
+                                color: selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(false, isDarkMode),
                                 fontSize: cssVariables['--font_body_text'],
                                 fontWeight: 'normal',
                                 textAlign: 'center',

@@ -5,6 +5,7 @@ export const colors  = {
     mainTextColor: (isDarkMode) => {
         return isDarkMode ? '#F8F8F8' : '#161616';
     },
+    mainAccentColor: '#529552',
     cardBackgroundColor: (isDarkMode) => {
         return isDarkMode ? '#282828' : '#f4f4f4';
     },

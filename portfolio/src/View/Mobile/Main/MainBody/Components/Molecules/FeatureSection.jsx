@@ -97,7 +97,7 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
             boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         scrollPageClicked: {
-            backgroundColor: '#529552',
+            backgroundColor: colors.mainAccentColor,
             margin: '33%',
             borderRadius: '100%',
             border: 'none',
