@@ -26,6 +26,7 @@ export function MainBody() {
         }}/>
         <p style={{
           fontSize: cssVariables['--font_body_text'],
+          color: colors.mainTextColor(isDarkMode),
           fontWeight: '200',
           margin: '0'
         }}>
