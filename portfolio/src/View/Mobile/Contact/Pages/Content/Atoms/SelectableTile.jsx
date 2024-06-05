@@ -3,8 +3,9 @@ import { MdOutlineQuestionMark } from 'react-icons/md';
 import { IoArrowBackOutline } from "react-icons/io5";
 import {colors} from "../../../../../../Services/ThemeService/Colors";
 import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
+import { cssVariables } from '../../../../../../Services/abstand';
 
-export default function SelectableTile({props, id, tileKey, state, changeState, scrollToNextComponent, position}) {
+export default function SelectableTile({props, id, state, changeState }) {
     const [isDarkMode] = useDarkMode()
 
     const [flip, setFlip] = useState(false)
@@ -17,7 +18,8 @@ export default function SelectableTile({props, id, tileKey, state, changeState, 
     const commonStyles = {
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',
         width: '155px', height: '155px',
-        borderRadius: '7px', border: '1px solid ' + colors.selectableTileBorderColor(isDarkMode),
+        borderRadius: '20px',
+        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
         transition: 'background 0.2s, color 0.2s',
     };
 
@@ -36,8 +38,11 @@ export default function SelectableTile({props, id, tileKey, state, changeState, 
     };
 
     const textCommonStyles = {
-        fontSize: '16px', fontWeight: '200', textAlign: 'center', width: '90%',
-        transition: 'color o.2s'
+        fontSize: cssVariables['--font_body_text'],
+        fontWeight: 'normal', 
+        textAlign: 'center', 
+        width: '90%',
+        transition: 'color 0.2s'
     };
 
     const styleHeaderUnselected = {

@@ -4,6 +4,7 @@ import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 import { MdOutlineMarkunreadMailbox } from "react-icons/md";
 import { IoChevronBackOutline } from "react-icons/io5";
 import {sendMail} from "../../MailService/ContactMailService";
+import { cssVariables } from '../../../../../Services/abstand';
 
 export default function PersonalData({ pageState, setPageState, selectedHauptziel, selectSecondaryGoal, selectMainGoal}) {
     const [isDarkMode] = useDarkMode();
@@ -33,7 +34,7 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
 
     const inputStyle = {
         width: '120%',
-        fontSize: '17px',
+        fontSize: cssVariables['--font_body_text'],
         background: '#F8F8F8',
         borderRadius: '7px',
         border: '1px solid #BDBDBD',
@@ -87,24 +88,25 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                     flexDirection: 'row',
                     justifyContent: pageState === 0 ? 'end' : 'space-between',
                     width: '83%',
-                    marginTop: '80px',
-                    marginBottom: '30px'
+                    marginTop: '78px',
+                    marginBottom: cssVariables['--height_body_to_body_space'],
                 }}>
                     <div style={{
                         display: pageState === 0 ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center',
                         background: colors.selectableTileUnselectedColor(false),
-                        border: '1px solid #C4C4C4', borderRadius: '7px',
-                        padding: '5px 10px 5px 7px',
+                        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                        padding: '5px 10px',
+                        borderRadius: '20px',
                     }}
                          onClick={handleBackward}>
                         <IoChevronBackOutline />
                         <p style={{
                             margin: '0 0 0 5px',
                             color: colors.cardBorderColor(true),
-                            fontSize: '16px',
-                            fontWeight: '400',
+                            fontSize: cssVariables['--font_body_text'],
+                            fontWeight: 'normal',
                             textAlign: 'center',
-                            width: '90%'
+                            width: '90%',
                         }}>Zurück</p>
                     </div>
                     <div style={{
@@ -112,9 +114,9 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                         flexDirection: 'row',
                         alignItems: 'center',
                         background: colors.selectableTileUnselectedColor(true, isDarkMode),
-                        border: '1px solid #C4C4C4',
-                        padding: '5px 7px 5px 10px',
-                        borderRadius: '7px',
+                        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                        padding: '5px 10px',
+                        borderRadius: '20px',
                         transition: 'background 0.2s, color 0.2s',
                         cursor: 'pointer'
                     }}
@@ -122,10 +124,10 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                         <p style={{
                             margin: '0 5px 0 0',
                             color: colors.cardBorderColor(false, isDarkMode),
-                            fontSize: '16px',
-                            fontWeight: '400',
+                            fontSize: cssVariables['--font_body_text'],
+                            fontWeight: 'normal',
                             textAlign: 'center',
-                            width: '90%'
+                            width: '90%',
                         }}>Absenden</p>
                         <MdOutlineMarkunreadMailbox
                             color={colors.cardBorderColor(false)} />
@@ -148,15 +150,19 @@ const styles = {
     headerText: {
         container: {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-            margin: '0 0 40px 0'
+            marginBottom: cssVariables['--height_body_to_body_space'],
         },
         header: {
-            textAlign: 'center', fontWeight: '700', fontSize: '24px',
+            textAlign: 'center', 
+            fontWeight: 'bold', 
+            fontSize: cssVariables['--font_body_heading'],
             marginTop: '0'
         },
         text: {
             width: '90%',
-            textAlign: 'center', fontWeight: '300', fontSize: '20px',
+            textAlign: 'center', 
+            fontWeight: 'normal', 
+            fontSize: cssVariables['--font_body_text'],
             margin: '0'
         }
     },
