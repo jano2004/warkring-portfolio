@@ -13,7 +13,7 @@ export function ShowTile ({ cssVariables, feature }) {
             flexDirection: 'column',
             aspectRatio: '1 / 1',
             minWidth: '140px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         cardContent: {
             marginTop: cssVariables['--height_body_attached_space'],

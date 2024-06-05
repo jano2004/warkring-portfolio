@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import ShowPersonCard from './Components/AboutPersonCard';
 import TextCards from './Components/AboutTextCards';
 import { cssVariables } from "../../../Services/abstand";
 
 export default function AboutBody() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []); 
+    
     const content = {
         headerHeading: 'Über uns',
         headerFirstText: 'Willkommen bei Warkring, Ihrem professionellen Partner für maßgeschneiderte Website-Lösungen. Wir sind ein dynamisches Trio bestehend aus drei engagierten Informatikstudenten an der FH Aachen.',
@@ -54,6 +60,15 @@ export default function AboutBody() {
             fontSize: cssVariables['--font_main_heading'],
             fontWeight: 'normal',
         },
+        about_main_header_text_container: {
+            transform: 'translateY(100%)',
+            opacity: 0,
+            transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
+        },
+        flyIn: {
+            transform: 'translateY(0)',
+            opacity: 1,
+          },
         about_main_header_first: {
             backgroundColor: 'transparent',
             width: '100%',
@@ -100,13 +115,15 @@ export default function AboutBody() {
             <div style={styles.about_main_content}>
                 <section style={styles.about_main_header}>
                     <h1 style={styles.about_main_header_heading}>{content.headerHeading}</h1>
-                    <p style={styles.about_main_header_first}>{content.headerFirstText}</p>
-                    <p style={styles.about_main_header_second}>{content.headerSecText}</p>
+                    <div style={{ ...styles.about_main_header_text_container, ...(isLoaded && styles.flyIn)} }>
+                        <p style={styles.about_main_header_first}>{content.headerFirstText}</p>
+                        <p style={styles.about_main_header_second}>{content.headerSecText}</p>
+                    </div>
                 </section>
                 <section style={styles.about_main_person_cards}>
-                    <ShowPersonCard person={personCard.first} cssVariables={cssVariables} />
-                    <ShowPersonCard person={personCard.second} isMirrored cssVariables={cssVariables} />
-                    <ShowPersonCard person={personCard.third} cssVariables={cssVariables} />
+                    <ShowPersonCard person={personCard.first} cssVariables={cssVariables} isLoaded={isLoaded} />
+                    <ShowPersonCard person={personCard.second} isMirrored cssVariables={cssVariables} isLoaded={isLoaded} />
+                    <ShowPersonCard person={personCard.third} cssVariables={cssVariables} isLoaded={isLoaded}/>
                 </section>
                 <section style={styles.about_main_text_cards}>
                     <TextCards cssVariables={cssVariables} />

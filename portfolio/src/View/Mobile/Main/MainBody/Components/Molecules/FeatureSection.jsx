@@ -1,9 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { services } from './Service/ServiceData';
-import Service from './Service/Service';
-import useDarkMode from "../../../../Services/ThemeService/ThemeService";
-import {colors} from "../../../../Services/ThemeService/Colors";
-
+import { FeatureCard } from "../Atoms/FeatureCard";
 
 function ShowScrollPage({ isActive, styles }) {
     return (
@@ -11,10 +7,9 @@ function ShowScrollPage({ isActive, styles }) {
     )
 }
 
-export default function MainServices() {
+export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     const [currentPage, setCurrentPage] = useState(0);
     const containerRef = useRef(null);
-    const [isDarkMode] = useDarkMode();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,37 +43,29 @@ export default function MainServices() {
         };
     }, []);
 
+    const features = [
+        {
+            header: 'Responsive Design',
+            text: 'Ihre Webseite sieht gut aus auf allen Endgeräten, dank unserem responsiven Design, welches sich der Gerätgröße anpasst.',
+        },
+        {
+            header: 'Analyse-Tools',
+            text: 'Bessere Einsicht in das Kundenverhalten um Ihr Marketing zu optimieren.',
+        },
+    ];
+
     const styles = {
-        mainServiceSection: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            height: 'auto',
-            width: '100%',
-        },
-        mainServiceTop: {
-            textAlign: 'left',
-            textDecoration: 'inherit',
-            fontSize: '27px',
-            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-            fontWeight: 800,
-            color: '#F8F8F8',
-            inlineSize: 'min(100% - 4rem, 70rem)',
-            lineHeight: 1,
-            padding: '0 0 18px 0',
-            margin: 0,
-            width: '100%'
-        },
-        mainServicesContainer: {
+        featuresSection: {
             width: '100%',
             display: 'grid',
             gridAutoFlow: 'column',
             gridAutoColumns: '100%',
             gap: '1rem',
             overflowX: 'auto',
-            marginTop: 0,
             scrollSnapType: 'x mandatory',
-            scrollbarWidth: 'none'
+            scrollbarWidth: 'none',
+            color: colors.mainTextColor(isDarkMode),
+            paddingBottom: cssVariables['--height_body_attached_space'],
         },
         mainServicePage: {
             backgroundColor: 'transparent',
@@ -89,54 +76,61 @@ export default function MainServices() {
             alignItems: 'center'
         },
         mainServicePageContainer: {
-            backgroundColor: colors.mainBackgroundColor(isDarkMode),
+            backgroundColor: colors.cardBackgroundColor(isDarkMode),
             height: '18px',
-            width: '55px',
+            width: '36px',
             borderRadius: '10px',
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr 1fr',
+            gridTemplateColumns: '1fr 1fr',
             marginTop: '10px',
             paddingLeft: '5px',
-            paddingRight: '5px'
+            paddingRight: '5px',
+            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
+            marginBottom: '8px',
         },
         scrollPage: {
-            backgroundColor: colors.cardBorderColor(!isDarkMode),
+            backgroundColor: colors.mainTextColor(!isDarkMode),
             margin: '35%',
             borderRadius: '100%',
             border: 'none',
-            padding: '0%'
+            padding: '0%',
+            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         scrollPageClicked: {
-            backgroundColor: colors.cardBorderColor(isDarkMode),
+            backgroundColor: '#529552',
             margin: '33%',
             borderRadius: '100%',
             border: 'none',
-            padding: '0%'
+            padding: '0%',
+            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
         }
-    };
+    }
 
     return (
-        <div style={styles.mainServiceSection}>
-            <div style={styles.mainServicesContainer} ref={containerRef}>
-                {services.map((service, index) => (
-                    <Service key={index} {...service}/>
+        <>
+        <section style={styles.featuresSection} ref={containerRef}>
+            {features.map((feature, index) => (
+                <FeatureCard
+                    key={index}
+                    cssVariables={cssVariables}
+                    isDarkMode={isDarkMode}
+                    colors={colors}
+                    header={feature.header}
+                    text={feature.text}
+                />
+            ))}
+        </section>
+        <div style={styles.mainServicePage}>
+            <div style={styles.mainServicePageContainer}>
+                {[0, 1].map(pageNumber => (
+                    <ShowScrollPage
+                    key={pageNumber}
+                    isActive={currentPage === pageNumber}
+                        styles={styles}
+                    />
                 ))}
             </div>
-            <div style={styles.mainServicePage}>
-                <div style={styles.mainServicePageContainer}>
-                    <div style={styles.mainServicePage}>
-                        <div style={styles.mainServicePageContainer}>
-                            {[0, 1, 2].map(pageNumber => (
-                                <ShowScrollPage
-                                    key={pageNumber}
-                                    isActive={currentPage === pageNumber}
-                                    styles={styles}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+        </>
     );
 }

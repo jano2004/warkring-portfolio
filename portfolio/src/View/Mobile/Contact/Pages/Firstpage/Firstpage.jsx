@@ -4,7 +4,7 @@ import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 import RadioSelect from "../Content/Molecules/RadioSelect";
 import {colors} from "../../../../../Services/ThemeService/Colors";
 
-export default function Firstpage({selected, setSelected, props, pageState, setPageState}) {
+export default function Firstpage({selected, setSelected, props, pageState, setPageState, isLoaded}) {
 
     const handleForward = () => {
         if(selected === null && pageState === 0) {
@@ -28,7 +28,7 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
 
     return (
         <div style={{height: '90vh', background: colors.mainBackgroundColor(isDarkMode)}}>
-            <div style={styles.mainContainer}>
+            <div style={{ ...styles.mainContainer, ...(isLoaded && styles.mainContainerFlyIn)}}>
                 <div style={styles.headerText.container}>
                     <h1 style={{...styles.headerText.header, color: colors.mainTextColor(isDarkMode)}}>{props.header}</h1>
                     <p style={{...styles.headerText.text, color: colors.mainTextColor(isDarkMode)}}>{props.description}</p>
@@ -101,8 +101,15 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
 
 const styles = {
     mainContainer: {
-        display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'
+        display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+        transform: 'translateY(100%)',
+        opacity: 0,
+        transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
     },
+    mainContainerFlyIn: {
+        transform: 'translateY(0)',
+        opacity: 1,
+      },
     headerText: {
         container: {
             display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',

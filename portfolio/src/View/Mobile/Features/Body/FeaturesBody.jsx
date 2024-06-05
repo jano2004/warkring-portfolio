@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { cssVariables } from '../../../../Services/abstand'
 import { ShowSection }from './Content/Molecules/PackSection'
 
@@ -5,6 +6,12 @@ import { servicesData } from '../Content/FeaturesData';
 
 
 export default function Body() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []); 
+
     const styles = {
         mainSection: {
             backgroundColor: 'transparent',
@@ -32,7 +39,11 @@ export default function Body() {
                     <h1 style={styles.mainHeaderH1}>Features</h1>
                 </section>
                 {servicesData.map((service, index) => (
-                    <ShowSection key={index} cssVariables={cssVariables} pack={service} />
+                    <ShowSection 
+                        key={index} 
+                        cssVariables={cssVariables} 
+                        pack={service}
+                        isLoaded={isLoaded} />
                 ))}
             </div>
         </section>

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import './MainMobile.css';
 import Header from '../../Header/Header';
-import MainBody from '../MainBody/MainBody';
+import { MainBody } from '../MainBody/MainBody';
 import Menu from '../../Header/Menu/Menu';
-import MainServices from '../MainServices/MainServices';
-import MainFeatures from '../MainFeatures/MainFeatures';
 import Footer from '../../Footer/Footer';
 import { colors } from "../../../../Services/ThemeService/Colors";
 import useDarkMode from "../../../../Services/ThemeService/ThemeService";
@@ -30,16 +28,12 @@ function MobileMain() {
             backgroundColor: colors.mainBackgroundColor(isDarkMode),
             justifyContent: 'center',
             alignItems: 'center',
-            overflowX: 'hidden'
+            overflowX: 'hidden',
+            scrollSnapType: 'y mandatory',
         }
     };
 
-    const scrollToBottom = () => {
-        window.scrollTo({
-            top: document.documentElement.scrollTop,
-            behavior: 'smooth'
-        });
-    }
+    
 
     return (
         <div style={styles.mobileBody}>
@@ -47,10 +41,7 @@ function MobileMain() {
             <div className={`mobileMenu ${menu ? 'active' : ''}`} style={mobileMenuStyle}>
                 {menu && <Menu currentSelected={'home'} />}
             </div>
-            <MainBody scrollToBottom={scrollToBottom}/>
-            <MainServices/>
-            <MainFeatures/>
-            <div style={{height: '30px'}}/>
+            <MainBody/>
             <Footer/>
         </div>
     );

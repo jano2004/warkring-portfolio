@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import Firstpage from "../Pages/Firstpage/Firstpage";
 import { propsPrimaryGoal, propsSecondaryGoal, propsMainGoal } from './Content';
 import './disableScroll.css';
@@ -22,6 +22,12 @@ export default function MainContact() {
       setMenu(!menu);
    }
 
+   const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []); 
+
    const mobileMenuStyle = {
       transition: 'transform 0.2s ease-in-out',
       width: '100%',
@@ -40,7 +46,8 @@ export default function MainContact() {
                  setSelected={setSelectedHauptziel}
                  props={propsPrimaryGoal(selectedHauptziel)}
                  pageState={pageState}
-                 setPageState={setPageState}/>
+                 setPageState={setPageState}
+                 isLoaded={isLoaded}/>
           </div>
       );
    } else if (pageState === 1) {
@@ -56,6 +63,7 @@ export default function MainContact() {
                  props={propsSecondaryGoal(selectedHauptziel, selectSecondaryGoal, selectMainGoal, pageState, setPageState)}
                  pageState={pageState}
                  setPageState={setPageState}
+                 isLoaded={isLoaded}
              />
           </div>
       );
@@ -72,6 +80,7 @@ export default function MainContact() {
                  props={propsMainGoal(selectMainGoal)}
                  pageState={pageState}
                  setPageState={setPageState}
+                 isLoaded={isLoaded}
              />
           </div>
       );

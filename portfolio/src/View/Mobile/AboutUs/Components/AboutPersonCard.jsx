@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ShowPersonCard({ person, isMirrored = false, cssVariables }) {
+export default function ShowPersonCard({ person, isMirrored = false, cssVariables, isLoaded }) {
     const styles = {
         personCard_section: {
             backgroundColor: 'transparent',
@@ -9,8 +9,15 @@ export default function ShowPersonCard({ person, isMirrored = false, cssVariable
             flexDirection: isMirrored ? 'row-reverse' : 'row',
             justifyContent: isMirrored ? 'flex-end' : 'flex-start',
             marginBottom: cssVariables['--height_body_to_body_space'],
-            alignItems: 'center'
+            alignItems: 'center',
+            transform: 'translateY(100%)',
+            opacity: 0,
+            transition: 'transform 0.7s ease-out, opacity 0.7s ease-out',
         },
+        flyIn: {
+            transform: 'translateY(0)',
+            opacity: 1,
+          },
         personCard_image: {
             backgroundColor: 'transparent',
             height: '120px',
@@ -46,7 +53,7 @@ export default function ShowPersonCard({ person, isMirrored = false, cssVariable
     };
 
     return (
-        <div style={styles.personCard_section}>
+        <div style={{ ...styles.personCard_section, ...(isLoaded && styles.flyIn)} }>
             <div style={styles.personCard_image}>
                 <div style={styles.personCard_image_img}></div>
             </div>

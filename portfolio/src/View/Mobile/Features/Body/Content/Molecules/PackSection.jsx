@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 
 import { ShowTile } from "../Atoms/Tile";
 
-export function ShowSection({ cssVariables, pack }) {
+export function ShowSection({ cssVariables, pack, isLoaded }) {
 
     const [showAll, setShowAll] = useState(false);
     const sectionRef = useRef(null);
@@ -17,7 +17,14 @@ export function ShowSection({ cssVariables, pack }) {
         sectionContainer: {
             backgroundColor: 'transparent',
             width: '100%',
-            marginBottom: cssVariables['--height_section_space']
+            marginBottom: cssVariables['--height_section_space'],
+            transform: 'translateY(100%)',
+            opacity: 0,
+            transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
+        },
+        sectionContainerFlyIn: {
+            transform: 'translateY(0)',
+            opacity: 1,
         },
         sectionHeader: {
             backgroundColor: 'transparent',
@@ -60,7 +67,7 @@ export function ShowSection({ cssVariables, pack }) {
     const displayFeatures = showAll ? pack.serviceFeatures : pack.serviceFeatures.slice(0, 4);
     const isOdd = displayFeatures.length % 2 !== 0;
     return (
-        <section style={styles.sectionContainer} ref={sectionRef}>
+        <section style={ {...styles.sectionContainer, ...isLoaded && styles.sectionContainerFlyIn} } ref={sectionRef}>
             <div style={styles.sectionHeader}>
                 <h2 style={styles.sectionHeaderH2}>{ pack.serviceName }</h2>
             </div>
