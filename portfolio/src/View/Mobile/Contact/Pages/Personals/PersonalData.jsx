@@ -88,21 +88,22 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                     flexDirection: 'row',
                     justifyContent: pageState === 0 ? 'end' : 'space-between',
                     width: '83%',
-                    marginTop: '78px',
+                    marginTop: '77px',
                     marginBottom: cssVariables['--height_body_to_body_space'],
                 }}>
                     <div style={{
                         display: pageState === 0 ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center',
-                        background: colors.selectableTileUnselectedColor(false),
+                        background: colors.selectableTileUnselectedColor(false, isDarkMode),
                         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
                         padding: '5px 10px',
                         borderRadius: '20px',
                     }}
                          onClick={handleBackward}>
-                        <IoChevronBackOutline />
+                        <IoChevronBackOutline
+                            color={colors.cardBorderColor(!isDarkMode)} />
                         <p style={{
                             margin: '0 0 0 5px',
-                            color: colors.cardBorderColor(true),
+                            color: colors.cardBorderColor(!isDarkMode),
                             fontSize: cssVariables['--font_body_text'],
                             fontWeight: 'normal',
                             textAlign: 'center',
