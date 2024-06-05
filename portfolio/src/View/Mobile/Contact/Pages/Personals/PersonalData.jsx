@@ -41,7 +41,7 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
     };
 
     return (
-        <div style={{ height: '90vh', background: colors.mainBackgroundColor(isDarkMode) }}>
+        <div style={{height: '90vh', background: colors.mainBackgroundColor(isDarkMode) }}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={styles.headerText.container}>
                     <h1 style={{ ...styles.headerText.header, color: colors.mainTextColor(isDarkMode) }}>Jetzt zu Ihnen</h1>
