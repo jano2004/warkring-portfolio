@@ -1,11 +1,8 @@
 import { useState, useRef } from "react";
 
 import { ShowTile } from "../Atoms/Tile";
-import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
-import { colors } from "../../../../../../Services/ThemeService/Colors";
 
 export function ShowSection({ cssVariables, pack }) {
-    const [isDarkMode] = useDarkMode();
 
     const [showAll, setShowAll] = useState(false);
     const sectionRef = useRef(null);
@@ -30,7 +27,7 @@ export function ShowSection({ cssVariables, pack }) {
         sectionHeaderH2: {
             fontSize: cssVariables['--font_body_heading'],
             margin: '0%',
-            fontWeight: 'normal',
+            fontWeight: '600',
         },
         sectionTiles: {
             backgroundColor: 'transparent',
@@ -51,7 +48,7 @@ export function ShowSection({ cssVariables, pack }) {
             fontSize: cssVariables['--font_body_text'],
             backgroundColor: 'transparent',
             border: 'none',
-            color: colors.mainTextColor(isDarkMode),
+            color: '#529552',
         },
         emptyCardContainer: {
             flex: '1 1 calc(25% - 17px)', 

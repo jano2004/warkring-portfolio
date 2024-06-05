@@ -12,7 +12,8 @@ export function ShowTile ({ cssVariables, feature }) {
             display: 'flex',
             flexDirection: 'column',
             aspectRatio: '1 / 1',
-            minWidth: '140px', 
+            minWidth: '140px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         cardContent: {
             marginTop: cssVariables['--height_body_attached_space'],
@@ -20,29 +21,36 @@ export function ShowTile ({ cssVariables, feature }) {
             marginLeft: cssVariables['--width_inside_card_space'],
             marginRight: cssVariables['--width_inside_card_space'],
             flex: '1 1 auto',
+            display: 'flex',
+            flexDirection: 'column',
         },
         cardContentH2: {
+            backgroundColor: 'transparent',
             fontSize: cssVariables['--font_body_text'],
-            fontWeight: 'bold',
+            fontWeight: 'normal',
             margin: '0%',
             marginBottom: cssVariables['--height_body_attached_space'],
             overflowWrap: 'break-word',
             wordWrap: 'break-word',
-            wordBreak: 'break-all',
-
             lineHeight: '1.1',
+            height: '50%',
+            textAlign: 'center'
+            
         },
-        cardContentP: {
-            fontSize: cssVariables['--font_body_text'],
+        cardContentIcon: {
+            backgroundColor: 'transparent',
             margin: '0%',
-            lineHeight: '1.1',
+            height: '50%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
         },
     };
     return (
         <div style={styles.cardContainer}>
             <div style={styles.cardContent}>
                 <h2 style={styles.cardContentH2}>{ feature.featureName }</h2>
-                <p style={styles.cardContentP}>Hier folgt die Beschreibung</p>
+                <div style={styles.cardContentIcon}>{ feature.featureIcon }</div>
             </div>
         </div>
     )
