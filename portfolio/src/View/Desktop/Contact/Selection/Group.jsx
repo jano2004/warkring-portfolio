@@ -154,7 +154,7 @@ export default function Group({header, text}) {
                            style={{
                                ...style.input,
                                border: inputTarget === 'vorwahl' ? '2px solid #529552' : '2px solid #D9D9D9',
-                               width: '13%'
+                               width: '15%',
                            }}
                            placeholder={'Vorwahl'}
                            onFocus={() => setInputTarget('vorwahl')}
@@ -163,7 +163,7 @@ export default function Group({header, text}) {
                            style={{
                                ...style.input,
                                border: inputTarget === 'rufnummer' ? '2px solid #529552' : '2px solid #D9D9D9',
-                               width: '87%'
+                               width: '85%'
                            }}
                            placeholder={'Rufnummer'}
                            onFocus={() => setInputTarget('rufnummer')}
@@ -241,7 +241,7 @@ const style = {
         height: '70px',
         padding: '0 0 0 20px',
         borderRadius: '10px',
-        fontSize: '17px',
+        fontSize: '20px',
         outline: 'none',
         transition: 'all 0.1s ease-in-out'
     },

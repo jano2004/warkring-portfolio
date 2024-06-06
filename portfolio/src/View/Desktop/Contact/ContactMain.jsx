@@ -1,7 +1,14 @@
 import Header from "../Header/Header";
 import Group from "./Selection/Group";
+import {useEffect, useState} from "react";
 
 export default function ContactMain() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
+
     return (
         <div style={{height: '100vh', background: 'white'}}>
             <Header />
@@ -12,7 +19,7 @@ export default function ContactMain() {
                 </div>
 
                 {/* SelectGroup */}
-                <div style={style.selectgroup}>
+                <div style={{...style.selectgroup, ...(isLoaded && style.selectgroupLoad)}}>
                     <Group />
                 </div>
 
@@ -44,7 +51,12 @@ const style = {
         alignItems: 'center',
         height: '90vh',
         width: '50%',
-        background: ''
+        background: '',
+        opacity: 0,
+        transition: 'opacity 0.4s ease-out'
+    },
+    selectgroupLoad: {
+        opacity: 1
     },
     freespace: {
         height: '90vh',

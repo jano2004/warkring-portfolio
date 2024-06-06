@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export default function Header() {
     return (
         <div style={{
@@ -8,18 +10,24 @@ export default function Header() {
             height: '70px',
             width: '100%',
             background: 'white'}}>
-            <div style={{display: 'flex', flexDirection: 'row', gap: '30px', margin: '0 0 0 40px'}}>
-                <p style={{
-                    fontSize: '30px',
-                    fontWeight: '400',
-                    userSelect: 'none',
-                    cursor: 'pointer'}}>
-                    warkring.org</p>
-            </div>
+            <Link to={'/'} style={{textDecoration: 'none'}}>
+                <div style={{display: 'flex', flexDirection: 'row', gap: '30px', margin: '0 0 0 40px'}}>
+                    <p style={{
+                        fontSize: '30px',
+                        fontWeight: '400',
+                        userSelect: 'none',
+                        cursor: 'pointer',
+                        color: 'black'}}>
+                        warkring.org
+                    </p>
+                </div>
+            </Link>
+
             <div style={{display: 'flex', flexDirection: 'row', gap: '30px', margin: '0 40px 0 0'}}>
                 <NavItem props={'Projekte'}/>
                 <NavItem props={'Über uns'}/>
-                <NavItem props={'Projekt anfragen'} color={'white'} background={'#007AFF'} padding={'5px 15px 5px 15px'}/>
+                <NavItem props={'Projekt anfragen'} color={'white'} background={'#007AFF'}
+                         padding={'5px 15px 5px 15px'}/>
             </div>
         </div>
     )
