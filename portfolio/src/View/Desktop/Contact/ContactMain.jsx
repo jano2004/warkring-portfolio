@@ -13,8 +13,8 @@ export default function ContactMain() {
         <div style={{height: '100vh', background: 'white'}}>
             <Header />
             <div style={style.main}>
-                {/* Progressbar */}
-                <div style={style.progressbar}>
+                {/* FreeSpace */}
+                <div style={style.freespace}>
 
                 </div>
 
@@ -38,8 +38,6 @@ const style = {
       flexDirection: 'row'
     },
     progressbar: {
-        display: 'flex',
-        justifyContent: 'center',
         height: '90vh',
         width: '25%',
         background: ''

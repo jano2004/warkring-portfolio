@@ -18,7 +18,7 @@ export default function Body() {
             justifyContent: 'space-evenly',
             alignItems: 'center',
             background: 'white',
-            userSelect: 'none'
+            userSelect: 'none',
         },
         verfuegbarkeit: {
             display: 'flex',
@@ -120,7 +120,7 @@ export default function Body() {
     }
 
     return (
-        <div style={{height: '800px', width: '100%', background: 'white'}}>
+        <div style={{height: '90%', width: '100%', background: 'white'}}>
             <div style={{...style.container}}>
                 <div style={{...style.verfuegbarkeit}}>
                     <div style={{...style.verfuegbarkeitButton}}/>
