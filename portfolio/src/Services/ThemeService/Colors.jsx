@@ -24,13 +24,13 @@ export const colors  = {
     selectableTileUnselectedColor: (state, isDarkMode) => {
         if (isDarkMode) {
             if(state) {
-                return '#529552';
+                return colors.mainAccentColor;
             } else if (!state) {
                 return '#2C2C2CFF';
             }
         } else {
             if(state) {
-                return '#529552';
+                return colors.mainAccentColor;
             } else if (!state) {
                 return '#f3f3f3';
             }

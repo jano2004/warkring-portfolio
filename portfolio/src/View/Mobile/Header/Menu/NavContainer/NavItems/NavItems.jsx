@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../../../../Services/ThemeService/Colors";
 
@@ -9,12 +9,18 @@ import { DiMaterializecss } from "react-icons/di";
 
 export default function NavItems({icon, text, selected, setSelected, setStatus }) {
     let convertedText = text.toString().toLowerCase();
-    const handleClick = () => {
+    const navigate = useNavigate();
+    
+    const handleClick = (e) => {
         setSelected(convertedText);
         setStatus = convertedText;
+        e.preventDefault();
+        navigate(convertedText === 'home' ? '/' : '/' + convertedText);
+        window.scrollTo(0, 0);
     };
 
     const [isDarkMode] = useDarkMode();
+
 
     const styles = {
         mainMenuNav: {

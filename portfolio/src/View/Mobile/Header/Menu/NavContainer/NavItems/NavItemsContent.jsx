@@ -16,6 +16,3 @@ export const content = [
     },
     
 ]
-
-export const footerContent = [
-]

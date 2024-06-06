@@ -35,10 +35,10 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
     const inputStyle = {
         width: '120%',
         fontSize: cssVariables['--font_body_text'],
-        background: '#F8F8F8',
+        background: colors.cardBackgroundColor(isDarkMode),
         borderRadius: '7px',
-        border: '1px solid #BDBDBD',
-        margin: '0 0 10px 0'
+        margin: '0 0 10px 0',
+        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
     };
 
     return (
@@ -176,7 +176,7 @@ const styles = {
             position: 'absolute',
             height: '7px',
             borderRadius: '10px', borderTop: '1px solid #BDBDBD', borderBottom: '1px solid #BDBDBD', borderLeft: '1px solid #BDBDBD',
-            background: '#588157',
+            background: colors.mainAccentColor,
             transition: 'width 0.5s ease-in-out'
         },
         nonProgress: {

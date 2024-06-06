@@ -55,10 +55,10 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             cursor: 'pointer'}}
                              onClick={handleBackward}>
                             <IoChevronBackOutline
-                                color= {selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(false, isDarkMode)}/>
+                                color= {selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(isDarkMode)}/>
                             <p style={{
                                 margin: '0 0 0 5px',
-                                color: selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(false, isDarkMode),
+                                color: selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(isDarkMode),
                                 fontSize: cssVariables['--font_body_text'],
                                 fontWeight: 'normal',
                                 textAlign: 'center',
@@ -152,7 +152,7 @@ const styles = {
             position: 'absolute',
             height: '7px',
             borderRadius: '10px', borderTop: '1px solid #BDBDBD', borderBottom: '1px solid #BDBDBD', borderLeft: '1px solid #BDBDBD',
-            background: '#588157',
+            background: colors.mainAccentColor,
             transition: 'width 0.5s ease-in-out'
         },
         nonProgress: {

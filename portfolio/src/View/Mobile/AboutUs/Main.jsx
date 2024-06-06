@@ -26,10 +26,14 @@ export default function Main({setStatus}) {
         overflowX: 'hidden',
         backgroundColor: colors.mainBackgroundColor(isDarkMode),
         color: colors.mainTextColor(isDarkMode),
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 
     return (
-        <section style={styles} onClick={menu ? handleMenuMobileClick : null}>
+        <section style={styles}>
             <Header handleMenuMobileClick={handleMenuMobileClick}/>
             <div className={'mobileMenu'} style={mobileMenuStyle}>
                 {menu && <Menu currentSelected={'über uns'}/>}
