@@ -26,6 +26,10 @@ export default function Main({setStatus}) {
         overflowX: 'hidden',
         backgroundColor: colors.mainBackgroundColor(isDarkMode),
         color: colors.mainTextColor(isDarkMode),
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 
     return (
