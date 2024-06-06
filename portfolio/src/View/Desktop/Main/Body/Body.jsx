@@ -101,6 +101,11 @@ export default function Body() {
             background: '#529552', borderRadius: '7px',
             cursor: 'pointer'
         },
+        anfrageAnalyseButtonText: {
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+            color: 'white',
+            fontWeight: '400'
+        },
         anfrageProjektButton: {
             display: 'flex',
             flexDirection: 'row',
@@ -145,12 +150,12 @@ export default function Body() {
                 <div style={{...style.anfrageContainer, ...(isLoaded && style.anfrageContainerFlyIn)}}>
                     <Link to={'/kontakt'} style={{textDecoration: 'none'}}>
                         <div style={{...style.anfrageAnalyseButton}}>
-                            <p style={{color: 'white', fontWeight: '400'}}>Kostenlose Website-Analyse</p>
+                            <p style={{...style.anfrageAnalyseButtonText}}>Kostenlose Website-Analyse</p>
                         </div>
                     </Link>
                     <Link to={'/kontakt'} style={{textDecoration: 'none'}}>
                         <div style={{...style.anfrageProjektButton}}>
-                            <p style={{color: 'black', fontWeight: '400', cursor: 'pointer'}}>
+                            <p style={{...style.anfrageAnalyseButtonText, color: 'black'}}>
                                 Neues Projekt anfragen
                             </p>
                             <MdOutlineNavigateNext size={'20px'}/>
