@@ -29,13 +29,15 @@ export default function SelectableTile({props}) {
             fontSize: '22px',
             fontWeight: '600',
             color: '#529552',
-            margin: '0'
+            margin: '0',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
         },
         text: {
             fontSize: '16px',
             fontWeight: '400',
             color: '#000000',
-            margin: '0'
+            margin: '0',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
         },
     }
     return (
