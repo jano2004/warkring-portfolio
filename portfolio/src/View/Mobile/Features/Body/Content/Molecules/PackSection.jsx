@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 
 import { ShowTile } from "../Atoms/Tile";
+import { colors } from "../../../../../../Services/ThemeService/Colors";
 
 export function ShowSection({ cssVariables, pack, isLoaded }) {
 
@@ -55,7 +56,7 @@ export function ShowSection({ cssVariables, pack, isLoaded }) {
             fontSize: cssVariables['--font_body_text'],
             backgroundColor: 'transparent',
             border: 'none',
-            color: '#529552',
+            color: colors.mainAccentColor,
         },
         emptyCardContainer: {
             flex: '1 1 calc(25% - 17px)', 

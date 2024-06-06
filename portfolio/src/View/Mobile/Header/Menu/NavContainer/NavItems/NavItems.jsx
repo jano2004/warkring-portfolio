@@ -5,9 +5,7 @@ import {colors} from "../../../../../../Services/ThemeService/Colors";
 import { IoMdContact } from "react-icons/io";
 import { IoIosHome } from "react-icons/io";
 import { LuAtom } from "react-icons/lu";
-import { SiMoleculer } from "react-icons/si";
 import { DiMaterializecss } from "react-icons/di";
-import { FaHandsHelping } from "react-icons/fa";
 
 export default function NavItems({icon, text, selected, setSelected, setStatus }) {
     let convertedText = text.toString().toLowerCase();
@@ -50,10 +48,8 @@ export default function NavItems({icon, text, selected, setSelected, setStatus }
             <div style={{...styles.mainMenuNavContainer}} onClick={handleClick}>
                 {icon === 'homeIcon' ? <IoIosHome size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'featuresIcon' ? <LuAtom size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'servicesIcon' ? <SiMoleculer size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'aboutIcon' ? <DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
                 {icon === 'contactIcon' ? <IoMdContact size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'helpIcon' ? <FaHandsHelping size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
+                {icon === 'aboutIcon' ? <DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}   
                 <Link to={convertedText === 'home' ? '/' : '/' + convertedText } className={'custom_link'}><p style={styles.mainMenuNavP}  onClick={handleClick}>{text}</p></Link>
             </div>
         </div>

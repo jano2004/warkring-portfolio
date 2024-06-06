@@ -1,4 +1,5 @@
 import React from "react";
+import { colors } from "../../../../Services/ThemeService/Colors";
 
 export default function ShowPersonCard({ person, isMirrored = false, cssVariables, isLoaded }) {
     const styles = {
@@ -25,7 +26,7 @@ export default function ShowPersonCard({ person, isMirrored = false, cssVariable
             flexShrink: 0
         },
         personCard_image_img: {
-            backgroundColor: 'red',
+            backgroundColor: colors.mainAccentColor,
             height: '100%',
             width: '100%',
             borderRadius: '50%',

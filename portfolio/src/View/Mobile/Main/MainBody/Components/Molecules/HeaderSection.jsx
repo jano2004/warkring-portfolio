@@ -14,7 +14,7 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
     const styles = {
       headerSection: {
         background: 'transparent',
-        marginTop: firstHeightSpace,
+        marginTop: cssVariables['--height_body_to_body_space'],
         marginBottom: firstHeightSpace,
         marginLeft: firstWidthSpace,
         marginRight: firstWidthSpace,
@@ -38,7 +38,7 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         fontWeight: '300',
       },
       textSpan: {
-        color: '#529552',
+        color: colors.mainAccentColor,
         fontWeight: '600',
       },
       callContainer: {
@@ -77,16 +77,16 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
 
     return (
         <section style={styles.headerSection}>
-            <div style={styles.headerBrandContainer}>
-                <h1 style={styles.headerBrandHeader}>warkring.org</h1>
-                <p style={styles.headerBrandText}>professionelle <span style={styles.textSpan}>Webseiten</span> für Ihren Online-Auftritt</p>
+          <div style={styles.headerBrandContainer}>
+            <h1 style={styles.headerBrandHeader}>warkring.org</h1>
+            <p style={styles.headerBrandText}>professionelle <span style={styles.textSpan}>Webseiten</span> für Ihren Online-Auftritt</p>
+          </div>
+          <div style={{ ...styles.callContainer, ...(isLoaded && styles.callContainerFlyIn) }}>
+            <h2 style={styles.callText}>Kontaktieren Sie uns jetzt und lassen sich beraten!</h2>
+            <div style={styles.callButtonContainer}>
+                <Link to="/kontakt" style={styles.callButton}>Jetzt Starten</Link>
             </div>
-            <div style={{ ...styles.callContainer, ...(isLoaded && styles.callContainerFlyIn) }}>
-                <h2 style={styles.callText}>Kontaktieren Sie uns jetzt und lassen sich beraten!</h2>
-                <div style={styles.callButtonContainer}>
-                    <Link to="/kontakt" style={styles.callButton}>Jetzt Starten</Link>
-                </div>
-            </div>
+          </div>
         </section>
     );
 }

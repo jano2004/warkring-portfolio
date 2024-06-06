@@ -1,5 +1,5 @@
 import SelectableTile from "../Atoms/SelectableTile";
-export default function RadioSelect({content, selected, setSelected, scrollToNextComponent}) {
+export default function RadioSelect({content, setSelected }) {
     const style = {
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
@@ -14,14 +14,11 @@ export default function RadioSelect({content, selected, setSelected, scrollToNex
         <div style={style}>
             {content.map((item, index) => (
                 <SelectableTile key={index}
-                                tileKey={index}
                                 props={item.props}
                                 id={item.id}
                                 state={item.state}
-                                position={item.position}
                                 color={item.color}
-                                changeState={changeSelected}
-                                scrollToNextComponent={scrollToNextComponent}/>
+                                changeState={changeSelected}/>
             ))}
         </div>
     );

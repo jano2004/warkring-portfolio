@@ -10,6 +10,29 @@ export function MainBody() {
 
   return (
     <div style={{width: "100%"}}>
+      <div style={{
+        marginTop: cssVariables['--height_section_space'],
+        background: 'transparent',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <div style={{
+          width: '13px',
+          height: '13px',
+          background: colors.mainAccentColor,
+          borderRadius: '50%',
+          marginRight: cssVariables['--width_inside_card_space'],
+        }}/>
+        <p style={{
+          fontSize: cssVariables['--font_body_text'],
+          color: colors.mainTextColor(isDarkMode),
+          fontWeight: '200',
+          margin: '0'
+        }}>
+          Freie Kapazitäten für Juni/2024
+        </p>
+      </div>
       <HeaderSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
       <FeaturesSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
     </div>
