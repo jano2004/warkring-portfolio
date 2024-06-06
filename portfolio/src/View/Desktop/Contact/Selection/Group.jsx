@@ -200,7 +200,8 @@ const style = {
         color: 'black',
         margin: '0 0 20px 5px',
         textAlign: 'left',
-        userSelect: 'none'
+        userSelect: 'none',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
     },
     selectContainer: {
         width: '100%',
