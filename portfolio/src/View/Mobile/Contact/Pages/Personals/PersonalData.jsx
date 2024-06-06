@@ -96,8 +96,8 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                         display: pageState === 0 ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center',
                         background: colors.selectableTileUnselectedColor(false, isDarkMode),
                         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
-                        padding: '5px 10px',
-                        borderRadius: '20px',
+                        borderRadius: '5px',
+                        padding: '8px 16px',
                     }}
                          onClick={handleBackward}>
                         <IoChevronBackOutline
@@ -117,8 +117,8 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                         alignItems: 'center',
                         background: colors.selectableTileUnselectedColor(true, isDarkMode),
                         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
-                        padding: '5px 10px',
-                        borderRadius: '20px',
+                        borderRadius: '5px',
+                        padding: '8px 16px',
                         transition: 'background 0.2s, color 0.2s',
                         cursor: 'pointer'
                     }}

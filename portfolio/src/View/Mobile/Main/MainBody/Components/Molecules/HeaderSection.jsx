@@ -9,7 +9,7 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
     }, []); 
 
     const firstHeightSpace = parseFloat(cssVariables['--height_section_space']) + parseFloat(cssVariables['--height_body_to_body_space']);
-    //const firstWidthSpace = parseFloat(cssVariables['--width_outside_card_space']) + parseFloat(cssVariables['--width_inside_card_space']);
+    const firstWidthSpace = parseFloat(cssVariables['--width_outside_card_space']) + parseFloat(cssVariables['--width_inside_card_space']);
 
     const styles = {
       headerSection: {
@@ -17,16 +17,13 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         flexDirection: 'column',
         alignItems: 'center',
         background: 'transparent',
+        marginLeft: firstWidthSpace,
+        marginRight: firstWidthSpace,
         marginTop: cssVariables['--height_body_to_body_space'],
         marginBottom: firstHeightSpace,
         color: colors.mainTextColor(isDarkMode),
-        width: '80%'
       },
       headerBrandContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         marginBottom: cssVariables['--height_section_space'],
         textAlign: 'center',
       },
@@ -62,8 +59,8 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         opacity: 1,
       },
       callText: {
-        fontSize: cssVariables['--font_body_button_text'],
-        fontWeight: '200',
+        fontSize: cssVariables['--font_body_text'],
+        fontWeight: '300',
         lineHeight: '1',
         marginBottom: cssVariables['--height_body_attached_space'],
       },
@@ -72,11 +69,11 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         justifyContent: 'center',
       },
       callButton: {
-        background: '#529552',
+        background: colors.mainAccentColor,
         fontSize: cssVariables['--font_body_text'],
         border: 'none',
         borderRadius: '5px',
-        padding: '8px 40px',
+        padding: '8px 16px',
         color: colors.mainTextColor(true),
         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
         textDecoration: 'none',

@@ -50,8 +50,8 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             alignItems: 'center',
                             background: colors.selectableTileUnselectedColor(false, isDarkMode),
                             boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
-                            padding: '5px 10px',
-                            borderRadius: '20px',
+                            borderRadius: '5px',
+                            padding: '8px 16px',
                             cursor: 'pointer'}}
                              onClick={handleBackward}>
                             <IoChevronBackOutline
@@ -71,8 +71,8 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             alignItems: 'center',
                             background: selected === null ? colors.selectableTileUnselectedColor(false, isDarkMode) : colors.selectableTileUnselectedColor(true, isDarkMode),
                             boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
-                            padding: '5px 10px',
-                            borderRadius: '20px',
+                            borderRadius: '5px',
+                            padding: '8px 16px',
                             transition: 'background 0.2s, color 0.2s',
                             cursor: 'pointer'}}
                              onClick={handleForward}>

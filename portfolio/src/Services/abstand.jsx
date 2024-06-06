@@ -8,5 +8,4 @@ export const cssVariables = {
     '--font_main_heading': '45px',
     '--font_body_heading': '28px',
     '--font_body_text': '17px',
-    '--font_body_button_text': '22px'
 };
