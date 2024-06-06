@@ -122,23 +122,23 @@ export const propsSecondaryGoal = (selectedPrimaryGoal, selected, elseSelected, 
     } else if (selectedPrimaryGoal === 'marketing') {
         return {
             header: 'Marketing / Werbung',
-            description: 'Was möchten Sie vermarkten?',
+            description: 'Was möchten Sie vermarkten oder für was wollen Sie werben?',
             missing: 'Für anderes lassen Sie dieses Feld frei und drücken Sie auf "Weiter"',
             content: [
                 {
-                    props: 'Mein Produkt bewerben',
+                    props: 'Mein Produkt',
                     id: 'info',
                     state: selected === 'info',
                     position: 'second'
                 },
                 {
-                    props: 'Mich selbst bewerben',
+                    props: 'Mich selbst',
                     id: 'selbstbewerben',
                     state: selected === 'selbstbewerben',
                     position: 'second'
                 },
                 {
-                    props: 'Produkte anderer bewerben',
+                    props: 'Produkte anderer',
                     id: 'marketing',
                     state: selected === 'marketing',
                     position: 'second'
