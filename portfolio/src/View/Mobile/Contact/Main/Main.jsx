@@ -36,7 +36,9 @@ export default function MainContact() {
 
    if (pageState === 0) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
+          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+            height: '100vh',
+          }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
              <div className={'mobileMenu'} style={mobileMenuStyle}>
                 {menu && <Menu currentSelected={'kontakt'}/>}
@@ -52,7 +54,9 @@ export default function MainContact() {
       );
    } else if (pageState === 1) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
+          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+            height: '100vh',
+          }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
              <div className={'mobileMenu'} style={mobileMenuStyle}>
                 {menu && <Menu currentSelected={'kontakt'}/>}
@@ -69,7 +73,9 @@ export default function MainContact() {
       );
    } else if (pageState === 2) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
+          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+            height: '100vh',
+          }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
              <div className={'mobileMenu'} style={mobileMenuStyle}>
                 {menu && <Menu currentSelected={'kontakt'}/>}
@@ -86,7 +92,9 @@ export default function MainContact() {
       );
    } else if (pageState === 3) {
        return (
-           <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
+           <div style={{background: colors.mainBackgroundColor(isDarkMode),
+            height: '100vh',
+           }}>
                <Header handleMenuMobileClick={handleMenuMobileClick}/>
                <div className={'mobileMenu'} style={mobileMenuStyle}>
                    {menu && <Menu currentSelected={'kontakt'}/>}

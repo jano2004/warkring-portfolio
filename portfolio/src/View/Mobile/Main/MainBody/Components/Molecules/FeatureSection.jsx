@@ -55,6 +55,9 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     ];
 
     const styles = {
+        featuresSectionMargin: {
+            marginBottom: cssVariables['--height_section_space'],
+        },
         featuresSection: {
             width: '100%',
             display: 'grid',
@@ -107,7 +110,7 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     }
 
     return (
-        <>
+        <section style={styles.featuresSectionMargin}>
         <section style={styles.featuresSection} ref={containerRef}>
             {features.map((feature, index) => (
                 <FeatureCard
@@ -131,6 +134,6 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
                 ))}
             </div>
         </div>
-        </>
+        </section>
     );
 }

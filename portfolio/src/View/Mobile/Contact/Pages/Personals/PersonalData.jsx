@@ -36,6 +36,7 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
         width: '120%',
         fontSize: cssVariables['--font_body_text'],
         background: colors.cardBackgroundColor(isDarkMode),
+        border: 'none',
         borderRadius: '7px',
         margin: '0 0 10px 0',
         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',

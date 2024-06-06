@@ -28,7 +28,7 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
     const [isDarkMode] = useDarkMode();
 
     return (
-        <div style={{height: '90vh', background: colors.mainBackgroundColor(isDarkMode)}}>
+        <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
             <div style={{ ...styles.mainContainer, ...(isLoaded && styles.mainContainerFlyIn)}}>
                 <div style={styles.headerText.container}>
                     <h1 style={{...styles.headerText.header, color: colors.mainTextColor(isDarkMode)}}>{props.header}</h1>
