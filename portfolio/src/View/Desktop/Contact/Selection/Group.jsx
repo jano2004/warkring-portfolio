@@ -343,7 +343,9 @@ const style = {
         borderRadius: '10px',
         border: '2px solid #D9D9D9',
         background: 'white',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        appearance: 'none',
+        webkitAppearance: 'none'
     },
     sendButton: {
         display: 'flex',
