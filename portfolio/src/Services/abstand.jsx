@@ -6,6 +6,7 @@ export const cssVariables = {
     '--height_body_to_body_space': '28px',
     '--height_body_attached_space': '14px',
     '--font_main_heading': '45px',
-    '--font_body_heading': '21px',
+    '--font_body_heading': '28px',
     '--font_body_text': '17px',
+    '--font_body_button_text': '22px'
 };

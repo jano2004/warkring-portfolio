@@ -62,7 +62,7 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         opacity: 1,
       },
       callText: {
-        fontSize: cssVariables['--font_body_heading'],
+        fontSize: cssVariables['--font_body_button_text'],
         fontWeight: '200',
         lineHeight: '1',
         marginBottom: cssVariables['--height_body_attached_space'],
