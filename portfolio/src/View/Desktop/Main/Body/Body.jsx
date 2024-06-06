@@ -120,7 +120,7 @@ export default function Body() {
     }
 
     return (
-        <div style={{height: '90%', width: '100%', background: 'white'}}>
+        <div style={{height: '0', width: '100%', background: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <div style={{...style.container}}>
                 <div style={{...style.verfuegbarkeit}}>
                     <div style={{...style.verfuegbarkeitButton}}/>

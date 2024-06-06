@@ -33,7 +33,9 @@ export function MainBody() {
           Freie Kapazitäten für Juni/2024
         </p>
       </div>
-      <HeaderSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
+      <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+        <HeaderSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
+      </div>
       <FeaturesSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
     </div>
   );

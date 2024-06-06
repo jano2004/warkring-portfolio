@@ -9,24 +9,30 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
     }, []); 
 
     const firstHeightSpace = parseFloat(cssVariables['--height_section_space']) + parseFloat(cssVariables['--height_body_to_body_space']);
-    const firstWidthSpace = parseFloat(cssVariables['--width_outside_card_space']) + parseFloat(cssVariables['--width_inside_card_space']); 
+    //const firstWidthSpace = parseFloat(cssVariables['--width_outside_card_space']) + parseFloat(cssVariables['--width_inside_card_space']);
 
     const styles = {
       headerSection: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         background: 'transparent',
         marginTop: cssVariables['--height_body_to_body_space'],
         marginBottom: firstHeightSpace,
-        marginLeft: firstWidthSpace,
-        marginRight: firstWidthSpace,
         color: colors.mainTextColor(isDarkMode),
+        width: '80%'
       },
       headerBrandContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginBottom: cssVariables['--height_section_space'],
         textAlign: 'center',
       },
       headerBrandHeader: {
         background: 'transparent',
-        margin: '0%',
+        margin: '0',
         fontSize: cssVariables['--font_main_heading'],
         fontWeight: '500',
         marginBottom: cssVariables['--height_body_attached_space'],
@@ -42,6 +48,9 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         fontWeight: '600',
       },
       callContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         background: 'transparent',
         textAlign: 'center',
         transform: 'translateY(100%)',
@@ -54,7 +63,7 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
       },
       callText: {
         fontSize: cssVariables['--font_body_heading'],
-        fontWeight: '300',
+        fontWeight: '200',
         lineHeight: '1',
         marginBottom: cssVariables['--height_body_attached_space'],
       },
@@ -63,12 +72,12 @@ export function HeaderSection({ cssVariables, isDarkMode, colors }) {
         justifyContent: 'center',
       },
       callButton: {
-        background: colors.cardBackgroundColor(isDarkMode),
+        background: '#529552',
         fontSize: cssVariables['--font_body_text'],
         border: 'none',
-        borderRadius: '20px',
-        padding: '6px 12px',
-        color: colors.mainTextColor(isDarkMode),
+        borderRadius: '5px',
+        padding: '8px 40px',
+        color: colors.mainTextColor(true),
         boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
         textDecoration: 'none',
         display: 'inline-block',

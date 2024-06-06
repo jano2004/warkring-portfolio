@@ -67,7 +67,8 @@ const style = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        background: 'white'
+        background: 'white',
+        userSelect: 'none'
     },
     container: {
         display: 'flex',
