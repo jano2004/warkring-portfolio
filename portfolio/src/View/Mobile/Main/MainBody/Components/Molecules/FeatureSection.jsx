@@ -1,139 +1,78 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FeatureCard } from "../Atoms/FeatureCard";
 
-function ShowScrollPage({ isActive, styles }) {
-    return (
-        <button style={isActive ? styles.scrollPageClicked : styles.scrollPage}></button>
-    )
-}
-
 export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
-    const [currentPage, setCurrentPage] = useState(0);
-    const containerRef = useRef(null);
+    const [activateFirst, setActivateFirst] = useState(false);
+    const [activateSecond, setActivateSecond] = useState(false);
+    const [activateThird, setActivateThird] = useState(false)
+
+
+    const handleScroll = () => {
+        if(window.scrollY >= window.innerHeight - (window.innerHeight - 150)) { setActivateFirst(true); }
+        else { setActivateFirst(false); }
+
+        if(window.scrollY >= window.innerHeight - (window.innerHeight - 350)) { setActivateSecond(true); }
+        else { setActivateSecond(false) }
+
+        if(window.scrollY >= window.innerHeight - (window.innerHeight - 550)) { setActivateThird(true); }
+        else { setActivateThird(false) }
+    };
 
     useEffect(() => {
-        const handleScroll = () => {
-            const currentContainerRef = containerRef.current;
-
-            if (currentContainerRef) {
-                const containerPosition = currentContainerRef.getBoundingClientRect().left;
-                const containerWidth = currentContainerRef.getBoundingClientRect().width;
-
-                for (let i = 0; i < currentContainerRef.children.length; i++) {
-                    const element = currentContainerRef.children[i];
-                    const elementPosition = element.getBoundingClientRect().left - containerPosition;
-                    if (elementPosition >= 0 && elementPosition < containerWidth) {
-                        setCurrentPage(i);
-                        break;
-                    }
-                }
-            }
-        };
-
-        const currentContainerRef = containerRef.current;
-
-        if (currentContainerRef) {
-            currentContainerRef.addEventListener('scroll', handleScroll);
-        }
-
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            if (currentContainerRef) {
-                currentContainerRef.removeEventListener('scroll', handleScroll);
-            }
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    const features = [
+    const content = [
         {
-            header: 'Responsive Design',
-            text: 'Ihre Webseite sieht gut aus auf allen Endgeräten, dank unserem responsiven Design, welches sich der Gerätgröße anpasst.',
+            header: 'Gewünschtes Webdesign',
+            text: 'Modernes, ansprechendes Design, welches Ihre Markenidentität widerspiegelt und Ihre Zielgruppe anspricht.',
         },
         {
-            header: 'Analyse-Tools',
-            text: 'Bessere Einsicht in das Kundenverhalten um Ihr Marketing zu optimieren.',
+            header: 'Professionelle Webentwicklung',
+            text: 'Robuste und skalierbare Lösungen, die auf den neuesten Technologien basieren und optimale Leistung garantieren.',
         },
+        {
+            header: 'SEO und Digitales Marketing',
+            text: 'Strategien, die Ihre Sichtbarkeit verbessern und den Traffic auf Ihrer Webseite erhöhen.',
+        }
     ];
 
-    const styles = {
-        featuresSectionMargin: {
-            marginBottom: cssVariables['--height_section_space'],
-        },
-        featuresSection: {
-            width: '100%',
-            display: 'grid',
-            gridAutoFlow: 'column',
-            gridAutoColumns: '100%',
-            gap: '1rem',
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            scrollbarWidth: 'none',
-            color: colors.mainTextColor(isDarkMode),
-            paddingBottom: cssVariables['--height_body_attached_space'],
-        },
-        mainServicePage: {
-            backgroundColor: 'transparent',
-            width: '100%',
-            height: '30px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
-        },
-        mainServicePageContainer: {
-            backgroundColor: colors.cardBackgroundColor(isDarkMode),
-            height: '18px',
-            width: '36px',
-            borderRadius: '10px',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            marginTop: '10px',
-            paddingLeft: '5px',
-            paddingRight: '5px',
-            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
-            marginBottom: '8px',
-        },
-        scrollPage: {
-            backgroundColor: colors.mainTextColor(!isDarkMode),
-            margin: '35%',
-            borderRadius: '100%',
-            border: 'none',
-            padding: '0%',
-            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
-        },
-        scrollPageClicked: {
-            backgroundColor: colors.mainAccentColor,
-            margin: '33%',
-            borderRadius: '100%',
-            border: 'none',
-            padding: '0%',
-            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
-        }
-    }
+    const sectionStyle = {
+        background: 'transparent',
+        marginLeft: cssVariables['--width_outside_card_space'],
+        marginRight: cssVariables['--width_outside_card_space'],
+    };
 
     return (
-        <section style={styles.featuresSectionMargin}>
-        <section style={styles.featuresSection} ref={containerRef}>
-            {features.map((feature, index) => (
-                <FeatureCard
-                    key={index}
-                    cssVariables={cssVariables}
-                    isDarkMode={isDarkMode}
-                    colors={colors}
-                    header={feature.header}
-                    text={feature.text}
-                />
-            ))}
-        </section>
-        <div style={styles.mainServicePage}>
-            <div style={styles.mainServicePageContainer}>
-                {[0, 1].map(pageNumber => (
-                    <ShowScrollPage
-                    key={pageNumber}
-                    isActive={currentPage === pageNumber}
-                        styles={styles}
-                    />
-                ))}
-            </div>
-        </div>
+        <section style={sectionStyle}>
+            <FeatureCard
+                cssVariables={cssVariables}
+                isDarkMode={isDarkMode}
+                colors={colors}
+                header={content[0].header}
+                text={content[0].text}
+                activate={activateFirst}
+            />
+            <FeatureCard
+                cssVariables={cssVariables}
+                isDarkMode={isDarkMode}
+                colors={colors}
+                header={content[1].header}
+                text={content[1].text}
+                activate={activateSecond}
+                isMirrored
+            />
+            <FeatureCard
+                cssVariables={cssVariables}
+                isDarkMode={isDarkMode}
+                colors={colors}
+                header={content[2].header}
+                text={content[2].text}
+                activate={activateThird}
+            />
         </section>
     );
 }
