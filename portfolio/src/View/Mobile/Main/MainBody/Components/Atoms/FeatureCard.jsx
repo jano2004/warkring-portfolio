@@ -28,6 +28,7 @@ export function FeatureCard({ cssVariables, isDarkMode, colors, header, text, ac
         },
         featureCardHeader: {
             margin: '0%',
+            color: colors.mainAccentColor,
             fontSize: cssVariables['--font_body_heading'],
             marginBottom: cssVariables['--height_body_attached_space'],
             lineHeight: '1.1',
