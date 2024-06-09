@@ -1,6 +1,7 @@
-import SelectableTile from "./SelectableTile";
+import SelectableTile from "./Props/SelectableTile";
+import SelectDropdown from "./Props/DropdownSelect";
 import {useState} from "react";
-import {content} from '../EmailContent';
+import {content, dropdownContent, style} from '../Content';
 
 export default function Group({header, text}) {
 
@@ -74,18 +75,7 @@ export default function Group({header, text}) {
     };
 
     return (
-        <div style={{
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'start',
-            alignItems: 'center',
-            gap: '10px',
-            marginTop: '40px',
-            paddingTop: '40px',
-            height: '1400px',
-            overflowY: 'scroll'
-        }}>
+        <div style={{...style.main}}>
             <h1 style={style.header}>Deine Vorstellungen</h1>
             <p style={style.text}>Weißt du schon, wie deine Traum-Website aussieht? *</p>
             <div style={style.selectContainer}>
@@ -96,7 +86,7 @@ export default function Group({header, text}) {
                 {select === 'vorstellung' ?
                     <textarea style={{
                         ...style.textarea,
-                        border: target ? '2px solid #529552' : '2px solid #D9D9D9'}}
+                        border: target ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'}}
                               placeholder={'So stelle ich mir meine Website vor... (Optional)'}
                               onFocus={() => setTarget(true)}
                               onBlur={() => setTarget(false)}
@@ -104,7 +94,7 @@ export default function Group({header, text}) {
                 {select === 'beratung' ?
                     <input type='datetime-local' style={{
                                ...style.dateTimePicker,
-                               border: target ? '2px solid #529552' : '2px solid #D9D9D9'}}
+                               border: target ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'}}
                            onChange={(event) => setTerminDate(event.target.value)}
                            onFocus={() => setTarget(true)}
                            onBlur={() => setTarget(false)}
@@ -116,63 +106,23 @@ export default function Group({header, text}) {
                 <div style={{height: '40px'}}/>
                 <h1 style={style.header}>Thema der Website</h1>
                 <p style={style.text}>Für was möchtest du deine Website erstellen? *</p>
-                <select
-                    style={style.select}
-                    onChange={event => setDropdownMaingoal(event.target.options.selectedIndex)}
-                    value={dropdownMaingoal}>
-                    <option value={0}>Informationswebsite</option>
-                    <option value={1}>Bildungs-/ Trainingswebseite</option>
-                    <option value={2}>Portfolio-/ Präsentationswebseite</option>
-                    <option value={3}>Marketing-/ Werbungswebseite</option>
-                </select>
-                {dropdownMaingoal === 0 ? <select
-                    style={style.select}
-                    onChange={event => setDropdownTopic(event.target.options.selectedIndex)}
-                    value={dropdownTopic}>
-                    <option value={0}>Über uns / Unternehmensinformation</option>
-                    <option value={1}>News- und Eventplattform</option>
-                    <option value={2}>Öffentliche Dienstleistungen</option>
-                    <option value={3}>Wissensdatenbanken und FAQ</option>
-                </select> : null}
-                {dropdownMaingoal === 1 ? <select
-                    style={style.select}
-                    onChange={event => setDropdownTopic(event.target.options.selectedIndex)}
-                    value={dropdownTopic}>
-                    <option value={0}>Akademische Institutionen</option>
-                    <option value={1}>Online-Tutorial-Seiten</option>
-                    <option value={2}>Berufliche Fortbildung</option>
-                    <option value={3}>Sprachlernplattformen</option>
-                </select> : null}
-                {dropdownMaingoal === 2 ? <select
-                    style={style.select}
-                    onChange={event => setDropdownTopic(event.target.options.selectedIndex)}
-                    value={dropdownTopic}>
-                    <option value={0}>Künstler- und Designerportfolios</option>
-                    <option value={1}>Firmenpräsentationen</option>
-                    <option value={2}>Freiberufler-Showcases</option>
-                    <option value={3}>Architektur- und Immobilienportfolios</option>
-                </select> : null}
-                {dropdownMaingoal === 3 ? <select
-                    style={style.select}
-                    onChange={event => setDropdownTopic(event.target.options.selectedIndex)}
-                    value={dropdownTopic}>
-                    <option value={0}>Produktlaunch-Seiten</option>
-                    <option value={1}>Kampagnen-spezifische Seiten</option>
-                    <option value={2}>Affiliate-Marketing-Seiten</option>
-                    <option value={3}>Brand-Promotion-Seiten</option>
-                </select> : null}
+                <SelectDropdown items={dropdownContent.goal} setSelectedIndex={setDropdownMaingoal} selectedIndex={dropdownMaingoal}/>
+                {dropdownMaingoal === 0 && <SelectDropdown items={dropdownContent.info} setSelectedIndex={setDropdownTopic} selectedIndex={dropdownTopic}/> }
+                {dropdownMaingoal === 1 && <SelectDropdown items={dropdownContent.bildung} setSelectedIndex={setDropdownTopic} selectedIndex={dropdownTopic}/> }
+                {dropdownMaingoal === 2 && <SelectDropdown items={dropdownContent.portfolio} setSelectedIndex={setDropdownTopic} selectedIndex={dropdownTopic}/> }
+                {dropdownMaingoal === 3 && <SelectDropdown items={dropdownContent.marketing} setSelectedIndex={setDropdownTopic} selectedIndex={dropdownTopic}/> }
             </div>
             <div style={{width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'}}>
                 <div style={{height: '40px'}}/>
                 <h1 style={style.header}>Personenbezogene Daten</h1>
-                <p style={style.text}>Wir brauchen noch ein paar Daten um dich zu kontaktieren? *</p>
+                <p style={style.text}>Wir brauchen noch ein paar Daten um dich zu kontaktieren? * <br/>Deine Daten werden NICHT bei uns gespeichert!</p>
                 <div style={{width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '7px'}}>
                     <p style={style.inputLabel}>Vor- und Zuname *</p>
                     <div style={{width: '85%', display: 'flex', justifyContent: 'center', gap: '7px'}}>
                         <input type={'text'}
                                style={{
                                    ...style.input,
-                                   border: inputTarget === 'vorname' ? '2px solid #529552' : '2px solid #D9D9D9'
+                                   border: inputTarget === 'vorname' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
                                }}
                                placeholder={'Vorname'}
                                onFocus={() => setInputTarget('vorname')}
@@ -182,7 +132,7 @@ export default function Group({header, text}) {
                         <input type={'text'}
                                style={{
                                    ...style.input,
-                                   border: inputTarget === 'nachname' ? '2px solid #529552' : '2px solid #D9D9D9'
+                                   border: inputTarget === 'nachname' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
                                }}
                                placeholder={'Nachname'}
                                onFocus={() => setInputTarget('nachname')}
@@ -195,7 +145,7 @@ export default function Group({header, text}) {
                     <input type={'text'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'email' ? '2px solid #529552' : '2px solid #D9D9D9'
+                               border: inputTarget === 'email' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
                            }}
                            placeholder={'E-Mail-Adresse'}
                            onFocus={() => setInputTarget('email')}
@@ -206,7 +156,7 @@ export default function Group({header, text}) {
                     <input type={'text'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'vorwahl' ? '2px solid #529552' : '2px solid #D9D9D9',
+                               border: inputTarget === 'vorwahl' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9',
                                width: '15%',
                            }}
                            placeholder={'Vorwahl'}
@@ -216,7 +166,7 @@ export default function Group({header, text}) {
                     <input type={'numeric'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'rufnummer' ? '2px solid #529552' : '2px solid #D9D9D9',
+                               border: inputTarget === 'rufnummer' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9',
                                width: '85%'
                            }}
                            placeholder={'Rufnummer'}
@@ -227,7 +177,7 @@ export default function Group({header, text}) {
             </div>
             <div>
                 <div style={{height: '40px'}}/>
-                <div style={{...style.sendButton, background: hover ? '#007AFF' : '#529552'}}
+                <div style={{...style.sendButton, background: hover ? '#007AFF' : 'rgb(37,118,136)'}}
                      onMouseEnter={() => setHover(true)}
                      onMouseLeave={() => setHover(false)}
                      onClick={handleSend}>
@@ -264,113 +214,4 @@ export default function Group({header, text}) {
             </div>
         </div>
     )
-}
-
-const style = {
-    header: {
-        width: '85%',
-        fontSize: '32px',
-        fontWeight: '700',
-        color: '#529552',
-        margin: '0 0 17px 5px',
-        textAlign: 'left',
-        userSelect: 'none'
-    },
-    text: {
-        width: '85%',
-        fontSize: '16px',
-        fontWeight: '400',
-        color: 'black',
-        margin: '0 0 20px 5px',
-        textAlign: 'left',
-        userSelect: 'none',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-    },
-    selectContainer: {
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '7px'
-    },
-    textDateContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%'
-    },
-    textarea: {
-        height: '170px',
-        width: 'calc(85% - 20px)',
-        borderRadius: '10px',
-        fontSize: '17px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-        resize: 'none',
-        padding: ' 15px 0 0 20px',
-        outline: 'none'
-    },
-    dateTimePicker: {
-        width: 'calc(85% - 60px)',
-        height: '70px',
-        padding: '0 40px 0 20px',
-        borderRadius: '10px',
-        fontSize: '17px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-        outline: 'none'
-    },
-    input: {
-        width: 'calc(85% - 20px)',
-        height: '70px',
-        padding: '0 0 0 20px',
-        borderRadius: '10px',
-        fontSize: '20px',
-        outline: 'none',
-        transition: 'all 0.1s ease-in-out'
-    },
-    inputLabel: {
-        width: '85%',
-        textAlign: 'left',
-        margin: '10px 0 0 5px',
-        fontWeight: '200',
-        userSelect: 'none'
-    },
-    select: {
-        width: '85%',
-        height: '70px',
-        padding: '0 0 0 20px',
-        fontSize: '17px',
-        borderRadius: '10px',
-        border: '2px solid #D9D9D9',
-        background: 'white',
-        cursor: 'pointer',
-        appearance: 'none',
-        webkitAppearance: 'none'
-    },
-    sendButton: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '17px 35px 17px 35px',
-        color: 'white',
-        fontSize: '17px',
-        borderRadius: '10px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-        fontWeight: '400',
-        cursor: 'pointer',
-        userSelect: 'none',
-        transition: 'all 0.2s ease-in-out'
-    },
-    outputTextarea: {
-        height: '300px',
-        width: 'calc(85% - 20px)',
-        borderRadius: '10px',
-        fontSize: '17px',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-        resize: 'none',
-        padding: ' 15px 0 0 20px',
-        outline: 'none',
-        userSelect: 'none',
-        cursor: 'pointer'
-    }
 }

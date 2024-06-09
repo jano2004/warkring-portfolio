@@ -10,9 +10,18 @@ export default function Body() {
     }, []);
 
     const style = {
+        main: {
+            height: '0',
+            width: '100%',
+            background: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            scrollSnapAlign: 'center'
+        },
         container: {
             width: '100%',
-            height: '700px',
+            height: '550px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-evenly',
@@ -29,13 +38,8 @@ export default function Body() {
             width: 'auto',
             padding: '0 20px 0 20px',
             borderRadius: '20px',
-            background: '#F4F5F5'
-        },
-        verfuegbarkeitButton: {
-            width: '13px',
-            height: '13px',
-            background: '#9BCF53',
-            borderRadius: '50%'
+            background: '#F4F5F5',
+            overflowX: 'hidden'
         },
         verfuegbarkeitButtonText: {
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
@@ -98,7 +102,8 @@ export default function Body() {
             height: '45px',
             width: 'auto',
             padding: '0 22px 0 22px',
-            background: '#529552', borderRadius: '7px',
+            background: 'rgba(21,33,212,0.7)',
+            borderRadius: '7px',
             cursor: 'pointer'
         },
         anfrageAnalyseButtonText: {
@@ -116,18 +121,18 @@ export default function Body() {
         p1: {
             fontWeight: '500',
             textAlign: 'center'
+        },
+        a: {
+            fontWeight: '500',
+            textDecoration: 'none',
+            color: 'black',
+            cursor: 'default'
         }
     }
 
     return (
-        <div style={{height: '0', width: '100%', background: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <div style={{...style.main}}>
             <div style={{...style.container}}>
-                <div style={{...style.verfuegbarkeit}}>
-                    <div style={{...style.verfuegbarkeitButton}}/>
-                    <p style={{...style.verfuegbarkeitButtonText}}>
-                        Freie Kapazitäten für Juni/2024
-                    </p>
-                </div>
                 <div>
                     <p style={{...style.miniHeader}}>
                         Webdesign und Entwicklung für B2B und B2P
@@ -141,9 +146,9 @@ export default function Body() {
                 <div>
                     <p style={{...style.description, ...(isLoaded && style.descriptionFlyIn)}}>
                         Wir erstellen Webseiten, die
-                        <p1 style={{...style.p1}}> deinen Ansprühen entsprechen.</p1><br/>
+                        <a style={{...style.a}} href={'hrefHanlder'}> deinen Ansprühen entsprechen.</a><br/>
                         Hebe dich ab
-                        <p1 style={{...style.p1}}> von deiner Konkurrenz </p1>
+                        <a style={{...style.a}} href={'hrefHanlder'}> von deiner Konkurrenz </a>
                         mit individuellem Design und SEO
                     </p>
                 </div>

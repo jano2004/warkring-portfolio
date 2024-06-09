@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MobileMain from './View/Mobile/Main/Main/Main';
@@ -10,7 +10,7 @@ import FeaturesMain from './View/Mobile/Features/Main/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
 import DesktopCotanct from "./View/Desktop/Contact/ContactMain";
-import DesktopMain from './View/Desktop/Main/Main'
+import DesktopMain from './View/Desktop/Main/Main';
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -47,11 +47,13 @@ const App = () => {
     );
 };
 
-ReactDOM.render(
+// Updated mounting code using createRoot
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+root.render(
     <React.StrictMode>
         <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
 );
 
 reportWebVitals();

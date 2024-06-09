@@ -14,19 +14,15 @@ export default function ContactMain() {
             <Header />
             <div style={style.main}>
                 {/* FreeSpace */}
-                <div style={style.freespace}>
-
-                </div>
+                <div style={style.freespace}/>
 
                 {/* SelectGroup */}
-                <div style={{...style.selectgroup, ...(isLoaded && style.selectgroupLoad)}}>
+                <div style={{...style.selectGroup, ...(isLoaded && style.selectgroupLoad)}}>
                     <Group />
                 </div>
 
                 {/* FreeSpace */}
-                <div style={style.freespace}>
-
-                </div>
+                <div style={style.freespace}/>
             </div>
         </div>
     )
@@ -37,12 +33,7 @@ const style = {
       display: 'flex',
       flexDirection: 'row'
     },
-    progressbar: {
-        height: '90vh',
-        width: '25%',
-        background: ''
-    },
-    selectgroup: {
+    selectGroup: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'start',

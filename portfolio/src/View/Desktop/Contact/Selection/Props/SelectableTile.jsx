@@ -12,7 +12,7 @@ export default function SelectableTile({props}) {
             width: '85%',
             height: '100px',
             background: '#FFFFFF',
-            border: props.select === props.id ? '2px solid #529552' : '2px solid #D9D9D9',
+            border: props.select === props.id ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9',
             borderRadius: '10px',
             transition: 'all 0.15s ease-in-out',
             cursor: 'pointer'
@@ -28,7 +28,7 @@ export default function SelectableTile({props}) {
         header: {
             fontSize: '22px',
             fontWeight: '600',
-            color: '#529552',
+            color: 'rgb(37,118,136)',
             margin: '0',
             fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
         },

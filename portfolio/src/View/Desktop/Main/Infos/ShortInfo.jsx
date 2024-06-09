@@ -1,59 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export default function ShortInfo() {
-    const [activateFirst, setActivateFirst] = useState(false);
-    const [activateSecond, setActivateSecond] = useState(false);
-    const [activateThird, setActivateThird] = useState(false)
-
-
-    const handleScroll = () => {
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 130)) { setActivateFirst(true); }
-        else { setActivateFirst(false); }
-
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 330)) { setActivateSecond(true); }
-        else { setActivateSecond(false) }
-
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 530)) { setActivateThird(true); }
-        else { setActivateThird(false) }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-        // eslint-disable-next-line
-    }, []);
-
+export default function ShortInfo({activate}) {
     return (
         <div style={{...style.main}}>
             <div style={{...style.container}}>
-                <div style={{...style.leftInfo, ...(activateFirst && style.leftInfoSlideIn)}}>
+                <div style={{...style.leftInfo, ...(activate && style.leftInfoSlideIn)}}>
                     <h1 style={{...style.infoHeader}}>Gewünschtes Webdesign</h1>
                     <p style={{...style.infoText}}>
                         Modernes,
-                        <p1 style={{fontWeight: '500'}}>ansprechendes Design</p1>,
+                        <a style={{...style.a}} href={'hrefHanlder'}> ansprechendes Design</a>,
                         das Ihre Markenidentität widerspiegelt und Ihre
-                        <p1 style={{fontWeight: '500'}}>Zielgruppe anspricht.</p1>
+                        <a style={{...style.a}} href={'hrefHanlder'} > Zielgruppe anspricht.</a>
                     </p>
                 </div>
             </div>
             <div style={{...style.container}}>
-                <div style={{...style.rightInfo, ...(activateSecond && style.rightInfoSlideIn)}}>
+                <div style={{...style.rightInfo, ...(activate && style.rightInfoSlideIn)}}>
                     <h1 style={{...style.infoHeader}}>Professionelle Webentwicklung</h1>
                     <p style={{...style.infoText, width: '700px'}}>
                         Robuste und
-                        <p1 style={{fontWeight: '500'}}> skalierbare Lösungen</p1>
+                        <a style={{...style.a}} href={'hrefHanlder'}> skalierbare Lösungen</a>
                         , die auf
-                        <p1 style={{fontWeight: '500'}}> neuesten Technologien </p1>
+                        <a style={{...style.a}} href={'hrefHanlder'}> neuesten Technologien </a>
                         basieren und optimale Leistung garantieren.</p>
                 </div>
             </div>
             <div style={{...style.container}}>
-                <div style={{...style.leftInfo, ...(activateThird && style.leftInfoSlideIn)}}>
+                <div style={{...style.leftInfo, ...(activate && style.leftInfoSlideIn)}}>
                     <h1 style={{...style.infoHeader}}>SEO und Digitales Marketing</h1>
                     <p style={{...style.infoText, width: '700px'}}>
-                        Strategien, die Ihre <p1 style={{fontWeight: '500'}}> Sichtbarkeit verbessern </p1>
+                        Strategien, die Ihre <a style={{...style.a}} href={'hrefHanlder'}> Sichtbarkeit verbessern </a>
                         und den Traffic auf Ihrer Website erhöhen.
                     </p>
                 </div>
@@ -68,7 +44,8 @@ const style = {
         flexDirection: 'column',
         alignItems: 'center',
         background: 'white',
-        userSelect: 'none'
+        userSelect: 'none',
+        scrollSnapAlign: 'center'
     },
     container: {
         display: 'flex',
@@ -117,7 +94,7 @@ const style = {
         margin: '0',
         fontSize: '3rem',
         letterSpacing: '1.5px',
-        color: '#529552',
+        color: 'rgba(21,33,212,0.7)',
         padding: '0 30px 0 30px',
         width: '800px',
         textAlign: 'center'
@@ -130,4 +107,10 @@ const style = {
         padding: '0 30px 0 30px',
         textAlign: 'center'
     },
+    a: {
+        fontWeight: '500',
+        textDecoration: 'none',
+        color: 'black',
+        cursor: 'default'
+    }
 }
