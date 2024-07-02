@@ -10,7 +10,7 @@ import FeaturesMain from './View/Mobile/Features/Main/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
 import DesktopCotanct from "./View/Desktop/Contact/ContactMain";
-import DesktopMain from './View/Desktop/Main/Main';
+import DesktopMain from './View/Desktop/Main/Main/Main';
 
 const App = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

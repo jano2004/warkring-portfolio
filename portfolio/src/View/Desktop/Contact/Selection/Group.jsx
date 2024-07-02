@@ -122,7 +122,7 @@ export default function Group({header, text}) {
                         <input type={'text'}
                                style={{
                                    ...style.input,
-                                   border: inputTarget === 'vorname' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
+                                   border: inputTarget === 'vorname' ? '2px solid rgba(21,33,212,0.7)' : '2px solid #D9D9D9'
                                }}
                                placeholder={'Vorname'}
                                onFocus={() => setInputTarget('vorname')}
@@ -132,7 +132,7 @@ export default function Group({header, text}) {
                         <input type={'text'}
                                style={{
                                    ...style.input,
-                                   border: inputTarget === 'nachname' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
+                                   border: inputTarget === 'nachname' ? '2px solid rgba(21,33,212,0.7)' : '2px solid #D9D9D9'
                                }}
                                placeholder={'Nachname'}
                                onFocus={() => setInputTarget('nachname')}
@@ -145,7 +145,7 @@ export default function Group({header, text}) {
                     <input type={'text'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'email' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9'
+                               border: inputTarget === 'email' ? '2px solid rgba(21,33,212,0.7)' : '2px solid #D9D9D9'
                            }}
                            placeholder={'E-Mail-Adresse'}
                            onFocus={() => setInputTarget('email')}
@@ -156,7 +156,7 @@ export default function Group({header, text}) {
                     <input type={'text'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'vorwahl' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9',
+                               border: inputTarget === 'vorwahl' ? '2px solid rgba(21,33,212,0.7)' : '2px solid #D9D9D9',
                                width: '15%',
                            }}
                            placeholder={'Vorwahl'}
@@ -166,7 +166,7 @@ export default function Group({header, text}) {
                     <input type={'numeric'}
                            style={{
                                ...style.input,
-                               border: inputTarget === 'rufnummer' ? '2px solid rgb(37,118,136)' : '2px solid #D9D9D9',
+                               border: inputTarget === 'rufnummer' ? '2px solid rgba(21,33,212,0.7)' : '2px solid #D9D9D9',
                                width: '85%'
                            }}
                            placeholder={'Rufnummer'}
@@ -177,7 +177,7 @@ export default function Group({header, text}) {
             </div>
             <div>
                 <div style={{height: '40px'}}/>
-                <div style={{...style.sendButton, background: hover ? '#007AFF' : 'rgb(37,118,136)'}}
+                <div style={{...style.sendButton, background: hover ? '#007AFF' : 'rgba(21,33,212,0.7)'}}
                      onMouseEnter={() => setHover(true)}
                      onMouseLeave={() => setHover(false)}
                      onClick={handleSend}>

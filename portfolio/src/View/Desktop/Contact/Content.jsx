@@ -36,7 +36,8 @@ export const dropdownContent = {
         'Informationswebsite',
         'Bildungs-/ Trainingswebseite',
         'Portfolio-/ Präsentationswebseite',
-        'Marketing-/ Werbungswebseite'
+        'Marketing-/ Werbungswebseite',
+        'Ich bin mir nicht sicher'
     ],
     info: [
         'Über uns / Unternehmensinformation',

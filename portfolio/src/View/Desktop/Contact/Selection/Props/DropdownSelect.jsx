@@ -23,7 +23,7 @@ const style = {
         padding: '0 0 0 20px',
         fontSize: '17px',
         borderRadius: '10px',
-        border: '2px solid rgb(37,118,136)',
+        border: '2px solid #D9D9D9',
         background: 'white',
         cursor: 'pointer',
         appearance: 'none',
