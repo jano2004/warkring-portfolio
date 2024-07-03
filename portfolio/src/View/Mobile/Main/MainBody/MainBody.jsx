@@ -4,6 +4,7 @@ import useDarkMode from "../../../../Services/ThemeService/ThemeService";
 import { colors } from "../../../../Services/ThemeService/Colors";
 import { FeaturesSection } from './Components/Molecules/FeatureSection';
 import { HeaderSection } from './Components/Molecules/HeaderSection';
+import { CodeSection } from './Components/Molecules/CodeSection';
 
 export function MainBody() {
   const [isDarkMode] = useDarkMode();
@@ -20,7 +21,7 @@ export function MainBody() {
         <div style={{
           width: '13px',
           height: '13px',
-          background: colors.mainAccentColor,
+          background: '#529552',
           borderRadius: '50%',
           marginRight: cssVariables['--width_inside_card_space'],
         }}/>
@@ -30,13 +31,14 @@ export function MainBody() {
           fontWeight: '200',
           margin: '0'
         }}>
-          Freie Kapazitäten für Juni/2024
+          Freie Kapazitäten für Juli/2024
         </p>
       </div>
       <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
         <HeaderSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
       </div>
       <FeaturesSection cssVariables={cssVariables} isDarkMode={isDarkMode} colors={colors}/>
+      <CodeSection />
     </div>
   );
 }
