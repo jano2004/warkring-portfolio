@@ -39,32 +39,55 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# Code-Specification
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## <u>Link</u>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### UI-Object: 
 
-### Code Splitting
+<pre>
+import {useState} from "react";
+import { Link } from 'react-router-dom';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default function CustomLink({ destination, description, style }) {
+    const [hover, setHover] = useState(false);
 
-### Analyzing the Bundle Size
+    return (
+        &lt;Link to={'/' + destination} style={{textDecoration: 'none'}}>
+            &lt;div style={{ ...style.main, ...(hover && style.hover) }}
+                 onMouseEnter={() => setHover(true)}
+                 onMouseLeave={() => setHover(false)}>
+                &lt;p style={{ ...style.text.main, ...(hover && style.text.hover)}}>
+                    {description}
+                &lt;/p>
+            &lt;/div>
+        &lt;/Link>
+    );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+$linkName: { 
+    main: { 
+        display: '', 
+        flexDirection: '', 
+        justifyContent: '', 
+        alignItems: '', 
+        gap: '', 
+        textDecoration: '', 
+        transition: '' 
+    }, 
+    hover: { 
+        textDecoration: '' 
+    }, 
+    text: { 
+        main: { 
+            fontFamily: '', 
+            color: '', 
+            fontWeight: '', 
+            transition: '', 
+        }, 
+        hover: { 
+            color: '' 
+        } 
+    }
+},
+</pre>

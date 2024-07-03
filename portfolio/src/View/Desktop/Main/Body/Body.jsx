@@ -1,12 +1,20 @@
-import { MdOutlineNavigateNext } from "react-icons/md";
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
 import {style} from './style';
+
+import CustomLink from "./Atoms/CustomLink/CustomLink";
+import Container from "./Atoms/Container/Container";
+import Header from "./Atoms/Header/Header";
+import Description from "./Atoms/Description/Description";
 
 export default function Body() {
     const [isLoaded, setIsLoaded] = useState(false);
-    const [hoverAnalyse, setHoverAnalyse] = useState(false);
-    const [hoverProject, setHoverProject] = useState(false);
+
+    const content = {
+        top: 'Webdesign und Entwicklung für B2B und B2P',
+        bottom: {
+            first: 'Webseiten für Verkauf', second: 'und Informationsverbreitung'
+        }
+    }
 
     useEffect(() => {
         setIsLoaded(true);
@@ -15,40 +23,25 @@ export default function Body() {
     return (
         <div style={{...style.main}}>
             <div style={{...style.container}}>
-                <div>
-                    <p style={{...style.miniHeader}}>
-                        Webdesign und Entwicklung für B2B und B2P
-                    </p>
-                </div>
-                <div>
-                    <p style={{...style.mainHeader, ...(isLoaded && style.mainHeaderFlyIn)}}>
-                        Webseiten für Verkauf <br/>und Informationsverbreitung
-                    </p>
-                </div>
-                <div>
-                    <p style={{...style.description, ...(isLoaded && style.descriptionFlyIn)}}>
-                        Wir erstellen Webseiten, die
-                        <a style={{...style.a}} href={'hrefHanlder'}> deinen Ansprühen entsprechen.</a><br/>
-                        Hebe dich ab
-                        <a style={{...style.a}} href={'hrefHanlder'}> von deiner Konkurrenz </a>
-                        mit individuellem Design und SEO
-                    </p>
-                </div>
-                <div style={{...style.anfrageContainer, ...(isLoaded && style.anfrageContainerFlyIn)}}>
-                    <Link to={'/kontakt'} style={{textDecoration: 'none'}}>
-                        <div style={{...style.anfrageAnalyseButton, ...(hoverAnalyse && style.hoverAnfrageAnalyseButton)}} onMouseEnter={() => setHoverAnalyse(true)} onMouseLeave={() => setHoverAnalyse(false)}>
-                            <p style={{...style.anfrageAnalyseButtonText, color: hoverAnalyse ? 'black' : 'white'}}>Kostenlose Website-Analyse</p>
-                        </div>
-                    </Link>
-                    <Link to={'/kontakt'} style={{textDecoration: 'none'}}>
-                        <div style={{...style.anfrageProjektButton}} onMouseEnter={() => setHoverProject(true)} onMouseLeave={() => setHoverProject(false)}>
-                            <p style={{...style.anfrageAnalyseButtonText, color: 'black', ...(hoverProject && style.anfrageProjektButtonHover)}}>
-                                Neues Projekt anfragen
-                            </p>
-                            <MdOutlineNavigateNext size={'20px'} color={'black'}/>
-                        </div>
-                    </Link>
-                </div>
+                <Container>
+                    <Header type={'h2'} description={content.top}>
+                        <p style={{margin: 0}}>
+                            {content.top}
+                        </p>
+                    </Header>
+                </Container>
+                <Container>
+                    <Header type={'h1'} description={content.top} isLoaded={isLoaded}>
+                        <p style={{margin: 0}}> { content.bottom.first } <br></br> { content.bottom.second } </p>
+                    </Header>
+                </Container>
+                <Container>
+                    <Description isLoaded={isLoaded}/>
+                </Container>
+                <Container style={style.anfrage} isLoaded={isLoaded}>
+                    <CustomLink destination={'kontakt'} description={'Kostenlose Website-Analyse'} style={style.button.analyse} />
+                    <CustomLink destination={'kontakt'} description={'Neues Projekt anfragen'} style={style.button.anfrage} />
+                </Container>
             </div>
         </div>
     )

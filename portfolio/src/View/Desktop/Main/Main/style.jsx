@@ -36,5 +36,13 @@ export const style = {
         height: '100vh',
         scrollSnapAlign: 'center',
         background: 'black'
+    },
+    booking: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        scrollSnapAlign: 'center',
+        background: 'white'
     }
 };

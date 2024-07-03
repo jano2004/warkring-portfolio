@@ -70,6 +70,22 @@ export const style = {
         transform: 'translateY(0)',
         opacity: 1
     },
+    anfrage: {
+        main: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '30px',
+            transform: 'translateY(100%)',
+            opacity: 0,
+            transition: 'transform 0.8s ease-out, opacity 0.8s ease-out',
+        },
+        flyIn: {
+            transform: 'translateY(0)',
+            opacity: 1
+        }
+    },
     anfrageContainer: {
         display: 'flex',
         flexDirection: 'row',
@@ -84,28 +100,62 @@ export const style = {
         transform: 'translateY(0)',
         opacity: 1
     },
-    anfrageAnalyseButton: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '45px',
-        width: 'auto',
-        padding: '0 22px 0 22px',
-        background: 'rgba(21,33,212,0.7)',
-        border: '1px solid rgba(21,33,212,0.7)',
-        borderRadius: '7px',
-        cursor: 'pointer',
-        transition: 'all 0.2s ease-in-out'
-    },
-    hoverAnfrageAnalyseButton: {
-        border: '1px solid black',
-        background: 'white'
-    },
-    anfrageAnalyseButtonText: {
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-        color: 'white',
-        fontWeight: '400',
-        transition: 'all 0.2s ease-in-out',
+    button: {
+        analyse: {
+            main: {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '45px',
+                width: 'auto',
+                padding: '0 22px 0 22px',
+                background: 'rgba(21,33,212,0.7)',
+                border: '1px solid rgba(21,33,212,0.7)',
+                borderRadius: '7px',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease-in-out'
+            },
+            hover: {
+                border: '1px solid black',
+                background: 'white',
+            },
+            text: {
+                main: {
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+                    color: 'white',
+                    fontWeight: '400',
+                    transition: 'all 0.2s ease-in-out',
+                },
+                hover: {
+                    color: 'black'
+                }
+            },
+        },
+        anfrage: {
+            main: {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '10px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease-in'
+            },
+            hover: {
+                textDecoration: 'underline'
+            },
+            text: {
+                main: {
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+                    color: 'black',
+                    fontWeight: '400',
+                    transition: 'all 0.2s ease-in-out',
+                },
+                hover: {
+                    color: 'black'
+                }
+            },
+        }
     },
     anfrageProjektButton: {
         display: 'flex',
