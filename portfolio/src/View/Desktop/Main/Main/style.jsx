@@ -21,7 +21,7 @@ export const style = {
         scrollSnapType: 'y mandatory',
         scrollBehavior: 'smooth'
     },
-    shortInfo: {
+    white: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -29,20 +29,12 @@ export const style = {
         background: 'white',
         scrollSnapAlign: 'center'
     },
-    example: {
+    black: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
         scrollSnapAlign: 'center',
         background: 'black'
-    },
-    booking: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        scrollSnapAlign: 'center',
-        background: 'white'
     }
 };

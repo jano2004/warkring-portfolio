@@ -2,36 +2,37 @@ import Header from "../../Header/Header";
 import Body from "../Body/Body";
 import ShortInfo from "../Infos/ShortInfo";
 import Example from "../Example/Example";
+import MainInfo from "../MainInfo/MainInfo";
 import { useState, useEffect, useRef } from "react";
 import {style} from "./style";
-//import Booking from "../Booking/Booking";
+//import Speed from "../Speed/Speed";
 
 export default function Main() {
     const [activateSmallInfo, setActivateSmallInfo] = useState(false);
     const [activateExample, setActivateExample] = useState(false);
-    const [activateBooking, setActivateBooking] = useState(false);
+    const [activateMainInfo, setActivateMainInfo] = useState(false)
     const shortInfoRef = useRef(null);
     const exampleRef = useRef(null);
-    const bookingRef = useRef(null);
+    const mainInfoRef = useRef(null);
 
     const handleScrollInfo = (isVisible) => {
-        console.log('Info: ' + isVisible)
+        console.log('Info: %c' + isVisible, isVisible ? 'color: green' : 'color: red')
         if (isVisible && !activateSmallInfo) {
             setActivateSmallInfo(true);
         }
     };
 
     const handleScrollExample = (isVisible) => {
-        console.log('Example: ' + isVisible)
+        console.log('Example: %c' + isVisible, isVisible ? 'color: green' : 'color: red')
         if (isVisible && !activateExample) {
             setActivateExample(true);
         }
     };
 
-    const handleScrollBooking = (isVisible) => {
-        console.log('Booking: ' + isVisible)
-        if (isVisible && !activateBooking) {
-            setActivateBooking(true);
+    const handleScrollMainInfo = (isVisible) => {
+        console.log('MainInfo: %c' + isVisible, isVisible ? 'color: green' : 'color: red')
+        if (isVisible && !activateMainInfo) {
+            setActivateMainInfo(true);
         }
     }
 
@@ -62,11 +63,16 @@ export default function Main() {
             }
         );
 
-        const observerBooking = new IntersectionObserver(
+        const observeMainInfo = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    handleScrollBooking(entry.isIntersecting);
+                    handleScrollMainInfo(entry.isIntersecting);
                 })
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5,
             }
         )
 
@@ -78,8 +84,8 @@ export default function Main() {
             observerExample.observe(exampleRef.current);
         }
 
-        if (bookingRef.current) {
-            observerBooking.observe(bookingRef.current);
+        if (mainInfoRef.current) {
+            observeMainInfo.observe(mainInfoRef.current);
         }
 
         return () => {
@@ -106,14 +112,14 @@ export default function Main() {
                         <Body/>
                     </div>
                 </div>
-                <div style={style.shortInfo} id={'short_info'} ref={shortInfoRef}>
+                <div style={style.white} id={'short_info'} ref={shortInfoRef}>
                     <ShortInfo activate={activateSmallInfo}/>
                 </div>
-                <div style={style.example} id={'example'} ref={exampleRef}>
+                <div style={style.black} id={'example'} ref={exampleRef}>
                     <Example activate={activateExample}/>
                 </div>
-                <div style={style.booking} id={'booking'} ref={bookingRef}>
-                    {/*<Booking activate={activateBooking}/>*/}
+                <div style={style.black} id={'info'} ref={mainInfoRef}>
+                    <MainInfo render={activateMainInfo}/>
                 </div>
             </div>
         </div>
