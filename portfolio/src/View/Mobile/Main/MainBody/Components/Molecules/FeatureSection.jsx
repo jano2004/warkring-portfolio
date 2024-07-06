@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FeatureCard } from "../Atoms/FeatureCard";
+import { FeatureCard } from "../Atoms/FeatureCard/FeatureCard";
 
 export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     const [activateFirst, setActivateFirst] = useState(false);
@@ -9,13 +9,8 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
 
     const handleScroll = () => {
         if(window.scrollY >= window.innerHeight - (window.innerHeight - 150)) { setActivateFirst(true); }
-        else { setActivateFirst(false); }
-
         if(window.scrollY >= window.innerHeight - (window.innerHeight - 350)) { setActivateSecond(true); }
-        else { setActivateSecond(false) }
-
         if(window.scrollY >= window.innerHeight - (window.innerHeight - 550)) { setActivateThird(true); }
-        else { setActivateThird(false) }
     };
 
     useEffect(() => {

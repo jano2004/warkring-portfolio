@@ -27,10 +27,6 @@ export default function AboutBody() {
             personName: 'Nick',
             personText: 'Ich bin 22 Jahre alt und spezialisiere mich bei Warkring auf Design und Frontend-Entwicklung.'
         },
-        third: {
-            personName: 'Lukas',
-            personText: 'Ich bin 20 Jahre alt und der Marketing Manager und Business Analyst bei Warkring.'
-        }
     };
 
 
@@ -123,7 +119,6 @@ export default function AboutBody() {
                 <section style={styles.about_main_person_cards}>
                     <ShowPersonCard person={personCard.first} cssVariables={cssVariables} isLoaded={isLoaded} />
                     <ShowPersonCard person={personCard.second} isMirrored cssVariables={cssVariables} isLoaded={isLoaded} />
-                    <ShowPersonCard person={personCard.third} cssVariables={cssVariables} isLoaded={isLoaded}/>
                 </section>
                 <section style={styles.about_main_text_cards}>
                     <TextCards cssVariables={cssVariables} />
