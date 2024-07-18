@@ -4,7 +4,8 @@ export const style = {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '592px',
-        height: '592px',
+        gap: '35px',
+        width: 'auto',
+        height: 'auto',
     }
 }

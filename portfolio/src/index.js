@@ -7,6 +7,7 @@ import ContactMain from './View/Mobile/Contact/Main/Main';
 import ImpressumMain from './View/Mobile/Impressum/Main';
 import AboutMain from './View/Mobile/AboutUs/Main';
 import FeaturesMain from './View/Mobile/Features/Main/Main';
+import FeaturesDesktop from './View/Desktop/Features/Main/Main';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import ErrorHandler from './View/Mobile/ErrorHandler/ErrorHandler';
 import DesktopCotanct from "./View/Desktop/Contact/ContactMain";
@@ -40,6 +41,7 @@ const App = () => {
                     <>
                         <Route path={'/'} element={<DesktopMain />}/>
                         <Route path={'/kontakt'} element={<DesktopCotanct />}/>
+                        <Route path={'features'} element={<FeaturesDesktop />}/>
                     </>
                 )}
             </Routes>

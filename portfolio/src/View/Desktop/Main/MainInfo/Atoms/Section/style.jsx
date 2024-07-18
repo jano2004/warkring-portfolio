@@ -6,7 +6,7 @@ export const style = {
         alignItems: 'center',
         gap: '30px',
         height: '100%',
-        width: '33.33333%',
+        width: 'auto',
     },
     left: {
         display: 'flex',
@@ -15,7 +15,7 @@ export const style = {
         alignItems: 'start',
         gap: '30px',
         height: '100%',
-        width: '33.33333%',
+        width: 'auto',
     },
     right: {
         display: 'flex',
@@ -24,6 +24,6 @@ export const style = {
         alignItems: 'end',
         gap: '30px',
         height: '100%',
-        width: '33.33333%',
+        width: 'auto',
     }
 }

@@ -27,7 +27,8 @@ export const style = {
         justifyContent: 'center',
         height: '100vh',
         background: 'white',
-        scrollSnapAlign: 'center'
+        scrollSnapAlign: 'center',
+        overflowX: 'hidden'
     },
     black: {
         display: 'flex',
@@ -35,6 +36,6 @@ export const style = {
         justifyContent: 'center',
         height: '100vh',
         scrollSnapAlign: 'center',
-        background: 'black'
+        background: 'black',
     }
 };
