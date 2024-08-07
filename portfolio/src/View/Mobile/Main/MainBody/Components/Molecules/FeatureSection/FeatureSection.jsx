@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FeatureCard } from "../Atoms/FeatureCard/FeatureCard";
+import FeatureCard from '../../Atoms/FeatureCard/FeatureCard';
+import Area from '../../Atoms/Area/Area';
 
 export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     const [activateFirst, setActivateFirst] = useState(false);
@@ -42,7 +43,7 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
     };
 
     return (
-        <section style={sectionStyle}>
+        <Area style={sectionStyle}>
             <FeatureCard
                 cssVariables={cssVariables}
                 isDarkMode={isDarkMode}
@@ -68,6 +69,6 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
                 text={content[2].text}
                 activate={activateThird}
             />
-        </section>
+        </Area>
     );
 }

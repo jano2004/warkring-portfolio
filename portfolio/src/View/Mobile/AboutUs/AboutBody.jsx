@@ -12,7 +12,7 @@ export default function AboutBody() {
     
     const content = {
         headerHeading: 'Über uns',
-        headerFirstText: 'Willkommen bei Warkring, Ihrem professionellen Partner für maßgeschneiderte Website-Lösungen. Wir sind ein dynamisches Trio bestehend aus drei engagierten Informatikstudenten an der FH Aachen.',
+        headerFirstText: 'Willkommen bei Warkring, Ihrem professionellen Partner für maßgeschneiderte Website-Lösungen. Wir sind ein dynamisches Duo bestehend aus zwei engagierten Informatikstudenten an der FH Aachen.',
         headerSecText: 'Unsere Leidenschaft für die neueste Technologie und fortschrittliche Sicherheitssysteme treibt uns an, innovative und sichere Websites genau nach Kundenwunsch zu erstellen.',
         endFirstText: 'Vertrauen Sie auf Warkring, wenn es darum geht, Ihre digitale Präsenz zu gestalten.',
         endSecondText: 'Lassen Sie uns gemeinsam etwas Großartiges schaffen!'

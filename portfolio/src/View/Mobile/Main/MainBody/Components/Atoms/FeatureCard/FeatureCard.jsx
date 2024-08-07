@@ -1,4 +1,4 @@
-export function FeatureCard({ cssVariables, isDarkMode, colors, header, text, activate, isMirrored=false }) {
+export default function FeatureCard({ cssVariables, isDarkMode, colors, header, text, activate, isMirrored=false }) {
     const styles = {
         featuresCard: {
             background: 'transparent',
