@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import { colors } from "../../../../../Services/ThemeService/Colors";
-import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 import { MdOutlineMarkunreadMailbox } from "react-icons/md";
 import { IoChevronBackOutline } from "react-icons/io5";
 import {sendMail} from "../../MailService/ContactMailService";
 import { cssVariables } from '../../../../../Services/abstand';
 
 export default function PersonalData({ pageState, setPageState, selectedHauptziel, selectSecondaryGoal, selectMainGoal}) {
-    const [isDarkMode] = useDarkMode();
 
     const handleNameChange = (e) => setName(e.target.value);
     const handleEmailChange = (e) => setEmail(e.target.value);
@@ -35,19 +33,19 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
     const inputStyle = {
         width: '120%',
         fontSize: cssVariables['--font_body_text'],
-        background: colors.cardBackgroundColor(isDarkMode),
+        background: colors.cardBackgroundColor,
         border: 'none',
         borderRadius: '7px',
         margin: '0 0 10px 0',
-        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
     };
 
     return (
-        <div style={{height: '90vh', background: colors.mainBackgroundColor(isDarkMode) }}>
+        <div style={{height: '90vh', background: colors.mainBackgroundColor }}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <div style={styles.headerText.container}>
-                    <h1 style={{ ...styles.headerText.header, color: colors.mainTextColor(isDarkMode) }}>Jetzt zu Ihnen</h1>
-                    <p style={{ ...styles.headerText.text, color: colors.mainTextColor(isDarkMode) }}>Wir brauchen noch ein paar persönliche Daten von Ihnen.</p>
+                    <h1 style={{ ...styles.headerText.header, color: colors.mainTextColor }}>Jetzt zu Ihnen</h1>
+                    <p style={{ ...styles.headerText.text, color: colors.mainTextColor }}>Wir brauchen noch ein paar persönliche Daten von Ihnen.</p>
                 </div>
                 <div style={{
                     display: 'flex',
@@ -94,17 +92,17 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                 }}>
                     <div style={{
                         display: pageState === 0 ? 'none' : 'flex', flexDirection: 'row', alignItems: 'center',
-                        background: colors.selectableTileUnselectedColor(false, isDarkMode),
-                        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                        background: colors.selectableTileUnselectedColor(false),
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
                         borderRadius: '5px',
                         padding: '8px 16px',
                     }}
                          onClick={handleBackward}>
                         <IoChevronBackOutline
-                            color={colors.cardBorderColor(!isDarkMode)} />
+                            color={colors.mainTextColor} />
                         <p style={{
                             margin: '0 0 0 5px',
-                            color: colors.cardBorderColor(!isDarkMode),
+                            color: colors.mainTextColor,
                             fontSize: cssVariables['--font_body_text'],
                             fontWeight: 'normal',
                             textAlign: 'center',
@@ -115,8 +113,8 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                         display: 'flex',
                         flexDirection: 'row',
                         alignItems: 'center',
-                        background: colors.selectableTileUnselectedColor(true, isDarkMode),
-                        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                        background: colors.selectableTileUnselectedColor(true),
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
                         borderRadius: '5px',
                         padding: '8px 16px',
                         transition: 'background 0.2s, color 0.2s',
@@ -125,14 +123,14 @@ export default function PersonalData({ pageState, setPageState, selectedHauptzie
                          onClick={handleSubmit}>
                         <p style={{
                             margin: '0 5px 0 0',
-                            color: colors.cardBorderColor(false, isDarkMode),
+                            color: colors.cardBorderColor,
                             fontSize: cssVariables['--font_body_text'],
                             fontWeight: 'normal',
                             textAlign: 'center',
                             width: '90%',
                         }}>Absenden</p>
                         <MdOutlineMarkunreadMailbox
-                            color={colors.cardBorderColor(false)} />
+                            color={colors.cardBorderColor} />
                     </div>
                 </div>
                 <div style={styles.progressBar.container}>

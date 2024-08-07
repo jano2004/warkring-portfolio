@@ -1,17 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import useDarkMode from "../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../Services/ThemeService/Colors";
 import { cssVariables } from '../../../Services/abstand';
 
 function Footer() {
-    const [isDarkMode] = useDarkMode();
 
     const styles = {
         style: {
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
-            background: colors.cardBackgroundColor(isDarkMode)
+            background: colors.cardBackgroundColor,
         },
         footerLinkContainer: {
             backgroundColor: 'transparent',
@@ -33,7 +31,7 @@ function Footer() {
         },
         styleLink: {
             textDecoration: 'none',
-            color: colors.mainTextColor(isDarkMode),
+            color: colors.mainTextColor,
         }
     }
 

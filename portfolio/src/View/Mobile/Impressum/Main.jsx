@@ -1,11 +1,9 @@
 import Header from "../Header/Header";
 import Menu from "../Header/Menu/Menu";
 import React, {useState} from "react";
-import useDarkMode from "../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../Services/ThemeService/Colors";
 
 export default function Main() {
-    const [isDarkMode] = useDarkMode();
 
     const style = {
         display: 'flex',
@@ -16,7 +14,7 @@ export default function Main() {
 
     const styleParagraphContainer = {
         width: '90%',
-        background: colors.cardBackgroundColor(isDarkMode),
+        background: colors.cardBackgroundColor,
         padding: '20px 0 20px 0'
     }
 
@@ -36,7 +34,7 @@ export default function Main() {
         <div style={{
             height: '100vh',
             width: '100%',
-            background: colors.mainBackgroundColor(isDarkMode)}}>
+            background: colors.mainBackgroundColor}}>
             <div style={style}>
                 <Header handleMenuMobileClick={handleMenuMobileClick}/>
                 <div style={mobileMenuStyle}>
@@ -55,10 +53,9 @@ export default function Main() {
 }
 
 function Paragraph({props}) {
-    const [isDarkMode] = useDarkMode();
 
     const styleText = {
-        color: colors.mainTextColor(isDarkMode),
+        color: colors.mainTextColor,
         margin: '10px 0 10px 10px'
     }
 

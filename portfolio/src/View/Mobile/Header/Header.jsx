@@ -1,8 +1,6 @@
-import useDarkMode from "../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../Services/ThemeService/Colors";
 
 function Header({ handleMenuMobileClick}) {
-    const [isDarkMode] = useDarkMode()
 
     const styles = {
         mainHeaderSection: {
@@ -32,7 +30,7 @@ function Header({ handleMenuMobileClick}) {
         menuLine: {
             width: '100%',
             height: '1px',
-            backgroundColor: colors.mainTextColor(isDarkMode),
+            backgroundColor: colors.mainTextColor,
             transition: 'all 0.2s ease-in-out'
         }
     };

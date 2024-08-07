@@ -1,20 +1,18 @@
 import React from "react";
-import useDarkMode from "../../../../Services/ThemeService/ThemeService";
 import { colors } from "../../../../Services/ThemeService/Colors";
 
 function ShowTextCard({ cssVariables, content }) {
-    const [isDarkMode] = useDarkMode();
     const styles = {
         cardContainer: {
-            backgroundColor: colors.cardBackgroundColor(isDarkMode),
-            border: '1px solid' + colors.cardBorderColor(isDarkMode),
+            backgroundColor: colors.cardBackgroundColor,
+            border: '1px solid' + colors.cardBorderColor,
             width: '100%',
             height: '340px',
             borderRadius: '28px',
             display: 'flex',
             flexDirection: 'column',
             marginBottom: cssVariables['--height_body_attached_space'],
-            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
         },
         card: {
             backgroundColor: 'transparent',

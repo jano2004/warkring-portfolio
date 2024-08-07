@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
 import { colors } from "../../../../../../Services/ThemeService/Colors";
 
 export function ShowTile({ cssVariables, feature }) {
-    const [isDarkMode] = useDarkMode();
     const [flip, setFlip] = useState(false);
 
     const handleFlip = (event) => {
@@ -13,14 +11,14 @@ export function ShowTile({ cssVariables, feature }) {
 
     const styles = {
         cardContainer: {
-            backgroundColor: colors.cardBackgroundColor(isDarkMode),
+            backgroundColor: colors.cardBackgroundColor,
             flex: '1 1 calc(25% - 17px)',
             borderRadius: '13px',
             display: 'flex',
             flexDirection: 'column',
             aspectRatio: '1 / 1',
             minWidth: '140px',
-            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)' : '0 2px 4px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
             transition: 'all 0.5s ease-in-out',
         },
         cardFlipInner: {

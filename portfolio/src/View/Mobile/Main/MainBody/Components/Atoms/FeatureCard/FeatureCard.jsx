@@ -1,8 +1,8 @@
-export default function FeatureCard({ cssVariables, isDarkMode, colors, header, text, activate, isMirrored=false }) {
+export default function FeatureCard({ cssVariables, colors, header, text, activate, isMirrored=false }) {
     const styles = {
         featuresCard: {
             background: 'transparent',
-            color: colors.mainTextColor(isDarkMode),
+            color: colors.mainTextColor,
             textAlign: 'center',
             paddingLeft: cssVariables['--width_inside_card_space'],
             paddingRight: cssVariables['--width_inside_card_space'],
@@ -13,7 +13,7 @@ export default function FeatureCard({ cssVariables, isDarkMode, colors, header, 
         },
         featuresCardMirrored: {
             background: 'transparent',
-            color: colors.mainTextColor(isDarkMode),
+            color: colors.mainTextColor,
             textAlign: 'center',
             paddingLeft: cssVariables['--width_inside_card_space'],
             paddingRight: cssVariables['--width_inside_card_space'],

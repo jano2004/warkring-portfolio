@@ -1,5 +1,4 @@
 import { Link, useNavigate} from "react-router-dom";
-import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
 import {colors} from "../../../../../../Services/ThemeService/Colors";
 
 import { IoMdContact } from "react-icons/io";
@@ -18,9 +17,6 @@ export default function NavItems({icon, text, selected, setSelected, setStatus }
         navigate(convertedText === 'home' ? '/' : '/' + convertedText);
         window.scrollTo(0, 0);
     };
-
-    const [isDarkMode] = useDarkMode();
-
 
     const styles = {
         mainMenuNav: {
@@ -44,7 +40,7 @@ export default function NavItems({icon, text, selected, setSelected, setStatus }
             fontFamily: '-apple-system',
             margin: '10px 0 0 15px',
             paddingBottom: '10px',
-            color: selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode),
+            color: selected === convertedText ? colors.navItemSelectedColor : colors.navItemUnselectedColor,
             fontWeight: selected === convertedText ? '300' : '200'
         }
     };
@@ -52,10 +48,10 @@ export default function NavItems({icon, text, selected, setSelected, setStatus }
     return (
         <div style={styles.mainMenuNav}>
             <div style={{...styles.mainMenuNavContainer}} onClick={handleClick}>
-                {icon === 'homeIcon' ? <IoIosHome size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'featuresIcon' ? <LuAtom size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'contactIcon' ? <IoMdContact size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}
-                {icon === 'aboutIcon' ? <DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor(isDarkMode) : colors.navItemUnselectedColor(isDarkMode)}/> : null}   
+                {icon === 'homeIcon' ? <IoIosHome size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor : colors.navItemUnselectedColor}/> : null}
+                {icon === 'featuresIcon' ? <LuAtom size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor : colors.navItemUnselectedColor}/> : null}
+                {icon === 'contactIcon' ? <IoMdContact size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor : colors.navItemUnselectedColor}/> : null}
+                {icon === 'aboutIcon' ? <DiMaterializecss size={'25px'} color={selected === convertedText ? colors.navItemSelectedColor : colors.navItemUnselectedColor}/> : null}   
                 <Link to={convertedText === 'home' ? '/' : '/' + convertedText } className={'custom_link'}><p style={styles.mainMenuNavP}  onClick={handleClick}>{text}</p></Link>
             </div>
         </div>

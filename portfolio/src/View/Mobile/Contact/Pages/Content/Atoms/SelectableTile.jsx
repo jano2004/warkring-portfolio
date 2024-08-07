@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import { MdOutlineQuestionMark } from 'react-icons/md';
 import { IoArrowBackOutline } from "react-icons/io5";
 import {colors} from "../../../../../../Services/ThemeService/Colors";
-import useDarkMode from "../../../../../../Services/ThemeService/ThemeService";
 import { cssVariables } from '../../../../../../Services/abstand';
 
 export default function SelectableTile({props, id, state, changeState }) {
-    const [isDarkMode] = useDarkMode()
 
     const [flip, setFlip] = useState(false)
 
@@ -19,7 +17,7 @@ export default function SelectableTile({props, id, state, changeState }) {
         display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',
         width: '155px', height: '155px',
         borderRadius: '20px',
-        boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
         transition: 'background 0.2s, color 0.2s',
     };
 
@@ -29,12 +27,12 @@ export default function SelectableTile({props, id, state, changeState }) {
 
     const styleUnselected = {
         ...commonStyles,
-        background: colors.selectableTileUnselectedColor(false, isDarkMode),
+        background: colors.selectableTileUnselectedColor(false),
     };
 
     const styleSelected = {
         ...commonStyles,
-        background: colors.selectableTileUnselectedColor(true, isDarkMode),
+        background: colors.selectableTileUnselectedColor(true),
     };
 
     const textCommonStyles = {
@@ -47,12 +45,12 @@ export default function SelectableTile({props, id, state, changeState }) {
 
     const styleHeaderUnselected = {
         ...textCommonStyles,
-        color: colors.cardBorderColor(!isDarkMode)
+        color: colors.mainTextColor,
     };
 
     const styleHeaderSelected = {
         ...textCommonStyles,
-        color: colors.cardBorderColor(false)
+        color: colors.cardBorderColor,
     };
 
     return (

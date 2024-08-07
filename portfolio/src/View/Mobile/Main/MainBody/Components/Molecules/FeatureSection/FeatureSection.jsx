@@ -1,26 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import FeatureCard from '../../Atoms/FeatureCard/FeatureCard';
 import Area from '../../Atoms/Area/Area';
 
-export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
-    const [activateFirst, setActivateFirst] = useState(false);
-    const [activateSecond, setActivateSecond] = useState(false);
-    const [activateThird, setActivateThird] = useState(false)
-
-
-    const handleScroll = () => {
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 150)) { setActivateFirst(true); }
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 350)) { setActivateSecond(true); }
-        if(window.scrollY >= window.innerHeight - (window.innerHeight - 550)) { setActivateThird(true); }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
+export function FeaturesSection({ cssVariables, colors, activate }) {
     const content = [
         {
             header: 'Gewünschtes Webdesign',
@@ -40,34 +22,33 @@ export function FeaturesSection({ cssVariables, isDarkMode, colors }) {
         background: 'transparent',
         marginLeft: cssVariables['--width_outside_card_space'],
         marginRight: cssVariables['--width_outside_card_space'],
+        scrollSnapAlign: 'start',
+        height: '100vh',
     };
 
     return (
         <Area style={sectionStyle}>
             <FeatureCard
                 cssVariables={cssVariables}
-                isDarkMode={isDarkMode}
                 colors={colors}
                 header={content[0].header}
                 text={content[0].text}
-                activate={activateFirst}
+                activate= {activate}
             />
             <FeatureCard
                 cssVariables={cssVariables}
-                isDarkMode={isDarkMode}
                 colors={colors}
                 header={content[1].header}
                 text={content[1].text}
-                activate={activateSecond}
+                activate={activate}
                 isMirrored
             />
             <FeatureCard
                 cssVariables={cssVariables}
-                isDarkMode={isDarkMode}
                 colors={colors}
                 header={content[2].header}
                 text={content[2].text}
-                activate={activateThird}
+                activate={activate}
             />
         </Area>
     );

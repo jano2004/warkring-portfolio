@@ -1,6 +1,5 @@
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { IoChevronBackOutline } from "react-icons/io5";
-import useDarkMode from "../../../../../Services/ThemeService/ThemeService";
 import RadioSelect from "../Content/Molecules/RadioSelect";
 import {colors} from "../../../../../Services/ThemeService/Colors";
 import { cssVariables } from "../../../../../Services/abstand";
@@ -25,14 +24,12 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
         }
     }
 
-    const [isDarkMode] = useDarkMode();
-
     return (
-        <div style={{background: colors.mainBackgroundColor(isDarkMode)}}>
+        <div style={{background: colors.mainBackgroundColor}}>
             <div style={{ ...styles.mainContainer, ...(isLoaded && styles.mainContainerFlyIn)}}>
                 <div style={styles.headerText.container}>
-                    <h1 style={{...styles.headerText.header, color: colors.mainTextColor(isDarkMode)}}>{props.header}</h1>
-                    <p style={{...styles.headerText.text, color: colors.mainTextColor(isDarkMode)}}>{props.description}</p>
+                    <h1 style={{...styles.headerText.header, color: colors.mainTextColor}}>{props.header}</h1>
+                    <p style={{...styles.headerText.text, color: colors.mainTextColor}}>{props.description}</p>
                 </div>
                 <div style={styles.radioSelect.container}>
                     <RadioSelect content={props.content} setSelected={setSelected}/>
@@ -48,17 +45,17 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             display: pageState === 0 ? 'none' : 'flex',
                             flexDirection: 'row',
                             alignItems: 'center',
-                            background: colors.selectableTileUnselectedColor(false, isDarkMode),
-                            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                            background: colors.selectableTileUnselectedColor(false),
+                            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
                             borderRadius: '5px',
                             padding: '8px 16px',
                             cursor: 'pointer'}}
                              onClick={handleBackward}>
                             <IoChevronBackOutline
-                                color= {selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(isDarkMode)}/>
+                                color= {colors.mainTextColor}/>
                             <p style={{
                                 margin: '0 0 0 5px',
-                                color: selected === null ? colors.mainTextColor(isDarkMode) : colors.mainTextColor(isDarkMode),
+                                color: colors.mainTextColor,
                                 fontSize: cssVariables['--font_body_text'],
                                 fontWeight: 'normal',
                                 textAlign: 'center',
@@ -69,8 +66,8 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                             display: 'flex',
                             flexDirection: 'row',
                             alignItems: 'center',
-                            background: selected === null ? colors.selectableTileUnselectedColor(false, isDarkMode) : colors.selectableTileUnselectedColor(true, isDarkMode),
-                            boxShadow: isDarkMode ? '0 4px 8px rgba(0, 0, 0, 0.5)': '0 2px 4px rgba(0, 0, 0, 0.2)',
+                            background: selected === null ? colors.selectableTileUnselectedColor(false) : colors.selectableTileUnselectedColor(true),
+                            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
                             borderRadius: '5px',
                             padding: '8px 16px',
                             transition: 'background 0.2s, color 0.2s',
@@ -78,14 +75,14 @@ export default function Firstpage({selected, setSelected, props, pageState, setP
                              onClick={handleForward}>
                             <p style={{
                                 margin: '0 5px 0 0',
-                                color: selected === null ? colors.cardBorderColor(!isDarkMode) : colors.cardBorderColor(false, isDarkMode),
+                                color: selected === null ? colors.mainTextColor: colors.cardBorderColor,
                                 fontSize: cssVariables['--font_body_text'],
                                 fontWeight: 'normal',
                                 textAlign: 'center',
                                 width: '90%',
                             }}>Weiter</p>
                             <IoChevronForwardOutline
-                                color={selected === null ? colors.cardBorderColor(!isDarkMode) : colors.cardBorderColor(false)}/>
+                                color={selected === null ? colors.mainTextColor : colors.cardBorderColor}/>
                         </div>
                     </div>
                 </div>

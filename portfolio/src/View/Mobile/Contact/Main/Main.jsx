@@ -5,7 +5,6 @@ import './disableScroll.css';
 import Header from "../../Header/Header";
 import Menu from "../../Header/Menu/Menu";
 import {colors} from "../../../../Services/ThemeService/Colors";
-import useDarkMode from "../../../../Services/ThemeService/ThemeService";
 import PersonalData from "../Pages/Personals/PersonalData";
 
 export default function MainContact() {
@@ -13,8 +12,6 @@ export default function MainContact() {
    const [selectedHauptziel, setSelectedHauptziel] = useState(null);
    const [selectSecondaryGoal, setSelectSecondaryGoal] = useState(null);
    const [selectMainGoal, setSelectMainGoal] = useState(null);
-
-   const [isDarkMode] = useDarkMode()
 
    const [menu, setMenu] = useState(false);
 
@@ -36,7 +33,7 @@ export default function MainContact() {
 
    if (pageState === 0) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+          <div style={{background: colors.mainBackgroundColor,
             height: '100vh',
           }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -54,7 +51,7 @@ export default function MainContact() {
       );
    } else if (pageState === 1) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+          <div style={{background: colors.mainBackgroundColor,
             height: '100vh',
           }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -73,7 +70,7 @@ export default function MainContact() {
       );
    } else if (pageState === 2) {
       return (
-          <div style={{background: colors.mainBackgroundColor(isDarkMode),
+          <div style={{background: colors.mainBackgroundColor,
             height: '100vh',
           }}>
              <Header handleMenuMobileClick={handleMenuMobileClick}/>
@@ -92,7 +89,7 @@ export default function MainContact() {
       );
    } else if (pageState === 3) {
        return (
-           <div style={{background: colors.mainBackgroundColor(isDarkMode),
+           <div style={{background: colors.mainBackgroundColor,
             height: '100vh',
            }}>
                <Header handleMenuMobileClick={handleMenuMobileClick}/>

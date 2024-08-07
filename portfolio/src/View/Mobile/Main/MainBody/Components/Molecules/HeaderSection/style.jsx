@@ -21,7 +21,7 @@ export const style = {
     },
     sloganText: {
       fontSize: cssVariables['--font_body_text'],
-      color: colors.mainTextColor(false),
+      color: colors.mainTextColor,
       fontWeight: '200',
       margin: '0'
     },
@@ -39,7 +39,7 @@ export const style = {
       marginRight: firstWidthSpace,
       marginTop: cssVariables['--height_body_to_body_space'],
       marginBottom: firstHeightSpace,
-      color: colors.mainTextColor(false),
+      color: colors.mainTextColor,
     },
     headerBrandContainer: {
       main: {
@@ -79,7 +79,7 @@ export const style = {
       border: 'none',
       borderRadius: '5px',
       padding: '8px 16px',
-      color: colors.mainTextColor(true),
+      color: colors.mainBackgroundColor,
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
       textDecoration: 'none',
       display: 'inline-block',
